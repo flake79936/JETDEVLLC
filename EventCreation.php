@@ -226,7 +226,7 @@
 			frmvalidator.addValidation("EendDate",     "req", "Please Select an End Date");
 			//frmvalidator.addValidation("Etype",        "req", "Please fill in Type of Event");
 			frmvalidator.addValidation("Edescription", "req", "Please fill in Description");
-			
+			//test
 			// ]]>
 		</script>
 	</body>
