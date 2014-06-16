@@ -35,6 +35,21 @@
 				$("#Edate").datepicker();
 			});
 		</script>
+		<!--Script to show whether the event is 'Other'-->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#other").hide();
+				$("select").change(function(){
+					$("select option:selected").each(function(){
+						if($(this).attr("value") === "Other"){
+							$("#other").show();
+						} else {
+							$("#other").hide();
+						}
+					});
+				}).change();
+			});
+		</script>
 	</head>
 	<body>
 		<div id='fg_membersite'>
@@ -131,26 +146,30 @@
 						</tr>
 						
 						<!--Type of Event-->
-						<script>
-							//TO DO CODE...
-						</script>
-						
 						<tr>
 							<td class="container">
 								<label for="Etype">Type of Event*: </label><br/>
 								<select>
+								 <option>Please Select One</option>
 								 <option value="Concert">Concert</option>
  								 <option value="Fair">Fair</option>
 							     <option value="Art">Art</option>
   								 <option value="Social">Social</option>
+  								 <option value="Other">Other</option>
 								</select>
-								<br/>
+								
+								<!--<input type="text" name="Etype" id="Etype" value="<?php echo $fgmembersite->SafeDisplay("Etype") ?>" maxlength="50" /><br/>-->
+							</td>
+						</tr>
+						
+						<!--Other 'option'-->
+						<tr id="other">
+							<td>
 								<label for="Etype">Other: </label><br/>
-								<input type="text" name="Etype" id="Etype" value="<?php echo $fgmembersite->SafeDisplay("Etype") ?>" maxlength="50" /><br/>
+								<textarea rows="3" cols="40" name="Etype" id="Etype" value="<?php echo $fgmembersite->SafeDisplay("Etype") ?>"></textarea>
 								<span id="event_Etype_errorloc" class="error"></span>
 							</td>
 						</tr>
-
 						<!--Description-->
 						<tr>
 							<td class="container">
