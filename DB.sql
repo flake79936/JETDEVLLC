@@ -19,13 +19,15 @@ CREATE TABLE Events(
 	Evename VARCHAR(26) NOT NULL, 
 	Eaddress VARCHAR(255) NOT NULL,
 	Ecity VARCHAR(50) NOT NULL,
-	Estate CHAR(2) NOT NULL,
+	Estate CHAR(10) NOT NULL,
 	Ezip INT(5) NOT NULL,
 	EphoneNumber INT(10),
 	Etype VARCHAR(26) NOT NULL,
 	Edescription VARCHAR(26) NOT NULL,
 	Epic BLOB,
-	Edate VARCHAR(20) NOT NULL,
+	EstartDate VARCHAR(20) NOT NULL,
+	EendDate VARCHAR(20) NOT NULL,
+	Eother CHAR(255),
 	PRIMARY KEY(Eid)
 );
 

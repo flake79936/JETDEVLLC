@@ -320,7 +320,6 @@ class FGMembersite{
 		return true;
 	}
 
-	/*Validate Event Submission*/
 	function ValidateEventSubmission(){
 		//This is a hidden input field. Humans won't fill this field.
 		if(!empty($_POST[$this->GetSpamTrapInputName()]) ){
@@ -338,9 +337,10 @@ class FGMembersite{
 		$validator->addValidation("Estate",       "req", "Please fill in State");
 		$validator->addValidation("Ezip",         "req", "Please fill in Zip code");
 		$validator->addValidation("EphoneNumber", "req", "Please fill in Phone Number");
-		$validator->addValidation("Etype",        "req", "Please fill in Type of Event");
-		$validator->addValidation("Edescription", "req", "Please fill in Description");
-
+		//$validator->addValidation("Etype",        "req", "Please fill in Type of Event");
+		$validator->addValidation("EstartDate",   "req", "Please Select a Start Date");
+		//$validator->addValidation("EendDate",     "req", "Please Select an End Date");
+		//$validator->addValidation("Edescription", "req", "Please fill in Description");
 
 		if(!$validator->ValidateForm()){
 			$error='';
@@ -365,10 +365,11 @@ class FGMembersite{
 		$formvars['EphoneNumber'] = $this->Sanitize($_POST['EphoneNumber']);
 		$formvars['Etype']        = $this->Sanitize($_POST['Etype']);
 		$formvars['Edescription'] = $this->Sanitize($_POST['Edescription']);
+		$formvars['EstartDate']   = $this->Sanitize($_POST['EstartDate']);
+		$formvars['EendDate']     = $this->Sanitize($_POST['EendDate']);
+		$formvars['Eother']       = $this->Sanitize($_POST['Eother']);
 	}
-	/*End of Event Submission*/
 	
-	/*Save to Database Event*/
 	function SaveEventToDatabase(&$formvars){
 		if(!$this->DBLogin()){
 			$this->HandleError("Database login failed!");
@@ -398,36 +399,50 @@ class FGMembersite{
         //$confirmcode = $this->MakeConfirmationMd5($formvars['email']);
         
         //$formvars['confirmcode'] = $confirmcode;
-        
-        $insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription)
-                VALUES(
-                "' . $this->SanitizeForSQL($formvars['Efname']) . '",
-                "' . $this->SanitizeForSQL($formvars['Elname']) . '",
-                "' . $this->SanitizeForSQL($formvars['Evename']) . '",
-                "' . $this->SanitizeForSQL($formvars['Eaddress']) . '",
-				"' . $this->SanitizeForSQL($formvars['Ecity']) . '",
-                "' . $this->SanitizeForSQL($formvars['Estate']) . '",
-                "' . $this->SanitizeForSQL($formvars['Ezip']) . '",
-                "' . $this->SanitizeForSQL($formvars['EphoneNumber']) . '",
-                "' . $this->SanitizeForSQL($formvars['Etype']) . '",
-                "' . $this->SanitizeForSQL($formvars['Edescription']) . '"
-                )';
-				
-        if(!mysql_query( $insert_query, $this->connection)){
+		if($formvars['Etype'] === 'Other'){
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate, Eother)
+				VALUES(
+					"' . $this->SanitizeForSQL($formvars['Efname']) . '",
+					"' . $this->SanitizeForSQL($formvars['Elname']) . '",
+					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
+					"' . $this->SanitizeForSQL($formvars['Eaddress']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ecity']) . '",
+					"' . $this->SanitizeForSQL($formvars['Estate']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ezip']) . '",
+					"' . $this->SanitizeForSQL($formvars['EphoneNumber']) . '",
+					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
+					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
+					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
+					"' . $this->SanitizeForSQL($formvars['EendDate']) . '",
+					"' . $this->SanitizeForSQL($formvars['Eother']) . '"
+				);';
+		} else {
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate)
+				VALUES(
+					"' . $this->SanitizeForSQL($formvars['Efname']) . '",
+					"' . $this->SanitizeForSQL($formvars['Elname']) . '",
+					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
+					"' . $this->SanitizeForSQL($formvars['Eaddress']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ecity']) . '",
+					"' . $this->SanitizeForSQL($formvars['Estate']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ezip']) . '",
+					"' . $this->SanitizeForSQL($formvars['EphoneNumber']) . '",
+					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
+					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
+					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
+					"' . $this->SanitizeForSQL($formvars['EendDate']) . '"
+				);';
+		}
+		
+        if(!mysql_query($insert_query, $this->connection)){
             $this->HandleDBError("Error inserting data to the table\nquery: $insert_query");
             return false;
         }
 		return true;
     }
 	
-	
-	/*End of Database Event*/
 	/*----(End) CreateEvent() Submission----*/
 
-	
-	
-	
-	
 	
 	/*----(Start) User Management----*/
 	function ConfirmUser(){
@@ -582,21 +597,22 @@ class FGMembersite{
 	
 	function CreateTableEvent(){
 		$qry = "Create Table $this->tablename2 (".
-		"Eid	INT	AUTO_INCREMENT NOT NULL,".
-		"Efname VARCHAR(26) NOT NULL,".
-		"Elname VARCHAR(26) NOT NULL".
-		"Evename VARCHAR(26) NOT NULL,".
-		"Eaddress VARCHAR(255) NOT NULL,".
-		"Ecity VARCHAR(50) NOT NULL,".
-		"Estate CHAR(2) NOT NULL,".
-		"Ezip INT(5) NOT NULL,".
-		"EphoneNumber INT(10),".
-		"Etype VARCHAR(26) NOT NULL,".
-		"Edescription VARCHAR(26) NOT NULL,".
-		"Epic BLOB,".
-		"Edate VARCHAR(20) NOT NULL,".
-		"PRIMARY KEY(Eid)".
-		")";
+				"Eid INT AUTO_INCREMENT NOT NULL,".  
+				"Efname VARCHAR(26) NOT NULL,".
+				"Elname VARCHAR(26) NOT NULL,".
+				"Evename VARCHAR(26) NOT NULL,".
+				"Eaddress VARCHAR(255) NOT NULL,".
+				"Ecity VARCHAR(50) NOT NULL,".
+				"Estate CHAR(255) NOT NULL,".
+				"Ezip INT(5) NOT NULL,".
+				"EphoneNumber INT(10),".
+				"Etype VARCHAR(26) NOT NULL,".
+				"Edescription VARCHAR(26) NOT NULL,".
+				"Epic BLOB,".
+				"EstartDate VARCHAR(20) NOT NULL,".
+				"EendDate VARCHAR(20) NOT NULL,".
+				"PRIMARY KEY(Eid)".
+			");";
 
 		if(!mysql_query($qry, $this->connection)){
 			$this->HandleDBError("Error creating the table \nquery was\n $qry");
@@ -845,7 +861,7 @@ class FGMembersite{
 	}    
 
 	function HandleDBError($err){
-		$this->HandleError($err."\r\n mysqlerror:".mysql_error());
+		$this->HandleError($err . "\r\n mysqlerror: " . mysql_error());
 	}
 
 	function GetFromAddress(){
