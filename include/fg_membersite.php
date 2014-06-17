@@ -249,7 +249,7 @@ class FGMembersite{
 	
 	function IsFieldUnique($formvars,$fieldname){
         $field_val = $this->SanitizeForSQL($formvars[$fieldname]);
-        $qry = "select UuserName from $this->tablename1 where $fieldname='".$field_val."'";
+        $qry = "SELECT UuserName from $this->tablename1 where $fieldname='".$field_val."'";
         $result = mysql_query($qry,$this->connection);   
         if($result && mysql_num_rows($result) > 0){
             return false;
@@ -262,13 +262,13 @@ class FGMembersite{
         
         //$formvars['confirmcode'] = $confirmcode;
         
-        $insert_query = 'insert into '.$this->tablename1.'(UFname, ULname, Uemail, UuserName, Upswd)
+        $insert_query = 'insert into '.$this->tablename1.'(UFname, ULname, Uemail, UuserName, UPswd)
                 values(
                 "' . $this->SanitizeForSQL($formvars['UFname']) . '",
                 "' . $this->SanitizeForSQL($formvars['ULname']) . '",
                 "' . $this->SanitizeForSQL($formvars['Uemail']) . '",
                 "' . $this->SanitizeForSQL($formvars['UuserName']) . '",
-                "' . md5($formvars['Upswd']) . '"
+                "' . md5($formvars['UPswd']) . '"
                 )';
 				
         if(!mysql_query( $insert_query ,$this->connection)){
@@ -514,7 +514,7 @@ class FGMembersite{
         }   
         $email = $this->SanitizeForSQL($email);
         
-        $result = mysql_query("Select * from $this->tablename1 where Uemail='$email'",$this->connection);  
+        $result = mysql_query("SELECT * FROM $this->tablename1 WHERE Uemail='$email'",$this->connection);  
 
         if(!$result || mysql_num_rows($result) <= 0){
             $this->HandleError("There is no user with email: $email");
@@ -540,8 +540,8 @@ class FGMembersite{
             return false;
         }
         
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
+        $username = trim($_POST['UuserName']);
+        $password = trim($_POST['UPswd']);
         
         if(!isset($_SESSION)){ session_start(); }
         if(!$this->CheckLoginInDB($username, $password)){
