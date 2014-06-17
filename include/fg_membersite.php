@@ -514,7 +514,7 @@ class FGMembersite{
         }   
         $email = $this->SanitizeForSQL($email);
         
-        $result = mysql_query("Select * from $this->tablename where email='$email'",$this->connection);  
+        $result = mysql_query("Select * from $this->tablename1 where Uemail='$email'",$this->connection);  
 
         if(!$result || mysql_num_rows($result) <= 0){
             $this->HandleError("There is no user with email: $email");
