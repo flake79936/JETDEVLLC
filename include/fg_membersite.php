@@ -341,6 +341,7 @@ class FGMembersite{
 		$validator->addValidation("EstartDate",   "req", "Please Select a Start Date");
 		//$validator->addValidation("EendDate",     "req", "Please Select an End Date");
 		//$validator->addValidation("Edescription", "req", "Please fill in Description");
+		$validator->addValidation("EhashTag",   "", "Please fill Hashtag");
 
 		if(!$validator->ValidateForm()){
 			$error='';
@@ -368,6 +369,7 @@ class FGMembersite{
 		$formvars['EstartDate']   = $this->Sanitize($_POST['EstartDate']);
 		$formvars['EendDate']     = $this->Sanitize($_POST['EendDate']);
 		$formvars['Eother']       = $this->Sanitize($_POST['Eother']);
+		$formvars['EhashTag']       = $this->Sanitize($_POST['EhashTag']);
 	}
 	
 	function SaveEventToDatabase(&$formvars){
@@ -400,7 +402,7 @@ class FGMembersite{
         
         //$formvars['confirmcode'] = $confirmcode;
 		if($formvars['Etype'] === 'Other'){
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate, Eother)
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate, Eother,EhashTag)
 				VALUES(
 					"' . $this->SanitizeForSQL($formvars['Efname']) . '",
 					"' . $this->SanitizeForSQL($formvars['Elname']) . '",
@@ -414,10 +416,11 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
 					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
 					"' . $this->SanitizeForSQL($formvars['EendDate']) . '",
-					"' . $this->SanitizeForSQL($formvars['Eother']) . '"
+					"' . $this->SanitizeForSQL($formvars['Eother']) . '",
+					"' . $this->SanitizeForSQL($formvars['EhasTag']) . '"
 				);';
 		} else {
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate)
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate,EhashTag)
 				VALUES(
 					"' . $this->SanitizeForSQL($formvars['Efname']) . '",
 					"' . $this->SanitizeForSQL($formvars['Elname']) . '",
@@ -430,7 +433,8 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
 					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
-					"' . $this->SanitizeForSQL($formvars['EendDate']) . '"
+					"' . $this->SanitizeForSQL($formvars['EendDate']) . '",
+					"' . $this->SanitizeForSQL($formvars['EhashTag']) . '"
 				);';
 		}
 		
@@ -611,6 +615,7 @@ class FGMembersite{
 				"Epic BLOB,".
 				"EstartDate VARCHAR(20) NOT NULL,".
 				"EendDate VARCHAR(20) NOT NULL,".
+				"EhashTag VARCHAR(50) ,".
 				"PRIMARY KEY(Eid)".
 			");";
 
