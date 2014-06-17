@@ -530,12 +530,12 @@ class FGMembersite{
 	
 	/*----(Start) Login information/Methods----*/
 	function Login(){
-        if(empty($_POST['username'])){
+        if(empty($_POST['UuserName'])){
             $this->HandleError("UserName is empty!");
             return false;
         }
         
-        if(empty($_POST['password'])){
+        if(empty($_POST['UPswd'])){
             $this->HandleError("Password is empty!");
             return false;
         }
@@ -630,7 +630,7 @@ class FGMembersite{
 		$username = $this->SanitizeForSQL($username);
 		$pwdmd5 = md5($password);
 		//$qry = "Select name, email from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y'";
-		$qry = "SELECT UFname, Uemail from $this->tablename1 where UuserName = '$username' AND UPswd = '$pwdmd5'";
+		$qry = "SELECT UFname, Uemail FROM $this->tablename1 WHERE UuserName = '$username' AND UPswd = '$pwdmd5'";
 
 		$result = mysql_query($qry, $this->connection);
 
