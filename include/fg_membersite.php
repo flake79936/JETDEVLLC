@@ -544,7 +544,7 @@ class FGMembersite{
         $password = trim($_POST['password']);
         
         if(!isset($_SESSION)){ session_start(); }
-        if(!$this->CheckLoginInDB($username,$password)){
+        if(!$this->CheckLoginInDB($username, $password)){
             return false;
         }
         
@@ -629,7 +629,8 @@ class FGMembersite{
 		
 		$username = $this->SanitizeForSQL($username);
 		$pwdmd5 = md5($password);
-		$qry = "Select name, email from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y'";
+		//$qry = "Select name, email from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y'";
+		$qry = "SELECT UFname, Uemail from $this->tablename1 where UuserName = '$username' AND UPswd = '$pwdmd5'";
 
 		$result = mysql_query($qry, $this->connection);
 
@@ -640,8 +641,8 @@ class FGMembersite{
 
 		$row = mysql_fetch_assoc($result);
 
-		$_SESSION['name_of_user']  = $row['name'];
-		$_SESSION['email_of_user'] = $row['email'];
+		$_SESSION['name_of_user']  = $row['UFname'];
+		$_SESSION['email_of_user'] = $row['Uemail'];
 
 		return true;
 	}
