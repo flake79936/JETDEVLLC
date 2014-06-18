@@ -24,7 +24,8 @@ require_once("formvalidator.php");
 class FGMembersite{
 	var $admin_email;
 	var $from_address;
-
+	
+	var $db_host;
 	var $username;   /*From DB*/
 	var $pwd;        /*From DB*/
 	var $database;   /*EventAdvisor*/
@@ -79,7 +80,7 @@ class FGMembersite{
 
 		$this->CollectRegistrationSubmission($formvars);
 
-		if(!$this->SaveToEventAdvDatabase($formvars)){
+		if(!$this->SaveToEventAdvisorDatabase($formvars)){
 			return false;
 		}
 
@@ -138,7 +139,8 @@ class FGMembersite{
         
     }
 	
-	function SaveToEventAdvDatabase(&$formvars){
+	//saves to database itself
+	function SaveToEventAdvisorDatabase(&$formvars){
         if(!$this->DBLogin()){
             $this->HandleError("Database login failed!");
             return false;
@@ -158,7 +160,7 @@ class FGMembersite{
             return false;
         }
         
-        if(!$this->InsertIntoEventAdvDB($formvars)){
+        if(!$this->InsertIntoRegTable($formvars)){
             $this->HandleError("Inserting to Database failed!");
             return false;
         }
@@ -257,13 +259,14 @@ class FGMembersite{
         return true;
     }
 	
-	function InsertIntoEventAdvDB(&$formvars){
-        $confirmcode = $this->MakeConfirmationMd5($formvars['email']);
+	//inserts into registration table
+	function InsertIntoRegTable(&$formvars){
+        //$confirmcode = $this->MakeConfirmationMd5($formvars['email']);
         
         //$formvars['confirmcode'] = $confirmcode;
         
-        $insert_query = 'insert into '.$this->tablename1.'(UFname, ULname, Uemail, UuserName, UPswd)
-                values(
+        $insert_query = 'INSERT INTO ' . $this->tablename1 . '(UFname, ULname, Uemail, UuserName, UPswd)
+                VALUES(
                 "' . $this->SanitizeForSQL($formvars['UFname']) . '",
                 "' . $this->SanitizeForSQL($formvars['ULname']) . '",
                 "' . $this->SanitizeForSQL($formvars['Uemail']) . '",
@@ -271,8 +274,8 @@ class FGMembersite{
                 "' . md5($formvars['UPswd']) . '"
                 )';
 				
-        if(!mysql_query( $insert_query ,$this->connection)){
-            $this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
+        if(!mysql_query( $insert_query, $this->connection)){
+            $this->HandleDBError("Error inserting data to the table\nquery: $insert_query");
             return false;
         }
 		return true;
@@ -547,6 +550,8 @@ class FGMembersite{
         $username = trim($_POST['UuserName']);
         $password = trim($_POST['UPswd']);
         
+        //echo $username . " " . $password;
+        
         if(!isset($_SESSION)){ session_start(); }
         if(!$this->CheckLoginInDB($username, $password)){
             return false;
@@ -637,8 +642,18 @@ class FGMembersite{
 		//$qry = "Select name, email from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y'";
 		$qry = "SELECT UFname, Uemail FROM $this->tablename1 WHERE UuserName = '$username' AND UPswd = '$pwdmd5'";
 
-		$result = mysql_query($qry, $this->connection);
-
+		$result = mysql_query($qry, mysql_connect($this->db_host, $this->username, $this->pwd));
+		
+		$count = mysql_num_rows($result);
+		
+		echo "COUNT = ",$count," ROWS---";
+		
+		echo $pwdmd5;
+		
+		echo $qry;
+		
+		
+		
 		if(!$result || mysql_num_rows($result) <= 0){
 			$this->HandleError("Error logging in. The username or password does not match");
 			return false;
