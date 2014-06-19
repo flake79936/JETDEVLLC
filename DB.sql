@@ -4,7 +4,11 @@ CREATE TABLE Registration(
 	id INTEGER AUTO_INCREMENT,
 	UFname CHAR(55) NOT NULL,
 	ULname CHAR(55) NOT NULL,
+<<<<<<< HEAD
 	UPswd CHAR(5) NOT NULL,
+=======
+	UPswd CHAR(255) NOT NULL,
+>>>>>>> origin/EC
 	Uemail CHAR(15) NOT NULL,
 	Uphone CHAR(10) DEFAULT 'N/A',
 	Uadmin CHAR(55) DEFAULT 0,

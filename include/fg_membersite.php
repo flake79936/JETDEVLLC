@@ -24,8 +24,12 @@ require_once("formvalidator.php");
 class FGMembersite{
 	var $admin_email;
 	var $from_address;
+<<<<<<< HEAD
 	
 	var $db_host;
+=======
+
+>>>>>>> origin/EC
 	var $username;   /*From DB*/
 	var $pwd;        /*From DB*/
 	var $database;   /*EventAdvisor*/
@@ -78,9 +82,21 @@ class FGMembersite{
 			return false;
 		}
 
+<<<<<<< HEAD
 		$this->CollectRegistrationSubmission($formvars);
 
 		if(!$this->SaveToEventAdvisorDatabase($formvars)){
+=======
+		echo 'Password: <br/>';
+		echo $formvars['UPswd'] . '<br/>';
+		echo 'Password Hash: <br/>';
+		echo md5($formvars['UPswd']) . '<br/>';
+		
+		
+		$this->CollectRegistrationSubmission($formvars);
+
+		if(!$this->SaveToEventAdvDatabase($formvars)){
+>>>>>>> origin/EC
 			return false;
 		}
 
@@ -129,6 +145,15 @@ class FGMembersite{
 	 *First, it will sanitize the value for sql injection reasons.
 	 *Second, it will store it in the array of '$formvars' to keep track of it.*/
 	function CollectRegistrationSubmission(&$formvars){
+<<<<<<< HEAD
+=======
+	
+		echo 'Password: <br/>';
+		echo $formvars['UPswd'] . '<br/>';
+		echo 'Password Hash: <br/>';
+		echo md5($formvars['UPswd']) . '<br/>';
+		
+>>>>>>> origin/EC
         $formvars['UFname']    = $this->Sanitize($_POST['UFname']);
         $formvars['ULname']    = $this->Sanitize($_POST['ULname']);
 		$formvars['UuserName'] = $this->Sanitize($_POST['UuserName']);
@@ -136,11 +161,17 @@ class FGMembersite{
         $formvars['Uemail']    = $this->Sanitize($_POST['Uemail']);
 		$formvars['Uphone']    = $this->Sanitize($_POST['Uphone']);
         //$formvars['Uadmin']    = $this->Sanitize($_POST['Uadmin']);
+<<<<<<< HEAD
         
     }
 	
 	//saves to database itself
 	function SaveToEventAdvisorDatabase(&$formvars){
+=======
+    }
+	
+	function SaveToEventAdvDatabase(&$formvars){
+>>>>>>> origin/EC
         if(!$this->DBLogin()){
             $this->HandleError("Database login failed!");
             return false;
@@ -160,13 +191,18 @@ class FGMembersite{
             return false;
         }
         
+<<<<<<< HEAD
         if(!$this->InsertIntoRegTable($formvars)){
+=======
+        if(!$this->InsertIntoEventAdvisorDB($formvars)){
+>>>>>>> origin/EC
             $this->HandleError("Inserting to Database failed!");
             return false;
         }
         return true;
     }
 	
+<<<<<<< HEAD
 	function SendUserConfirmationEmail(&$formvars){
         $mailer = new PHPMailer();
         
@@ -223,6 +259,8 @@ class FGMembersite{
         return true;
     }
 	
+=======
+>>>>>>> origin/EC
 	function DBLogin(){
         $this->connection = mysql_connect($this->db_host,$this->username,$this->pwd);
 
@@ -259,14 +297,28 @@ class FGMembersite{
         return true;
     }
 	
+<<<<<<< HEAD
 	//inserts into registration table
 	function InsertIntoRegTable(&$formvars){
+=======
+	function InsertIntoEventAdvisorDB(&$formvars){
+>>>>>>> origin/EC
         //$confirmcode = $this->MakeConfirmationMd5($formvars['email']);
         
         //$formvars['confirmcode'] = $confirmcode;
         
+<<<<<<< HEAD
         $insert_query = 'INSERT INTO ' . $this->tablename1 . '(UFname, ULname, Uemail, UuserName, UPswd)
                 VALUES(
+=======
+		echo 'Password: <br/>';
+		echo $formvars['UPswd'] . '<br/>';
+		echo 'Password Hash: <br/>';
+		echo md5($formvars['UPswd']) . '<br/>';
+		
+        $insert_query = 'insert into '.$this->tablename1.'(UFname, ULname, Uemail, UuserName, UPswd)
+                values(
+>>>>>>> origin/EC
                 "' . $this->SanitizeForSQL($formvars['UFname']) . '",
                 "' . $this->SanitizeForSQL($formvars['ULname']) . '",
                 "' . $this->SanitizeForSQL($formvars['Uemail']) . '",
@@ -274,8 +326,13 @@ class FGMembersite{
                 "' . md5($formvars['UPswd']) . '"
                 )';
 				
+<<<<<<< HEAD
         if(!mysql_query( $insert_query, $this->connection)){
             $this->HandleDBError("Error inserting data to the table\nquery: $insert_query");
+=======
+        if(!mysql_query( $insert_query ,$this->connection)){
+            $this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
+>>>>>>> origin/EC
             return false;
         }
 		return true;
@@ -291,6 +348,65 @@ class FGMembersite{
         return md5($email.$this->rand_key.$randno1.''.$randno2);
     }
 	
+<<<<<<< HEAD
+=======
+	function SendUserConfirmationEmail(&$formvars){
+        $mailer = new PHPMailer();
+        
+        $mailer->CharSet = 'utf-8';
+        
+        $mailer->AddAddress($formvars['email'],$formvars['name']);
+        
+        $mailer->Subject = "Your registration with ".$this->sitename;
+
+        $mailer->From = $this->GetFromAddress();        
+        
+        $confirmcode = $formvars['confirmcode'];
+        
+        $confirm_url = $this->GetAbsoluteURLFolder().'/confirmreg.php?code='.$confirmcode;
+        
+        $mailer->Body ="Hello ".$formvars['name']."\r\n\r\n".
+        "Thanks for your registration with ".$this->sitename."\r\n".
+        "Please click the link below to confirm your registration.\r\n".
+        "$confirm_url\r\n".
+        "\r\n".
+        "Regards,\r\n".
+        "Webmaster\r\n".
+        $this->sitename;
+
+        if(!$mailer->Send()){
+            $this->HandleError("Failed sending registration confirmation email.");
+            return false;
+        }
+        return true;
+    }
+	
+	function SendAdminIntimationEmail(&$formvars){
+        if(empty($this->admin_email)){
+            return false;
+        }
+        $mailer = new PHPMailer();
+        
+        $mailer->CharSet = 'utf-8';
+        
+        $mailer->AddAddress($this->admin_email);
+        
+        $mailer->Subject = "New registration: ".$formvars['name'];
+
+        $mailer->From = $this->GetFromAddress();         
+        
+        $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
+        "Name: ".$formvars['name']."\r\n".
+        "Email address: ".$formvars['email']."\r\n".
+        "UserName: ".$formvars['username'];
+        
+        if(!$mailer->Send()){
+            return false;
+        }
+        return true;
+    }
+	
+>>>>>>> origin/EC
 	/*----(End) Registration of User----*/
 	
 	
@@ -344,7 +460,10 @@ class FGMembersite{
 		$validator->addValidation("EstartDate",   "req", "Please Select a Start Date");
 		//$validator->addValidation("EendDate",     "req", "Please Select an End Date");
 		//$validator->addValidation("Edescription", "req", "Please fill in Description");
+<<<<<<< HEAD
 		$validator->addValidation("EhashTag",   "", "Please fill Hashtag");
+=======
+>>>>>>> origin/EC
 
 		if(!$validator->ValidateForm()){
 			$error='';
@@ -372,7 +491,10 @@ class FGMembersite{
 		$formvars['EstartDate']   = $this->Sanitize($_POST['EstartDate']);
 		$formvars['EendDate']     = $this->Sanitize($_POST['EendDate']);
 		$formvars['Eother']       = $this->Sanitize($_POST['Eother']);
+<<<<<<< HEAD
 		$formvars['EhashTag']       = $this->Sanitize($_POST['EhashTag']);
+=======
+>>>>>>> origin/EC
 	}
 	
 	function SaveEventToDatabase(&$formvars){
@@ -405,7 +527,11 @@ class FGMembersite{
         
         //$formvars['confirmcode'] = $confirmcode;
 		if($formvars['Etype'] === 'Other'){
+<<<<<<< HEAD
 			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate, Eother,EhashTag)
+=======
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate, Eother)
+>>>>>>> origin/EC
 				VALUES(
 					"' . $this->SanitizeForSQL($formvars['Efname']) . '",
 					"' . $this->SanitizeForSQL($formvars['Elname']) . '",
@@ -419,11 +545,18 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
 					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
 					"' . $this->SanitizeForSQL($formvars['EendDate']) . '",
+<<<<<<< HEAD
 					"' . $this->SanitizeForSQL($formvars['Eother']) . '",
 					"' . $this->SanitizeForSQL($formvars['EhasTag']) . '"
 				);';
 		} else {
 			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate,EhashTag)
+=======
+					"' . $this->SanitizeForSQL($formvars['Eother']) . '"
+				);';
+		} else {
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate)
+>>>>>>> origin/EC
 				VALUES(
 					"' . $this->SanitizeForSQL($formvars['Efname']) . '",
 					"' . $this->SanitizeForSQL($formvars['Elname']) . '",
@@ -436,8 +569,12 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
 					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
+<<<<<<< HEAD
 					"' . $this->SanitizeForSQL($formvars['EendDate']) . '",
 					"' . $this->SanitizeForSQL($formvars['EhashTag']) . '"
+=======
+					"' . $this->SanitizeForSQL($formvars['EendDate']) . '"
+>>>>>>> origin/EC
 				);';
 		}
 		
@@ -550,8 +687,11 @@ class FGMembersite{
         $username = trim($_POST['UuserName']);
         $password = trim($_POST['UPswd']);
         
+<<<<<<< HEAD
         //echo $username . " " . $password;
         
+=======
+>>>>>>> origin/EC
         if(!isset($_SESSION)){ session_start(); }
         if(!$this->CheckLoginInDB($username, $password)){
             return false;
@@ -620,7 +760,10 @@ class FGMembersite{
 				"Epic BLOB,".
 				"EstartDate VARCHAR(20) NOT NULL,".
 				"EendDate VARCHAR(20) NOT NULL,".
+<<<<<<< HEAD
 				"EhashTag VARCHAR(50) ,".
+=======
+>>>>>>> origin/EC
 				"PRIMARY KEY(Eid)".
 			");";
 
@@ -642,6 +785,7 @@ class FGMembersite{
 		//$qry = "Select name, email from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y'";
 		$qry = "SELECT UFname, Uemail FROM $this->tablename1 WHERE UuserName = '$username' AND UPswd = '$pwdmd5'";
 
+<<<<<<< HEAD
 		$result = mysql_query($qry, mysql_connect($this->db_host, $this->username, $this->pwd));
 		
 		$count = mysql_num_rows($result);
@@ -654,6 +798,10 @@ class FGMembersite{
 		
 		
 		
+=======
+		$result = mysql_query($qry, $this->connection);
+
+>>>>>>> origin/EC
 		if(!$result || mysql_num_rows($result) <= 0){
 			$this->HandleError("Error logging in. The username or password does not match");
 			return false;

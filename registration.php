@@ -16,7 +16,11 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+<<<<<<< HEAD
 		<title>Registration Page</title>
+=======
+		<title>Inventory Page</title>
+>>>>>>> origin/EC
 		
 		<!--Stylesheets-->
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
@@ -75,12 +79,30 @@
 									<label for='UPswd' >Password*:</label><br/>
 									<div class='pwdwidgetdiv' id='thepwddiv' ></div>
 									<noscript>
+<<<<<<< HEAD
 										<input type='password' name='UPswd' id='UPswd' maxlength="50" />
+=======
+										<input type='password' name='UPswd' id='UPswd' value="<?php echo $fgmembersite->SafeDisplay("UPswd") ?>" maxlength="50" />
+>>>>>>> origin/EC
 									</noscript>    
 									<div id='register_UPswd_errorloc' class='error' style='clear:both'></div>
 							</td>
 						</tr>
 						
+<<<<<<< HEAD
+=======
+						<!--<tr>
+							<td class='container' style='height:80px;'>
+									<label for='UPswd' >Password*:</label><br/>
+									<div class='pwdwidgetdiv' id='thepwddiv' ></div>
+									<noscript>
+										<input type='password' name='UPswd' id='UPswd' value="<?php echo $fgmembersite->SafeDisplay("UPswd") ?>" maxlength="50" />
+									</noscript>
+									<div id='register_UPswd_errorloc' class='error' style='clear:both'></div>
+							</td>
+						</tr>-->
+						
+>>>>>>> origin/EC
 						<!--Confirm Password-->
 						<tr>
 							<td class="container">
@@ -115,7 +137,14 @@
 		</div>
 		<script type="text/javascript">
 			// <![CDATA[
+<<<<<<< HEAD
 			var pwdwidget = new PasswordWidget('thepwddiv','password');
+=======
+			//'PasswordWidget()'
+			// @param1: The IDname of the <div> that it is going to be used in.
+			// @param2: The name of the <input> field.
+			var pwdwidget = new PasswordWidget('thepwddiv', 'UPswd');
+>>>>>>> origin/EC
 			pwdwidget.MakePWDWidget();
 
 			var frmvalidator = new Validator("register");
