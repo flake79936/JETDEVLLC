@@ -199,15 +199,6 @@
 						</tr>
 						
 						<tr>
-							<!--Hashtag-->
-							<td class="container">
-								<label for="EhashTag">Hashtag of the Event*: </label><br/>
-								<input type="text" name="EhashTag" id="EhashTag" value="<?php echo $fgmembersite->SafeDisplay("EhashTag") ?>" maxlength="50" /><br/>
-								<span id="event_EhashTag_errorloc" class="error"></span>
-							</td>
-						</tr>
-						
-						<tr>						
 							<!--Submit Button-->
 							<td>
 								<input id="submitButton" type="submit" name="Submit" value="Create Event" />
@@ -235,7 +226,6 @@
 			frmvalidator.addValidation("EendDate",     "req", "Please Select an End Date");
 			//frmvalidator.addValidation("Etype",        "req", "Please fill in Type of Event");
 			frmvalidator.addValidation("Edescription", "req", "Please fill in Description");
-			//frmvalidator.addValidation("EhashTag", "req", "Please fill in Description");
 			//test
 			// ]]>
 		</script>
