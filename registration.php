@@ -16,7 +16,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Inventory Page</title>
+		<title>User Registration</title>
 		
 		<!--Stylesheets-->
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />

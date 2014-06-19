@@ -77,11 +77,11 @@ class FGMembersite{
 			return false;
 		}
 
-		echo 'Password: <br/>';
-		echo $formvars['UPswd'] . '<br/>';
-		echo 'Password Hash: <br/>';
-		echo md5($formvars['UPswd']) . '<br/>';
-		
+// 		echo 'Password: <br/>';
+// 		echo $formvars['UPswd'] . '<br/>';
+// 		echo 'Password Hash: <br/>';
+// 		echo md5($formvars['UPswd']) . '<br/>';
+// 		
 		
 		$this->CollectRegistrationSubmission($formvars);
 
@@ -135,10 +135,10 @@ class FGMembersite{
 	 *Second, it will store it in the array of '$formvars' to keep track of it.*/
 	function CollectRegistrationSubmission(&$formvars){
 	
-		echo 'Password: <br/>';
-		echo $formvars['UPswd'] . '<br/>';
-		echo 'Password Hash: <br/>';
-		echo md5($formvars['UPswd']) . '<br/>';
+// 		echo 'Password: <br/>';
+// 		echo $formvars['UPswd'] . '<br/>';
+// 		echo 'Password Hash: <br/>';
+// 		echo md5($formvars['UPswd']) . '<br/>';
 		
         $formvars['UFname']    = $this->Sanitize($_POST['UFname']);
         $formvars['ULname']    = $this->Sanitize($_POST['ULname']);
@@ -217,10 +217,10 @@ class FGMembersite{
         
         //$formvars['confirmcode'] = $confirmcode;
         
-		echo 'Password: <br/>';
-		echo $formvars['UPswd'] . '<br/>';
-		echo 'Password Hash: <br/>';
-		echo md5($formvars['UPswd']) . '<br/>';
+// 		echo 'Password: <br/>';
+// 		echo $formvars['UPswd'] . '<br/>';
+// 		echo 'Password Hash: <br/>';
+// 		echo md5($formvars['UPswd']) . '<br/>';
 		
         $insert_query = 'insert into '.$this->tablename1.'(UFname, ULname, Uemail, UuserName, UPswd)
                 values(
