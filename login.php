@@ -1,10 +1,8 @@
-
-
 <?PHP
 	require_once("./include/membersite_config.php");
 	if(isset($_POST['submitted'])){
 		if($fgmembersite->Login()){
-			$fgmembersite->RedirectToURL("login-home.php");
+			$fgmembersite->RedirectToURL("UserPage.php");
 		}
 	}
 ?>
@@ -15,9 +13,12 @@
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 		<title>Login</title>
 		
-		<link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
+		
+		<!--Scripts-->
 		<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-	
+		
+		
 	</head>
 	<body>
 		<!-- Form Code Start -->
@@ -48,6 +49,7 @@
 						<input type='submit' name='Submit' value='Submit' />
 					</div>
 					<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
+					<div class='short_explanation'><a href='registration.php'>Registor Here</a></div>
 				</fieldset>
 			</form>
 			<!-- client-side Form Validations:
