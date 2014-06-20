@@ -778,15 +778,13 @@ class FGMembersite{
 		$newpwd = $this->SanitizeForSQL($newpwd);
 
 		$qry = "UPDATE $this->tablename1 SET UPswd='".md5($newpwd)."' WHERE  UuserName='".$user_rec['UuserName']."'";
-//echo $qry;
+
 		if(!mysql_query( $qry ,$this->connection)){
 			$this->HandleDBError("Error updating the password \nquery:$qry");
 			
 			return false;
-			//echo $qry;
+
 		}    
-// 		echo $qry;
-// 		echo  md5($newpwd);
 		return true;
 	}
 
