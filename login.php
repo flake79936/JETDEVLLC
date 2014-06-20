@@ -17,7 +17,12 @@
 		
 		<!--Scripts-->
 		<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-		
+		<!--Go Back function-->
+		<script>
+			function goBack() {
+				window.history.back()
+			}
+		</script>
 		
 	</head>
 	<body>
@@ -47,6 +52,7 @@
 
 					<div class='container'>
 						<input type='submit' name='Submit' value='Submit' />
+						<input type="button" onclick="goBack();" value="Go Back" />
 					</div>
 					<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 					<div class='short_explanation'><a href='registration.php'>Registor Here</a></div>

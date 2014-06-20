@@ -49,7 +49,8 @@ You can customize all the aspects of the form in this style sheet*/
 	height: 18px;
 }
 
-#fg_membersite input[type="submit"]{
+#fg_membersite input[type="submit"],
+#fg_membersite input[type="button"]{
 	width:        100px;
 	height:       30px;
 	padding-left: 0px;
