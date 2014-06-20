@@ -12,7 +12,7 @@
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 		<title>An Access Controlled Page</title>
-		<link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css">
+		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
 	</head>
 	<body>
 		<div id='fg_membersite_content'>

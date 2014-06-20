@@ -31,6 +31,7 @@
 	
 	<body>
 		<div id='fg_membersite'>
+			<a href="index.php">Home</a>
 			<form id="register" action="<?php echo $fgmembersite->GetSelfScript(); ?>" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
 				<fieldset>
 					<table>

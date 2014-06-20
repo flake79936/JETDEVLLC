@@ -87,7 +87,7 @@ class FGMembersite{
 			return false;
 		}
 
-		/*if(!$this->SendUserConfirmationEmail($formvars)){
+		/*if(!$this->sendConfimMail($formvars)){
 			return false;
 		}*/
 
@@ -228,12 +228,13 @@ class FGMembersite{
 // 		echo 'Password Hash: <br/>';
 // 		echo md5($formvars['UPswd']) . '<br/>';
 		
-        $insert_query = 'insert into '.$this->tablename1.'(UFname, ULname, Uemail, UuserName, UPswd)
+        $insert_query = 'insert into '.$this->tablename1.'(UFname, ULname, Uemail, UuserName, Uphone, UPswd)
                 values(
                 "' . $this->SanitizeForSQL($formvars['UFname']) . '",
                 "' . $this->SanitizeForSQL($formvars['ULname']) . '",
                 "' . $this->SanitizeForSQL($formvars['Uemail']) . '",
                 "' . $this->SanitizeForSQL($formvars['UuserName']) . '",
+                "' . $this->SanitizeForSQL($formvars['Uphone']) . '",
                 "' . md5($formvars['UPswd']) . '"
                 )';
 				
@@ -259,7 +260,7 @@ class FGMembersite{
         
         $mailer->CharSet = 'utf-8';
         
-        $mailer->AddAddress($formvars['email'],$formvars['name']);
+        $mailer->AddAddress($formvars['email'], $formvars['name']);
         
         $mailer->Subject = "Your registration with ".$this->sitename;
 
@@ -284,6 +285,46 @@ class FGMembersite{
         }
         return true;
     }
+	
+	function sendConfimMail(&$formvars){
+		$mail = new PHPMailer();
+		
+		$name = $formvars['UFname'] . " " . $formvars['ULname'];
+		$toAddress = $formvars['Uemail'];
+		
+		$mail->IsSMTP();
+		$mail->CharSet    = 'utf-8';
+		$mail->Host       = 'smtp.gmail.com'; // SMTP server example
+		$mail->SMTPAuth   = true;             // enable SMTP authentication
+		$mail->SMTPSecure = 'ssl';
+		$mail->Port       = 465;              // set the SMTP port for the GMAIL server
+		$mail->Encoding   = '7bit';
+		
+		$mail->Subject = "Do not reply to this email: Just a confirmation email";
+		
+		$mail->Username   = "viskodtt@gmail.com"; // SMTP account username example  WHERE YOURE SENDING FROM
+		$mail->Password   = "software2";         // SMTP account password example
+		
+		$mail->Body = "Hello ".$formvars['name']."\r\n\r\n".
+					"Thanks for your registration with " . $this->sitename . "\r\n".
+					"Please click the link below to confirm your registration.\r\n".
+					"Regards,\r\n".
+					"Webmaster\r\n".
+					$this->sitename;  //simple message only  you can add headers and other stuff
+		
+		//$mail->MsgHTML($message);
+		//$mail->AddAddress("ecorral2@miners.utep.edu", "test");  //WHERE YOURE SENDING TO 
+		
+		$mail->AddAddress($toAddress, $name);
+		
+		if(!$mail->Send()) {
+			echo 'Message could not be sent.<br>';
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+			return false;
+			exit;
+		}
+		return true;
+	}
 	
 	function SendAdminIntimationEmail(&$formvars){
         if(empty($this->admin_email)){
