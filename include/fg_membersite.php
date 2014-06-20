@@ -76,15 +76,13 @@ class FGMembersite{
 		if(!$this->ValidateRegistrationSubmission()){
 			return false;
 		}
-
-// 		echo 'Password: <br/>';
-// 		echo $formvars['UPswd'] . '<br/>';
-// 		echo 'Password Hash: <br/>';
-// 		echo md5($formvars['UPswd']) . '<br/>';
-// 		
 		
 		$this->CollectRegistrationSubmission($formvars);
-
+		
+		if(!$this->comparePswd($formvars)){
+			return false;
+		}
+		
 		if(!$this->SaveToEventAdvDatabase($formvars)){
 			return false;
 		}
@@ -110,7 +108,7 @@ class FGMembersite{
 		$validator->addValidation("UFname",    "req",   "Please Input Your First Name");
 		$validator->addValidation("ULname",    "req",   "Please Input Your Last Name");
 		$validator->addValidation("UuserName", "req",   "Please Provide a User Name");
-		//$validator->addValidation("UPswd",     "req",   "Please Provide a Password");
+		$validator->addValidation("UPswd",     "req",   "Please Provide a Password");
 		$validator->addValidation("ConPswd",   "req",   "Please Confirm Your Password");
 		$validator->addValidation("Uemail",    "req",   "Please Please fill in Name");
 		$validator->addValidation("Uemail",    "email", "Please Provide a Valid Email: Syntax is Wrong");
@@ -134,20 +132,28 @@ class FGMembersite{
 	 *First, it will sanitize the value for sql injection reasons.
 	 *Second, it will store it in the array of '$formvars' to keep track of it.*/
 	function CollectRegistrationSubmission(&$formvars){
-	
-// 		echo 'Password: <br/>';
-// 		echo $formvars['UPswd'] . '<br/>';
-// 		echo 'Password Hash: <br/>';
-// 		echo md5($formvars['UPswd']) . '<br/>';
 		
         $formvars['UFname']    = $this->Sanitize($_POST['UFname']);
         $formvars['ULname']    = $this->Sanitize($_POST['ULname']);
 		$formvars['UuserName'] = $this->Sanitize($_POST['UuserName']);
         $formvars['UPswd']     = $this->Sanitize($_POST['UPswd']);
+        $formvars['ConPswd']     = $this->Sanitize($_POST['ConPswd']);
         $formvars['Uemail']    = $this->Sanitize($_POST['Uemail']);
 		$formvars['Uphone']    = $this->Sanitize($_POST['Uphone']);
         //$formvars['Uadmin']    = $this->Sanitize($_POST['Uadmin']);
     }
+	
+	//checks for similar submission inputs in the registration form.
+	function comparePswd(&$formvars){
+		$pswd1  = $formvars['UPswd'];
+		$pswd2  = $formvars['ConPswd'];
+		
+		if($pswd1 !== $pswd2){
+			$this->HandleError("Passwords do not match");
+            return false;
+		}
+        return true;
+	}
 	
 	function SaveToEventAdvDatabase(&$formvars){
         if(!$this->DBLogin()){

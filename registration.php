@@ -8,7 +8,7 @@
 	
 	if(isset($_POST["submitted"])){
 		if($fgmembersite->RegisterUser()){
-			$fgmembersite->RedirectToURL("registration.php");
+			$fgmembersite->RedirectToURL("reg_thank_you.php");
 		}
 	}
 ?>
@@ -81,25 +81,16 @@
 							</td>
 						</tr>
 						
-						<!--<tr>
-							<td class='container' style='height:80px;'>
-									<label for='UPswd' >Password*:</label><br/>
-									<div class='pwdwidgetdiv' id='thepwddiv' ></div>
-									<noscript>
-										<input type='password' name='UPswd' id='UPswd' value="<?php echo $fgmembersite->SafeDisplay("UPswd") ?>" maxlength="50" />
-									</noscript>
-									<div id='register_UPswd_errorloc' class='error' style='clear:both'></div>
-							</td>
-						</tr>-->
-						
 						<!--Confirm Password-->
 						<tr>
 							<td class="container">
 								<label for="ConPswd" >Confirm Password*: </label><br/>
 								<input type='password' name="ConPswd" id="ConPswd" value="<?php echo $fgmembersite->SafeDisplay("ConPswd") ?>" maxlength="50" /><br/>
-								<span id="register_ConPswd_errorloc" class="error"></span>
+								<span id="register_ConPswd_errorloc" class="error" style="clear"></span>
 							</td>
 						</tr>
+						
+						
 						
 						<!--Email-->
 						<tr>
@@ -139,7 +130,7 @@
 			frmvalidator.addValidation("UFname",    "req", "Please Input Your First Name");
 			frmvalidator.addValidation("ULname",    "req", "Please Input Your Last Name");
 			frmvalidator.addValidation("UuserName", "req", "Please Provide a User Name");
-			//frmvalidator.addValidation("UPswd",     "req", "Please Provide a Password");
+			frmvalidator.addValidation("UPswd",     "req", "Please Provide a Password");
 			frmvalidator.addValidation("ConPswd",   "req", "Please Confirm Your Password");
 			frmvalidator.addValidation("Uemail",    "req", "Please Please fill in Name");
 			frmvalidator.addValidation("Uphone",    "req", "Please Provide a Phone Number");
