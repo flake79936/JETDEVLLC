@@ -4,6 +4,8 @@
 		$fgmembersite->RedirectToURL("login.php");
 		exit;
 	}
+	
+	$street = "1432+backus,el+paso+tx";
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -54,7 +56,7 @@
 			height="450"
 			frameborder="0" style="border:0"
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0uLEbR6K9fehSmaCyR4-NdWmIUaYevjY
-			&q=1432+backus,el+paso+tx">
+			&q=<?= $street?>">
 		</iframe>
 	</body>
 </html>
