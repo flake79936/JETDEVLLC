@@ -761,7 +761,7 @@ class FGMembersite{
 
 		$pwd = trim($_POST['oldpwd']);
 
-		if($user_rec['password'] != md5($pwd)){
+		if($user_rec['UPswd'] != md5($pwd)){
 			$this->HandleError("The old password does not match!");
 			return false;
 		}
@@ -777,12 +777,16 @@ class FGMembersite{
 	function ChangePasswordInDB($user_rec, $newpwd){
 		$newpwd = $this->SanitizeForSQL($newpwd);
 
-		$qry = "Update $this->tablename Set password='".md5($newpwd)."' Where  id_user=".$user_rec['id_user']."";
-
+		$qry = "UPDATE $this->tablename1 SET UPswd='".md5($newpwd)."' WHERE  UuserName='".$user_rec['UuserName']."'";
+//echo $qry;
 		if(!mysql_query( $qry ,$this->connection)){
 			$this->HandleDBError("Error updating the password \nquery:$qry");
+			
 			return false;
-		}     
+			//echo $qry;
+		}    
+// 		echo $qry;
+// 		echo  md5($newpwd);
 		return true;
 	}
 
