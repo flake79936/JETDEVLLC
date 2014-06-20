@@ -665,6 +665,12 @@ class FGMembersite{
 	
 	/*----(End) Database Management----*/
 	
+	/*----(Start) Search Event----*/
+	
+	
+	
+	/*----(End)   Search Event----*/
+	
 	/*----(Start) Password Management----*/
 	function EmailResetPasswordLink(){
 		if(empty($_POST['email'])){

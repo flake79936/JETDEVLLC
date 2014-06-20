@@ -59,7 +59,8 @@ $(document).ready(function(){
             <li><span class="shadow">|</span></li>
             <li><a id="product-nav" href="#product">Product</a></li>
             <li><span class="shadow">|</span></li>
-            <li><a id="faq-nav" href="#faq">FAQ</a></li>
+            <li><a  href="EventCreation.php">Events</a></li>
+<!--             <li><a id="faq-nav" href="#faq">Event</a></li> -->
         </ul>    
         
         <div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
