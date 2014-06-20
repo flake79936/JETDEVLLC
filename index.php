@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 <div class="header-wrap">
 	<div class="header">
-    	<a class="login-btn" href="#">Log In</a>
+    	<a class="login-btn" href="login-home.php">Log In</a>
     	<ul class="head-social-icons">
         	<li><a class="facebook" href="#"></a></li>
             <li><a class="twitter" href="#"></a></li>
