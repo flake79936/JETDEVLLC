@@ -86,7 +86,7 @@
 				// into the accordion
 				//-----------------------------------------------------------+
 				for (var i=0;i<20;i++) {
-				$("#accordion").append(addBout()).accordion("refresh");
+					$("#accordion").append(addBout()).accordion("refresh");
 				}
 			});
 		</script>
