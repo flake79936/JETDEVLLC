@@ -55,7 +55,7 @@
 						<input type="button" onclick="goBack();" value="Go Back" />
 					</div>
 					<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-					<div class='short_explanation'><a href='registration.php'>Registor Here</a></div>
+					<div class='short_explanation'><a href='registration.php'>Register Here</a></div>
 				</fieldset>
 			</form>
 			<!-- client-side Form Validations:
