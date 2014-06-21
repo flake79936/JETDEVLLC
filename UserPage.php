@@ -29,20 +29,64 @@
 		</style>
 		<script>
 			$(function() {
-				var div = "<h3>1D Abstractions</h3><div><p><table><tr><td> test " + count + " </td></tr></table></p></div>";
-				$( "#accordion" ).append(div);
-				$( "#accordion" ).accordion({ heightStyle: "fill" });
+			$( "#accordion" ).accordion({
+			heightStyle: "fill"
+			});
 			});
 			$(function() {
-				var count = 0;
-				$( "#accordion-resizer" ).resizable({
-					minHeight: 100,
-					minWidth: 200,
-					resize: function() {
-						$( "#accordion" ).accordion( "refresh" );
-					}
-					count++;
-				});
+			$( "#accordion-resizer" ).resizable({
+			minHeight: 100,
+			minWidth: 200,
+			resize: function() {
+			$( "#accordion" ).accordion( "refresh" );
+			}
+			});
+			});
+		
+			//-----------------------------------------------------------+
+			// addBout() - Add a single node to the accordian
+			// TODO: add JSON object as input parameter and build the
+			//       bout with that data,
+			//-----------------------------------------------------------+
+			function addBout(){
+				var bout =
+					"<h3>1D Abstractions</h3>"+
+						"<div>"+
+							"<p>"+
+								"<table>"+
+									"<tr>"+
+										"<td>"+
+											"hello"+
+										"</td>"+
+										"<td>"+
+											"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."+
+										"</td>"+
+									"</tr>"+
+								"</table>"+
+							"</p>"+
+						"</div>";
+				return bout;
+			}
+			 
+			$(function(){
+				$( "#accordion" )
+						.accordion({
+							header: "> .group > .handle",
+							heightStyle: "content"
+						})
+						.sortable({
+							axis: "y",
+							handle: ".handle",
+							stop: function( event, ui ) {
+								// IE doesn't register the blur event when sorting
+								// so trigger focusout handler to remove .ui-state-focus
+								ui.item.children(".handle").triggerHandler("focusout");
+							}
+						});
+						
+				for (var i = 0; i < 8; i++) {
+					$("#accordion").append(addBout()).accordion("refresh");
+				}
 			});
 		</script>
 	</head>
@@ -62,28 +106,7 @@
 						<html lang="en">
 							<body>
 								<div id="accordion">
-								<?PHP $i = 0;
-									while( $i < 5 ){ ?>
-									<h3>1D Abstractions</h3>
-									<div>
-										<p>
-											<table>
-												<tr>
-													<td>
-														<iframe
-														width="350"
-														height="200"
-														frameborder="0" style="border:0"
-														src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0uLEbR6K9fehSmaCyR4-NdWmIUaYevjY
-														&q=<?= $street?>">
-														</iframe>
-													</td>
-												</tr>
-											</table>
-										</p>
-									</div>
-									<?PHP $i++;
-										} ?>
+									<!--todo-->
 								</div>
 							</body>
 						</html>

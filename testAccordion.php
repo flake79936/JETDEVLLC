@@ -85,7 +85,7 @@
 				// each bout node to the addBout function for insertion
 				// into the accordion
 				//-----------------------------------------------------------+
-				for (var i=0;i<20;i++) {
+				for (var i = 0; i < 8; i++) {
 					$("#accordion").append(addBout()).accordion("refresh");
 				}
 			});
