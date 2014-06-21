@@ -1,0 +1,164 @@
+body {
+   font-family: "Trebuchet MS","Helvetica","Arial","Verdana","sans-serif";
+   font-size: 62.5%;
+   background: url('../images/background.gif') repeat;
+}
+ 
+.main-container {
+    width: 96%;
+    max-width: 960px;
+    min-width: 300px;
+    height: 100px;
+    position: absolute;
+    top:20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+ 
+/*---------------------------------------*/
+/*   Styles for table like formatting.   */
+/*---------------------------------------*/
+.table {
+    display: table;
+    width: 100%;
+}
+.row {
+    display: table-row;
+}
+.cell {
+    display: table-cell;
+}
+ 
+/*---------------------------------------*/
+/*   Styles for width specification.     */
+/*---------------------------------------*/
+.width150 {
+    width: 150px;
+}
+ 
+.width33pct {
+    width: 33%;
+}
+ 
+.width34pct {
+    width: 34%;
+}
+ 
+/*---------------------------------------*/
+/*   Styles for various alignments.      */
+/*---------------------------------------*/
+.align-right {
+    text-align: right;
+}
+.align-left {
+    text-align: left;
+}
+.align-center {
+    text-align: center;
+}
+ 
+.valign-middle {
+    vertical-align: middle;
+}
+ 
+/*-------------------------------------------*/
+/*   Style overrides for jQuery accordion.   */
+/*-------------------------------------------*/
+.ui-state-default{
+    background-color: #3173a5;
+    background-image: none;body {
+    font-family: "Trebuchet MS","Helvetica","Arial","Verdana","sans-serif";
+    font-size: 62.5%;
+    background: url('../images/background.gif') repeat;
+}
+ 
+.main-container {
+    width: 96%;
+    max-width: 960px;
+    min-width: 300px;
+    height: 100px;
+    position: absolute;
+    top:20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+ 
+/*---------------------------------------*/
+/*   Styles for table like formatting.   */
+/*---------------------------------------*/
+.table {
+    display: table;
+    width: 100%;
+}
+.row {
+    display: table-row;
+}
+.cell {
+    display: table-cell;
+}
+ 
+/*---------------------------------------*/
+/*   Styles for width specification.     */
+/*---------------------------------------*/
+.width150 {
+    width: 150px;
+}
+ 
+.width33pct {
+    width: 33%;
+}
+ 
+.width34pct {
+    width: 34%;
+}
+ 
+/*---------------------------------------*/
+/*   Styles for various alignments.      */
+/*---------------------------------------*/
+.align-right {
+    text-align: right;
+}
+.align-left {
+    text-align: left;
+}
+.align-center {
+    text-align: center;
+}
+ 
+.valign-middle {
+    vertical-align: middle;
+}
+ 
+/*-------------------------------------------*/
+/*   Style overrides for jQuery accordion.   */
+/*-------------------------------------------*/
+.ui-state-default{
+    background-color: #3173a5;
+    background-image: none;
+}
+.ui-accordion-header {
+    background-color: #333333;
+    color:  #BDC3C7;
+    font-size: 16;
+}
+ 
+.ui-accordion-header.ui-state-active {
+    background-color: #BDC3C7;
+    color: #333333;
+    font-size: 16;
+}
+ 
+}
+.ui-accordion-header {
+    background-color: #333333;
+    color:  #BDC3C7;
+    font-size: 16;
+}
+ 
+.ui-accordion-header.ui-state-active {
+    background-color: #BDC3C7;
+    color: #333333;
+    font-size: 16;
+}
