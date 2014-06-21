@@ -149,3 +149,22 @@ You can customize all the aspects of the form in this style sheet*/
 	font-weight: bold;
 	color:       #333;
 }
+
+#main_container{
+	width: 100%;
+	height: auto;
+	margin: auto;
+	background-color: #fff;
+}
+
+.middle_box_content{
+padding: 30px 0 0 20px;
+}
+
+#middle_box{
+width: 900px;
+height: auto;
+clear: both;
+margin: auto;
+background: url(../images/middle_banner.jpg) no-repeat center;
+}
