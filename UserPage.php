@@ -22,13 +22,12 @@
 			This page can be accessed after logging in only. To make more access controlled pages, 
 			copy paste the code between &lt;?php and ?&gt; to the page and name the page to be php.
 			<p>Logged in as: <?= $fgmembersite->UserFullName() ?></p>
+			<p>Logged in as: <?= $fgmembersite->UserName() ?></p>
 			<p><a href='login-home.php'>Home</a></p>
 		</div>
 		
-
-		
 		<iframe
-			width="1000"
+			width="600"
 			height="450"
 			frameborder="0" style="border:0"
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0uLEbR6K9fehSmaCyR4-NdWmIUaYevjY

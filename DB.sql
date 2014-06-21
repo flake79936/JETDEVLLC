@@ -9,27 +9,40 @@ CREATE TABLE Registration(
 	Uphone CHAR(15) DEFAULT 'N/A',
 	Uadmin CHAR(1) DEFAULT 0,
 	UuserName CHAR(255) NOT NULL,
-	PRIMARY KEY(id, Uemail)
+	PRIMARY KEY(id, UuserName)
 );
 
 CREATE TABLE Events(
 	Eid	INT	AUTO_INCREMENT,
-	Efname VARCHAR(26) NOT NULL,
-	Elname VARCHAR(26) NOT NULL, 
-	Evename VARCHAR(26) NOT NULL, 
+	UuserName CHAR(255) NOT NULL,
+	Evename VARCHAR(26) NOT NULL,
+	EstartDate VARCHAR(20) NOT NULL,
+	EendDate VARCHAR(20) NOT NULL,
 	Eaddress VARCHAR(255) NOT NULL,
 	Ecity VARCHAR(50) NOT NULL,
 	Estate CHAR(10) NOT NULL,
 	Ezip INT(5) NOT NULL,
 	EphoneNumber INT(10),
-	Etype VARCHAR(26) NOT NULL,
 	Edescription VARCHAR(26) NOT NULL,
-	Epic BLOB,
-	EstartDate VARCHAR(20) NOT NULL,
-	EendDate VARCHAR(20) NOT NULL,
+	Etype VARCHAR(26) NOT NULL,
+	Ewebsite VARCHAR(26) NOT NULL,
+	Ehashtage CHAR(255),
+	Efacebook CHAR(255),
+	Etwitter CHAR(255),
+	Egoogle CHAR(255),
+	Eflyer BLOB,
 	Eother CHAR(255),
-	PRIMARY KEY(Eid)
+	PRIMARY KEY(Eid, UuserName)
 );
+
+CREATE TABLE Orders(
+O_Id int NOT NULL,
+OrderNo int NOT NULL,
+P_Id int,
+PRIMARY KEY (O_Id),
+CONSTRAINT fk_PerOrders FOREIGN KEY (P_Id)
+REFERENCES Persons(P_Id)
+)
 
 USERNAME:JetDevSQL
 PASSWORD:DevTeamSQL!!12

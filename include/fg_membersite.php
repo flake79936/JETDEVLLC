@@ -537,8 +537,12 @@ class FGMembersite{
          return true;
     }
     
+	function UserName(){
+        return isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
+    }
+	
     function UserFullName(){
-        return isset($_SESSION['name_of_user'])?$_SESSION['name_of_user']:'';
+        return isset($_SESSION['name_of_user']) ? $_SESSION['name_of_user'] : '';
     }
     
     function UserEmail(){
@@ -693,7 +697,7 @@ class FGMembersite{
 		$username = $this->SanitizeForSQL($username);
 		$pwdmd5 = md5($password);
 		//$qry = "Select name, email from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y'";
-		$qry = "SELECT UFname, Uemail FROM $this->tablename1 WHERE UuserName = '$username' AND UPswd = '$pwdmd5'";
+		$qry = "SELECT UFname, UuserName, Uemail FROM $this->tablename1 WHERE UuserName = '$username' AND UPswd = '$pwdmd5'";
 
 		$result = mysql_query($qry, $this->connection);
 
@@ -705,6 +709,7 @@ class FGMembersite{
 		$row = mysql_fetch_assoc($result);
 
 		$_SESSION['name_of_user']  = $row['UFname'];
+		$_SESSION['user_name']     = $row['UuserName'];
 		$_SESSION['email_of_user'] = $row['Uemail'];
 
 		return true;
