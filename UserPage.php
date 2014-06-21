@@ -26,17 +26,11 @@
 			<p>Logged in as: <?= $fgmembersite->UserName() ?></p>
 			<p><a href='login-home.php'>Home</a></p>
 		
-		<iframe
-			width="600"
-			height="450"
-			frameborder="0" style="border:0"
-			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0uLEbR6K9fehSmaCyR4-NdWmIUaYevjY
-			&q=<?= $street?>">
-		</iframe>
+
 		<br/><br/><br/>
 		<br/><br/><br/>
 			<div class="middle_box_content">
-				<div align = "center">
+				<div align = "left">
 					<html lang="en">
 						<head>
 							<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
@@ -75,12 +69,19 @@
 										<table>
 											<tr>
 											<td>
-												<font size="3" color="black"><b>Timeline</b></font>
-												<?php $src = "http://www.stanford.edu/group/spatialhistory/media/images/publication/MSantosAPeers_graphs-05.svg"; ?>
-												<a href='./SetQueryParameters.php?type=1D_Timeline&image=<?php echo $src ?>&desc=Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'><img src="http://www.stanford.edu/group/spatialhistory/media/images/publication/MSantosAPeers_graphs-05.svg" width="250" height="250">
+												<font size="3" color="black"><b></b></font>
+												<!--<?php $src = "http://www.stanford.edu/group/spatialhistory/media/images/publication/MSantosAPeers_graphs-05.svg"; ?>-->
+												<!--<a href='./SetQueryParameters.php?type=1D_Timeline&image=<?php echo $src ?>&desc=Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'><img src="http://www.stanford.edu/group/spatialhistory/media/images/publication/MSantosAPeers_graphs-05.svg" width="250" height="250">-->
 											</td>
 											<td>
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+													<iframe
+													width="350"
+													height="200"
+													frameborder="0" style="border:0"
+													src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0uLEbR6K9fehSmaCyR4-NdWmIUaYevjY
+													&q=<?= $street?>">
+													</iframe>
+												<!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.-->
 											</td>
 											</tr>
 										</table>
