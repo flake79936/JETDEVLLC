@@ -23,7 +23,22 @@
 				window.history.back()
 			}
 		</script>
-		
+		<!--code for tooltip-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script>
+  		$(function() {
+		$( document ).tooltip();
+  		});
+		</script>
+		<style>
+  		label {
+		display: inline-block;
+		width: 5em;
+  		}
+		</style>
 	</head>
 	<body>
 		<!-- Form Code Start -->
@@ -41,7 +56,7 @@
 					</div>
 					<div class='container'>
 						<label for='UuserName' >UserName*:</label><br/>
-						<input type='text' name='UuserName' id='UuserName' value='<?php echo $fgmembersite->SafeDisplay('UuserName') ?>' maxlength="50" /><br/>
+						<input type='text' name='UuserName' title="Enter your Username" id='UuserName' value='<?php echo $fgmembersite->SafeDisplay('UuserName') ?>' maxlength="50" /><br/>
 						<span id='login_UuserName_errorloc' class='error'></span>
 					</div>
 					<div class='container'>

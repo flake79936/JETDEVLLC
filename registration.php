@@ -27,6 +27,26 @@
 		<script src="scripts/pwdwidget.js" type="text/javascript"></script>
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+				<!--code for tooltip-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script>
+  		$(function() {
+		$( document ).tooltip();
+  		});
+		</script>
+		<style>
+  		label {
+		display: inline-block;
+		width: 5em;
+  		}
+		</style>
+		
+		
+	
+		
 	</head>
 	
 	<body>
@@ -46,8 +66,9 @@
 						<!--First Name-->
 						<tr>
 							<td class="container">
+							
 								<label for="UFname">First Name*: </label><br/>
-								<input type="text" name="UFname" id="UFname" value="<?php echo $fgmembersite->SafeDisplay('UFname') ?>" maxlength="50" /><br/>
+								<input type="text" name="UFname" title="Enter your First Name" id="UFname" value="<?php echo $fgmembersite->SafeDisplay('UFname') ?>" maxlength="50" /><br/>
 								<span id="register_UFname_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -56,7 +77,7 @@
 						<tr>
 							<td class="container">
 								<label for="ULname">Last Name*: </label><br/>
-								<input type="text" name="ULname" id="ULname" value="<?php echo $fgmembersite->SafeDisplay('ULname') ?>" maxlength="50" /><br/>
+								<input type="text" name="ULname" title="Enter your Last Name"id="ULname" value="<?php echo $fgmembersite->SafeDisplay('ULname') ?>" maxlength="50" /><br/>
 								<span id="register_ULname_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -65,7 +86,7 @@
 						<tr>
 							<td class="container">
 								<label for="UuserName">Username*: </label><br/>
-								<input type="text" name="UuserName" id="UuserName" value="<?php echo $fgmembersite->SafeDisplay("UuserName") ?>" maxlength="50" /><br/>
+								<input type="text" name="UuserName" title="Enter your Username" id="UuserName" value="<?php echo $fgmembersite->SafeDisplay("UuserName") ?>" maxlength="50" /><br/>
 								<span id="register_UuserName_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -76,7 +97,7 @@
 									<label for='UPswd' >Password*:</label><br/>
 									<div class='pwdwidgetdiv' id='thepwddiv' ></div>
 									<noscript>
-										<input type='password' name='UPswd' id='UPswd' value="<?php echo $fgmembersite->SafeDisplay("UPswd") ?>" maxlength="50" />
+										<input type='password' name='UPswd' title="Enter your Password" id='UPswd' value="<?php echo $fgmembersite->SafeDisplay("UPswd") ?>" maxlength="50" />
 									</noscript>    
 									<div id='register_UPswd_errorloc' class='error' style='clear:both'></div>
 							</td>
@@ -86,7 +107,7 @@
 						<tr>
 							<td class="container">
 								<label for="ConPswd" >Confirm Password*: </label><br/>
-								<input type='password' name="ConPswd" id="ConPswd" value="<?php echo $fgmembersite->SafeDisplay("ConPswd") ?>" maxlength="50" /><br/>
+								<input type='password' name="ConPswd" title="Confirm your Password"id="ConPswd" value="<?php echo $fgmembersite->SafeDisplay("ConPswd") ?>" maxlength="50" /><br/>
 								<span id="register_ConPswd_errorloc" class="error" style="clear"></span>
 							</td>
 						</tr>
@@ -97,7 +118,7 @@
 						<tr>
 							<td class="container">
 								<label for="Uemail" >Email*: </label><br/>
-								<input type="text" name="Uemail" id="Uemail" value="<?php echo $fgmembersite->SafeDisplay('Uemail') ?>" maxlength="50" /><br/>
+								<input type="text" name="Uemail" title="Enter your Email"id="Uemail" value="<?php echo $fgmembersite->SafeDisplay('Uemail') ?>" maxlength="50" /><br/>
 								<span id="register_Uemail_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -106,7 +127,7 @@
 						<tr>
 							<td class="container">
 								<label for="Uphone" >Phone*: </label><br/>
-								<input type="text" name="Uphone" id="Uphone" value="<?php echo $fgmembersite->SafeDisplay("Uphone") ?>" maxlength="50" /><br/>
+								<input type="text" name="Uphone" title="Enter your Phone Number"id="Uphone" value="<?php echo $fgmembersite->SafeDisplay("Uphone") ?>" maxlength="50" /><br/>
 								<span id="register_Uphone_errorloc" class="error"></span>
 							</td>
 						</tr>

@@ -15,6 +15,8 @@
 		<title>An Access Controlled Page</title>
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
 		
+		
+		
 		<!--code for acordian-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
@@ -27,6 +29,7 @@
 				height:  200px;
 			}
 		</style>
+
 		<script>
 			$(function() {
 			$( "#accordion" ).accordion({
