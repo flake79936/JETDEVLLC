@@ -29,6 +29,25 @@
 		<script src="scripts/pwdwidget.js" type="text/javascript"></script>
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+						<!--code for tooltip-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script>
+  		$(function() {
+		$( document ).tooltip();
+  		});
+		</script>
+		<style>
+  		label {
+		display: inline-block;
+		width: 5em;
+  		}
+		</style>
+		
+		
 		<!--Calendar-->
 		
 		<!--Script to show whether the event is 'Other'-->
@@ -78,14 +97,14 @@
 							<!--First Name-->
 							<td class="container">
 								<label for="Efname">First Name*: </label><br/>
-								<input type="text" name="Efname" id="Efname" value="<?php echo $fgmembersite->SafeDisplay('Efname') ?>" maxlength="50" /><br/>
+								<input type="text" name="Efname" title="Enter your First Name" id="Efname" value="<?php echo $fgmembersite->SafeDisplay('Efname') ?>" maxlength="50" /><br/>
 								<span id="event_Efname_errorloc" class="error"></span>
 							</td>
 							
 							<!--Last Name-->
 							<td class="container">
 								<label for="Elname">Last Name*: </label><br/>
-								<input type="text" name="Elname" id="Elname" value="<?php echo $fgmembersite->SafeDisplay('Elname') ?>" maxlength="50" /><br/>
+								<input type="text" name="Elname" title="Enter your Last Name" id="Elname" value="<?php echo $fgmembersite->SafeDisplay('Elname') ?>" maxlength="50" /><br/>
 								<span id="event_Elname_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -95,7 +114,7 @@
 							<!--Event Name-->
 							<td class="container">
 								<label for="Evename">Event Name*: </label><br/>
-								<input type="text" name="Evename" id="Evename" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
+								<input type="text" name="Evename" title="Enter the Event Name" id="Evename" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
 								<span id="event_Evename_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -104,14 +123,14 @@
 							<!--Address-->
 							<td class="container">
 								<label for="Eaddress">Address*: </label><br/>
-								<input type="text" name="Eaddress" id="Eaddress" value="<?php echo $fgmembersite->SafeDisplay("Eaddress") ?>" maxlength="50" /><br/>
+								<input type="text" name="Eaddress" title="Enter the Address of the Event"id="Eaddress" value="<?php echo $fgmembersite->SafeDisplay("Eaddress") ?>" maxlength="50" /><br/>
 								<span id="event_Eaddress_errorloc" class="error"></span>
 							</td>
 							
 							<!--City-->
 							<td class="container">
 								<label for="Ecity">City*: </label><br/>
-								<input type="text" name="Ecity" id="Ecity" value="<?php echo $fgmembersite->SafeDisplay("Ecity") ?>" maxlength="50" /><br/>
+								<input type="text" name="Ecity" title="Enter the City of the Event"id="Ecity" value="<?php echo $fgmembersite->SafeDisplay("Ecity") ?>" maxlength="50" /><br/>
 								<span id="event_Ecity_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -120,14 +139,14 @@
 							<!--State-->
 							<td class="container">
 								<label for="Estate">State*: </label><br/>
-								<input type="text" name="Estate" id="Estate" value="<?php echo $fgmembersite->SafeDisplay("Estate") ?>" maxlength="50" /><br/>
+								<input type="text" name="Estate" title="Enter the State of the Event"id="Estate" value="<?php echo $fgmembersite->SafeDisplay("Estate") ?>" maxlength="50" /><br/>
 								<span id="event_Estate_errorloc" class="error"></span>
 							</td>
 							
 							<!--Zip-->
 							<td class="container">
 								<label for="Ezip">Zip*: </label><br/>
-								<input type="text" name="Ezip" id="Ezip" value="<?php echo $fgmembersite->SafeDisplay("Ezip") ?>" maxlength="50" /><br/>
+								<input type="text" name="Ezip" title="Enter the Zip code of the Event" id="Ezip" value="<?php echo $fgmembersite->SafeDisplay("Ezip") ?>" maxlength="50" /><br/>
 								<span id="event_Ezip_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -136,7 +155,7 @@
 						<tr>
 							<td class="container">
 								<label for="EphoneNumber">Phone number*: </label><br/>
-								<input type="text" name="EphoneNumber" id="EphoneNumber" value="<?php echo $fgmembersite->SafeDisplay("EphoneNumber") ?>" maxlength="50" /><br/>
+								<input type="text" name="EphoneNumber" title="Enter the Phone Number for the Event"id="EphoneNumber" value="<?php echo $fgmembersite->SafeDisplay("EphoneNumber") ?>" maxlength="50" /><br/>
 								<span id="event_EphoneNumber_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -152,14 +171,14 @@
 							<!--Start Date picker-->
 							<td class="container">
 								<label for="EstartDate">Start date: </label><br/>
-								<input type="text" name="EstartDate" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
+								<input type="text" name="EstartDate" title="Pick the Start Date" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
 								<span id="event_EstartDate_errorloc" class="error"></span>
 							</td>
 							
 							<!--End Date picker-->
 							<td class="container">
 								<label for="EendDate">End date: </label><br/>
-								<input type="text" name="EendDate" id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
+								<input type="text" name="EendDate" title="Pick the End Date"id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
 								<span id="event_EendDate_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -193,7 +212,7 @@
 							<!--Description-->
 							<td class="container">
 								<label for="Edescription">Description of the Event*: </label><br/>
-								<input type="text" name="Edescription" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>" maxlength="50" /><br/>
+								<input type="text" name="Edescription" title="Enter the Description of the Event" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>" maxlength="50" /><br/>
 								<span id="event_Edescription_errorloc" class="error"></span>
 							</td>
 						</tr>
