@@ -42,6 +42,13 @@
 				window.history.back()
 			}
 		</script>
+		<script>
+  			$(function() {
+   			 $( "#progressbar" ).progressbar({
+     		 value: 20
+   		});
+  		});
+  		</script>
 	<!-- 
 	<style>
   		label {
@@ -63,7 +70,7 @@
 				<fieldset>
 					<table>
 						<legend>User Registration</legend>
-
+						<div id="progressbar"></div>
 						<input type="hidden" name="submitted" id="submitted" value="1"/>
 
 						<tr><td class="short_explanation">* required fields</td></tr>
