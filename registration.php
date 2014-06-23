@@ -37,6 +37,11 @@
 		$( document ).tooltip();
   		});
 		</script>
+		<script>
+			function goBack() {
+				window.history.back()
+			}
+		</script>
 	<!-- 
 	<style>
   		label {
@@ -135,6 +140,7 @@
 						</tr>
 					</table>
 					<input id="submitButton" type="submit" name="Submit" value="submit" />
+					<input type="button" onclick="goBack();" value="Go Back" />
 				</fieldset>
 				
 			</form>

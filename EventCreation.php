@@ -80,6 +80,12 @@
 				$("#EendDate").datepicker();
 			});
 		</script>
+		<script>
+			function goBack() {
+				window.history.back()
+			}
+		</script>
+		
 	</head>
 	
 	<body>
@@ -126,14 +132,14 @@
 							<!--Start Date picker-->
 							<td class="container">
 								<label for="EstartDate">Start date: </label><br/>
-								<input type="text" name="EstartDate" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
+								<input type="text" name="EstartDate" title="Pick Start Date" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
 								<span id="event_EstartDate_errorloc" class="error"></span>
 							</td>
 							
 							<!--End Date picker-->
 							<td class="container">
 								<label for="EendDate">End date: </label><br/>
-								<input type="text" name="EendDate" id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
+								<input type="text" name="EendDate" title="Pick Start Date" id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
 								<span id="event_EendDate_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -179,32 +185,7 @@
 							</td>
 						</tr>
 						
-<<<<<<< HEAD
-=======
-						<script type="text/javascript">
-							$(document).ready(function(){
-								$("#EstartDate").datepicker();
-								$("#EendDate").datepicker();
-							});
-						</script>
-						
-						<tr>
-							<!--Start Date picker-->
-							<td class="container">
-								<label for="EstartDate">Start date: </label><br/>
-								<input type="text" name="EstartDate" title="Pick the Start Date" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
-								<span id="event_EstartDate_errorloc" class="error"></span>
-							</td>
-							
-							<!--End Date picker-->
-							<td class="container">
-								<label for="EendDate">End date: </label><br/>
-								<input type="text" name="EendDate" title="Pick the End Date"id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
-								<span id="event_EendDate_errorloc" class="error"></span>
-							</td>
-						</tr>
-						
->>>>>>> origin/master
+
 						<tr>
 							<!--Type of Event-->
 							<td class="container">
@@ -240,13 +221,13 @@
 							<!--hastags-->
 							<td class="container">
 								<label for="Ehashtage">Hastags: </label><br/>
-								<input type="text" name="Ehashtage" id="Ehashtage" value="<?php echo $fgmembersite->SafeDisplay("Ehashtage") ?>" maxlength="50" /><br/>
+								<input type="text" name="Ehashtage" title="Enter Hashtag" id="Ehashtage" value="<?php echo $fgmembersite->SafeDisplay("Ehashtage") ?>" maxlength="50" /><br/>
 								<span id="event_Ehashtage_errorloc" class="error"></span>
 							</td>
 							<!--website-->
 							<td class="container">
 								<label for="Ewebsite">Website*: </label><br/>
-								<input type="text" name="Ewebsite" id="Ewebsite" value="<?php echo $fgmembersite->SafeDisplay("Ewebsite") ?>" maxlength="50" /><br/>
+								<input type="text" name="Ewebsite" title="Enter Website" id="Ewebsite" value="<?php echo $fgmembersite->SafeDisplay("Ewebsite") ?>" maxlength="50" /><br/>
 								<span id="event_Ewebsite_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -255,19 +236,19 @@
 							<!--Facebook-->
 							<td class="container">
 								<label for="Efacebook">FaceBook: </label><br/>
-								<input type="text" name="Efacebook" id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="20" /><br/>
+								<input type="text" name="Efacebook" title="Enter Facebook Website" id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="20" /><br/>
 								<span id="event_Efacebook_errorloc" class="error"></span>
 							</td>
 							<!--twitter-->
 							<td class="container">
 								<label for="Etwitter">Twitter: </label><br/>
-								<input type="text" name="Etwitter" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="20" /><br/>
+								<input type="text" name="Etwitter" title="Enter Twitter Username" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="20" /><br/>
 								<span id="event_Etwitter_errorloc" class="error"></span>
 							</td>
 							<!--google+-->
 							<td class="container">
 								<label for="Egoogle">Google+: </label><br/>
-								<input type="text" name="Egoogle" id="Egoogle" value="<?php echo $fgmembersite->SafeDisplay("Egoogle") ?>" maxlength="20" /><br/>
+								<input type="text" name="Egoogle" title="Enter Google+ Username " id="Egoogle" value="<?php echo $fgmembersite->SafeDisplay("Egoogle") ?>" maxlength="20" /><br/>
 								<span id="event_Egoogle_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -276,6 +257,7 @@
 							<!--Submit Button-->
 							<td>
 								<input id="submitButton" type="submit" name="Submit" value="Create Event" />
+								<input type="button" onclick="goBack();" value="Go Back" />
 							</td>
 						</tr>
 					</table>

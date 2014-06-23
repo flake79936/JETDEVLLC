@@ -27,7 +27,13 @@
 			/* IE has layout problems when sorting  */
 			.group { zoom: 1 }
 		</style>
-
+		
+		<script>
+			function goBack() {
+				window.history.back()
+			}
+		</script>
+		
 	</head>
 	
 	<body onLoad="showEvents('ecorral2');">
