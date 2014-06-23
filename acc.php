@@ -17,14 +17,14 @@
 
 	mysqli_select_db($con, "EventAdvisor");
 	
-	$sql = "SELECT * FROM Events WHERE UuserName = 'ecorral2'";
+	$sql = "SELECT Evename FROM Events WHERE UuserName = 'ecorral2'";
 	
 	$result = mysqli_query($con, $sql);
 ?>
 
 <html>
 	<head>
-		<link href="acc.css" rel="stylesheet" type="text/css" />
+		<link href="css/acc.css" rel="stylesheet" type="text/css" />
 	</head>
 	
 	<body>
@@ -32,28 +32,22 @@
 		<p>Logged in as: <?= $fgmembersite->UserFullName() ?></p>
 		<p>Logged in as: <?= $usrname?></p>
 		
-		<?PHP while($row = mysqli_fetch_array($result)){ ?>
+		<?PHP
+			$i = 0;
+			while($row = mysqli_fetch_array($result)){ 
+		?>
 			<div class="accordion vertical">
 				<ul>
 					<li>
-						<input type="radio" id="radio-1" name="radio-accordion" checked="checked" />
-						<label for="radio-1">Title&nbsp;One</label>
+						<input type="radio" id="radio-<?= $i?>" name="radio-accordion" checked="checked" />
+						<label for="radio-<?= $i?>">Event <?= $i?></label>
 						<div class="content">
-							<h3><?PHP $row['FirstName'] ?></h3>
-							
-								$row['FirstName']
-								echo "<td>" . $row['LastName'] . "</td>";
-								echo "<td>" . $row['Age'] . "</td>";
-								echo "<td>" . $row['Hometown'] . "</td>";
-								echo "<td>" . $row['Job'] . "</td>";
-							
-							
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec posuere lorem. Pellentesque hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum. Mauris semper ipsum sit amet metus semper malesuada. Donec vel est justo, ac porta diam.</p>
-							<p>In ut est in orci commodo blandit. Cras rhoncus ultricies augue. Proin quam odio, venenatis ut tempus tristique, aliquet in velit. Pellentesque volutpat facilisis orci, ut congue mi rhoncus at. Nullam vehicula dignissim neque, sed rhoncus magna ultricies et.</p>
+							<h3>hello test</h3>
+							<p><?= $row['Evename'] ?></p>
 						</div>
 					</li>
 				</ul>
 			</div>
-		<?PHP } ?>
+		<?PHP $i++; } ?>
 	</body>
 </html>

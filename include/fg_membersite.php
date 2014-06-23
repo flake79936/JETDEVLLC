@@ -615,59 +615,6 @@ class FGMembersite{
 	
 	/*----(Start) User Management----*/
 	
-	/*
-		Method still under test.
-		We don't know if it will work.
-		
-		
-		NOT WORKING!!!
-	*/
-	function getEvents(){
-		//$q is the username that we want to extract the events from.
-		$q = intval($_GET['q']);
-		
-		if(!$this->DBLogin()){
-			$this->HandleError("Database login failed!");
-			return false;
-		}
-		
-		$result = mysql_query("SELECT * FROM Events WHERE UuserName = '" . $q . "'", $this->connection);
-
-		echo "<table border='1'>
-				<tr>
-					<th>Evename</th>
-					<th>EstartDate</th>
-					<th>EendDate</th>
-					<th>Eaddress</th>
-					<th>Ecity</th>
-					<th>Estate</th>
-					<th>Ezip</th>
-					<th>EphoneNumber</th>
-					<th>Edescription</th>
-					<th>Etype</th>
-					<th>Ewebsite</th>
-					<th>Ehashtage</th>
-					<th>Efacebook</th>
-					<th>Etwitter</th>
-					<th>Egoogle</th>
-					<th>Eflyer</th>
-					<th>Eother</th>
-				</tr>";
-
-			while($row = mysqli_fetch_array($result)) {
-				echo "<tr>";
-				echo "<td>" . $row['FirstName'] . "</td>";
-				echo "<td>" . $row['LastName'] . "</td>";
-				echo "<td>" . $row['Age'] . "</td>";
-				echo "<td>" . $row['Hometown'] . "</td>";
-				echo "<td>" . $row['Job'] . "</td>";
-				echo "</tr>";
-			}
-		echo "</table>";
-	}
-	
-	/*----(End) User Management----*/
-	
 	/*----(Start) Login information/Methods----*/
 	function Login(){
         if(empty($_POST['UuserName'])){
