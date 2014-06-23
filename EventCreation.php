@@ -1,10 +1,10 @@
 <?PHP
 	require_once("./include/membersite_config.php");
 	/*This part ckecks whether there is a session or not.*/
-	/*if(!$fgmembersite->CheckLogin()){
+	if(!$fgmembersite->CheckLogin()){
 		$fgmembersite->RedirectToURL("index.php");
 		exit;
-	}*/
+	}
 	
 	if(isset($_POST["submitted"])){
 		if($fgmembersite->CreateEvent()){
@@ -58,6 +58,14 @@
 					document.getElementById('charsLeft').innerHTML = maxlimit - field.value.length;
 			}
 		</script>
+		
+		<!--date pickers-->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#EstartDate").datepicker();
+				$("#EendDate").datepicker();
+			});
+		</script>
 	</head>
 	
 	<body>
@@ -74,21 +82,21 @@
 
 						<tr><td><span class="error"><?php echo $fgmembersite->GetErrorMessage(); ?></span></td></tr>
 						
-						<tr>
+						<!--<tr>-->
 							<!--First Name-->
-							<td class="container">
+							<!--<td class="container">
 								<label for="Efname">First Name*: </label><br/>
 								<input type="text" name="Efname" id="Efname" value="<?php echo $fgmembersite->SafeDisplay('Efname') ?>" maxlength="50" /><br/>
 								<span id="event_Efname_errorloc" class="error"></span>
-							</td>
+							</td>-->
 							
 							<!--Last Name-->
-							<td class="container">
+							<!--<td class="container">
 								<label for="Elname">Last Name*: </label><br/>
 								<input type="text" name="Elname" id="Elname" value="<?php echo $fgmembersite->SafeDisplay('Elname') ?>" maxlength="50" /><br/>
 								<span id="event_Elname_errorloc" class="error"></span>
 							</td>
-						</tr>
+						</tr>-->
 						
 						
 						<tr>
@@ -97,6 +105,22 @@
 								<label for="Evename">Event Name*: </label><br/>
 								<input type="text" name="Evename" id="Evename" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
 								<span id="event_Evename_errorloc" class="error"></span>
+							</td>
+						</tr>
+						
+						<tr>
+							<!--Start Date picker-->
+							<td class="container">
+								<label for="EstartDate">Start date: </label><br/>
+								<input type="text" name="EstartDate" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
+								<span id="event_EstartDate_errorloc" class="error"></span>
+							</td>
+							
+							<!--End Date picker-->
+							<td class="container">
+								<label for="EendDate">End date: </label><br/>
+								<input type="text" name="EendDate" id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
+								<span id="event_EendDate_errorloc" class="error"></span>
 							</td>
 						</tr>
 						
@@ -141,29 +165,6 @@
 							</td>
 						</tr>
 						
-						<script type="text/javascript">
-							$(document).ready(function(){
-								$("#EstartDate").datepicker();
-								$("#EendDate").datepicker();
-							});
-						</script>
-						
-						<tr>
-							<!--Start Date picker-->
-							<td class="container">
-								<label for="EstartDate">Start date: </label><br/>
-								<input type="text" name="EstartDate" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
-								<span id="event_EstartDate_errorloc" class="error"></span>
-							</td>
-							
-							<!--End Date picker-->
-							<td class="container">
-								<label for="EendDate">End date: </label><br/>
-								<input type="text" name="EendDate" id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
-								<span id="event_EendDate_errorloc" class="error"></span>
-							</td>
-						</tr>
-						
 						<tr>
 							<!--Type of Event-->
 							<td class="container">
@@ -196,6 +197,39 @@
 								<input type="text" name="Edescription" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>" maxlength="50" /><br/>
 								<span id="event_Edescription_errorloc" class="error"></span>
 							</td>
+							<!--hastags-->
+							<td class="container">
+								<label for="Ehashtage">Hastags: </label><br/>
+								<input type="text" name="Ehashtage" id="Ehashtage" value="<?php echo $fgmembersite->SafeDisplay("Ehashtage") ?>" maxlength="50" /><br/>
+								<span id="event_Ehashtage_errorloc" class="error"></span>
+							</td>
+							<!--website-->
+							<td class="container">
+								<label for="Ewebsite">Website*: </label><br/>
+								<input type="text" name="Ewebsite" id="Ewebsite" value="<?php echo $fgmembersite->SafeDisplay("Ewebsite") ?>" maxlength="50" /><br/>
+								<span id="event_Ewebsite_errorloc" class="error"></span>
+							</td>
+						</tr>
+						
+						<tr>
+							<!--Facebook-->
+							<td class="container">
+								<label for="Efacebook">FaceBook: </label><br/>
+								<input type="text" name="Efacebook" id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="20" /><br/>
+								<span id="event_Efacebook_errorloc" class="error"></span>
+							</td>
+							<!--twitter-->
+							<td class="container">
+								<label for="Etwitter">Twitter: </label><br/>
+								<input type="text" name="Etwitter" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="20" /><br/>
+								<span id="event_Etwitter_errorloc" class="error"></span>
+							</td>
+							<!--google+-->
+							<td class="container">
+								<label for="Egoogle">Google+: </label><br/>
+								<input type="text" name="Egoogle" id="Egoogle" value="<?php echo $fgmembersite->SafeDisplay("Egoogle") ?>" maxlength="20" /><br/>
+								<span id="event_Egoogle_errorloc" class="error"></span>
+							</td>
 						</tr>
 						
 						<tr>
@@ -214,8 +248,8 @@
 			frmvalidator.EnableOnPageErrorDisplay();
 			frmvalidator.EnableMsgsTogether();
 			
-			frmvalidator.addValidation("Efname",       "req", "Please fill in First Name");
-			frmvalidator.addValidation("Elname",       "req", "Please fill in Last Name");
+			//frmvalidator.addValidation("Efname",       "req", "Please fill in First Name");
+			//frmvalidator.addValidation("Elname",       "req", "Please fill in Last Name");
 			frmvalidator.addValidation("Evename",      "req", "Please fill in Event Name");
 			frmvalidator.addValidation("Eaddress",     "req", "Please fill in address");
 			frmvalidator.addValidation("Ecity",        "req", "Please fill in City");

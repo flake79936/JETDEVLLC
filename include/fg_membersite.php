@@ -353,9 +353,6 @@ class FGMembersite{
 	
 	/*----(End) Registration of User----*/
 	
-	
-	
-	
 	/*----(Start) CreateEvent() Submission----*/
 	function CreateEvent(){
 		if(!isset($_POST['submitted'])){
@@ -392,8 +389,8 @@ class FGMembersite{
 		}
 
 		$validator = new FormValidator();
-		$validator->addValidation("Efname",       "req", "Please fill in First Name");
-		$validator->addValidation("Elname",       "req", "Please fill in Last Name");
+		//$validator->addValidation("Efname",       "req", "Please fill in First Name");
+		//$validator->addValidation("Elname",       "req", "Please fill in Last Name");
 		$validator->addValidation("Evename",      "req", "Please fill in Event Name");
 		$validator->addValidation("Eaddress",     "req", "Please fill in address");
 		$validator->addValidation("Ecity",        "req", "Please fill in City");
@@ -418,18 +415,24 @@ class FGMembersite{
 	}
 	
 	function CollectEventSubmission(&$formvars){
-		$formvars['Efname']       = $this->Sanitize($_POST['Efname']);
-		$formvars['Elname']       = $this->Sanitize($_POST['Elname']);
+		//$formvars['UuserName']    = $this->Sanitize($this->UsrName());
+		//$formvars['UuserName']    = $this->Sanitize($_POST['UuserName']);
 		$formvars['Evename']      = $this->Sanitize($_POST['Evename']);
+		$formvars['EstartDate']   = $this->Sanitize($_POST['EstartDate']);
+		$formvars['EendDate']     = $this->Sanitize($_POST['EendDate']);
 		$formvars['Eaddress']     = $this->Sanitize($_POST['Eaddress']);
 		$formvars['Ecity']        = $this->Sanitize($_POST['Ecity']);
 		$formvars['Estate']       = $this->Sanitize($_POST['Estate']);
 		$formvars['Ezip']         = $this->Sanitize($_POST['Ezip']);
 		$formvars['EphoneNumber'] = $this->Sanitize($_POST['EphoneNumber']);
-		$formvars['Etype']        = $this->Sanitize($_POST['Etype']);
 		$formvars['Edescription'] = $this->Sanitize($_POST['Edescription']);
-		$formvars['EstartDate']   = $this->Sanitize($_POST['EstartDate']);
-		$formvars['EendDate']     = $this->Sanitize($_POST['EendDate']);
+		$formvars['Etype']        = $this->Sanitize($_POST['Etype']);
+		$formvars['Ewebsite']     = $this->Sanitize($_POST['Ewebsite']);
+		$formvars['Ehashtage']    = $this->Sanitize($_POST['Ehashtage']);
+		$formvars['Efacebook']    = $this->Sanitize($_POST['Efacebook']);
+		$formvars['Etwitter']     = $this->Sanitize($_POST['Etwitter']);
+		$formvars['Egoogle']      = $this->Sanitize($_POST['Egoogle']);
+		//$formvars['Eflyer']       = $this->Sanitize($_POST['Eflyer']);
 		$formvars['Eother']       = $this->Sanitize($_POST['Eother']);
 	}
 	
@@ -462,12 +465,17 @@ class FGMembersite{
         //$confirmcode = $this->MakeConfirmationMd5($formvars['email']);
         
         //$formvars['confirmcode'] = $confirmcode;
+		
+		$uName = $this->UsrName();
+		echo $uName . " here i am"; 
 		if($formvars['Etype'] === 'Other'){
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate, Eother)
+			//
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtage, Efacebook, Etwitter, Egoogle, Eflyer, Eother)
 				VALUES(
-					"' . $this->SanitizeForSQL($formvars['Efname']) . '",
-					"' . $this->SanitizeForSQL($formvars['Elname']) . '",
+					"' . $this->SanitizeForSQL($uName) . '",
 					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
+					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
+					"' . $this->SanitizeForSQL($formvars['EendDate']) . '",
 					"' . $this->SanitizeForSQL($formvars['Eaddress']) . '",
 					"' . $this->SanitizeForSQL($formvars['Ecity']) . '",
 					"' . $this->SanitizeForSQL($formvars['Estate']) . '",
@@ -475,16 +483,22 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['EphoneNumber']) . '",
 					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
-					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
-					"' . $this->SanitizeForSQL($formvars['EendDate']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ewebsite']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ehashtage']) . '",
+					"' . $this->SanitizeForSQL($formvars['Efacebook']) . '",
+					"' . $this->SanitizeForSQL($formvars['Etwitter']) . '",
+					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
+					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
 					"' . $this->SanitizeForSQL($formvars['Eother']) . '"
 				);';
 		} else {
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(Efname, Elname, Evename, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, EstartDate, EendDate)
+			//
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtage, Efacebook, Etwitter, Eflyer, Egoogle)
 				VALUES(
-					"' . $this->SanitizeForSQL($formvars['Efname']) . '",
-					"' . $this->SanitizeForSQL($formvars['Elname']) . '",
+					"' . $this->SanitizeForSQL($uName) . '",
 					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
+					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
+					"' . $this->SanitizeForSQL($formvars['EendDate']) . '",
 					"' . $this->SanitizeForSQL($formvars['Eaddress']) . '",
 					"' . $this->SanitizeForSQL($formvars['Ecity']) . '",
 					"' . $this->SanitizeForSQL($formvars['Estate']) . '",
@@ -492,8 +506,12 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['EphoneNumber']) . '",
 					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
-					"' . $this->SanitizeForSQL($formvars['EstartDate']) . '",
-					"' . $this->SanitizeForSQL($formvars['EendDate']) . '"
+					"' . $this->SanitizeForSQL($formvars['Ewebsite']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ehashtage']) . '",
+					"' . $this->SanitizeForSQL($formvars['Efacebook']) . '",
+					"' . $this->SanitizeForSQL($formvars['Etwitter']) . '",
+					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
+					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '"
 				);';
 		}
 		
@@ -537,7 +555,7 @@ class FGMembersite{
          return true;
     }
     
-	function UserName(){
+	function UsrName(){
         return isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
     }
 	
@@ -592,6 +610,61 @@ class FGMembersite{
         
         return true;
     }
+	
+	/*----(End) User Management----*/
+	
+	/*----(Start) User Management----*/
+	
+	/*
+		Method still under test.
+		We don't know if it will work.
+		
+		
+		NOT WORKING!!!
+	*/
+	function getEvents(){
+		//$q is the username that we want to extract the events from.
+		$q = intval($_GET['q']);
+		
+		if(!$this->DBLogin()){
+			$this->HandleError("Database login failed!");
+			return false;
+		}
+		
+		$result = mysql_query("SELECT * FROM Events WHERE UuserName = '" . $q . "'", $this->connection);
+
+		echo "<table border='1'>
+				<tr>
+					<th>Evename</th>
+					<th>EstartDate</th>
+					<th>EendDate</th>
+					<th>Eaddress</th>
+					<th>Ecity</th>
+					<th>Estate</th>
+					<th>Ezip</th>
+					<th>EphoneNumber</th>
+					<th>Edescription</th>
+					<th>Etype</th>
+					<th>Ewebsite</th>
+					<th>Ehashtage</th>
+					<th>Efacebook</th>
+					<th>Etwitter</th>
+					<th>Egoogle</th>
+					<th>Eflyer</th>
+					<th>Eother</th>
+				</tr>";
+
+			while($row = mysqli_fetch_array($result)) {
+				echo "<tr>";
+				echo "<td>" . $row['FirstName'] . "</td>";
+				echo "<td>" . $row['LastName'] . "</td>";
+				echo "<td>" . $row['Age'] . "</td>";
+				echo "<td>" . $row['Hometown'] . "</td>";
+				echo "<td>" . $row['Job'] . "</td>";
+				echo "</tr>";
+			}
+		echo "</table>";
+	}
 	
 	/*----(End) User Management----*/
 	
@@ -763,7 +836,7 @@ class FGMembersite{
 		}
 		
 		$email = trim($_GET['email']);
-		$code = trim($_GET['code']);
+		$code  = trim($_GET['code']);
 
 		if($this->GetResetPasswordCode($email) != $code){
 			$this->HandleError("Bad reset code!");
@@ -771,7 +844,7 @@ class FGMembersite{
 		}
 
 		$user_rec = array();
-			if(!$this->GetUserFromEmail($email,$user_rec)){
+		if(!$this->GetUserFromEmail($email,$user_rec)){
 			return false;
 		}
 
@@ -956,19 +1029,22 @@ class FGMembersite{
 		if(!$this->DBLogin()){
 			$this->HandleError("Database login failed!");
 			return false;
-		}   
+		}
+		
 		$confirmcode = $this->SanitizeForSQL($_GET['code']);
 
-		$result = mysql_query("Select name, email from $this->tablename where confirmcode='$confirmcode'",$this->connection);   
+		$result = mysql_query("Select name, email from $this->tablename where confirmcode='$confirmcode'", $this->connection);   
+		
 		if(!$result || mysql_num_rows($result) <= 0){
 			$this->HandleError("Wrong confirm code.");
 			return false;
 		}
+		
 		$row = mysql_fetch_assoc($result);
 		$user_rec['name'] = $row['name'];
 		$user_rec['email']= $row['email'];
 
-		$qry = "Update $this->tablename Set confirmcode='y' Where  confirmcode='$confirmcode'";
+		$qry = "Update $this->tablename Set confirmcode = 'y' Where confirmcode = '$confirmcode'";
 
 		if(!mysql_query( $qry ,$this->connection)){
 			$this->HandleDBError("Error inserting data to the table\nquery:$qry");

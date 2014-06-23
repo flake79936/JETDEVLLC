@@ -10,7 +10,7 @@ body {
     min-width: 300px;
     height: 100px;
     position: absolute;
-    top:20px;
+    top:140px;
     left: 0;
     right: 0;
     margin: auto;
@@ -143,7 +143,7 @@ body {
     color:  #BDC3C7;
     font-size: 16;
 }
- 
+
 .ui-accordion-header.ui-state-active {
     background-color: #BDC3C7;
     color: #333333;
