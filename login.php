@@ -61,7 +61,7 @@
 					</div>
 					<div class='container'>
 						<label for='UPswd' >Password*:</label><br/>
-						<input type='password' name='UPswd' id='UPswd' maxlength="50" /><br/>
+						<input type='password' title="Enter your Password" name='UPswd' id='UPswd' maxlength="50" /><br/>
 						<span id='login_UPswd_errorloc' class='error'></span>
 					</div>
 

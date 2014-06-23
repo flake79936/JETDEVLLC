@@ -37,12 +37,14 @@
 		$( document ).tooltip();
   		});
 		</script>
-		<style>
+	<!-- 
+	<style>
   		label {
 		display: inline-block;
 		width: 5em;
   		}
 		</style>
+ -->
 		
 		
 	
