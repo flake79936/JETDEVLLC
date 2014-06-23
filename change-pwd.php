@@ -22,7 +22,13 @@
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
 		<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
 		<link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
-		<script src="scripts/pwdwidget.js" type="text/javascript"></script>       
+		<script src="scripts/pwdwidget.js" type="text/javascript"></script>  
+				<script>
+			function goBack() {
+				window.history.back()
+			}
+		</script>
+		     
 	</head>
 	<body>
 		<!--Form Code Start-->
@@ -55,6 +61,7 @@
 					<br/><br/><br/>
 					<div class='container'>
 						<input type='submit' name='Submit' value='Submit' />
+						<input type="button" onclick="goBack();" value="Go Back" />
 					</div>
 				</fieldset>
 			</form>
