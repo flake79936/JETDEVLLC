@@ -50,20 +50,24 @@
 				});
 			});
   		</script>
+
   		
   		<script type="text/javascript">
         function check() {
-            var completion = 0;
+            //var completion = 0;
             if (document.getElementById("UFname").value != "") {
-                completion++;
+                value=30;
             }
             if (document.getElementById("ULname").value != "") {
-                completion++;
+                value=40;
             }
             if (document.getElementById("UuserName").value != "") {
-                completion++;
+                value=50;
             }
-            document.getElementById("progressbar").style.width = completion * 20 + "px";
+                        if (document.getElementById("Uemail").value != "") {
+                value=60;
+            }
+            document.getElementById("progressbar").style.width = value * 20 + "px" ;
        	 }
 		</script>
 	</head>
@@ -87,7 +91,7 @@
 							<td class="container">
 							
 								<label for="UFname">First Name*: </label><br/>
-								<input type="text" name="UFname" title="Enter your First Name" id="UFname" value="<?php echo $fgmembersite->SafeDisplay('UFname') ?>" maxlength="50" /><br/>
+								<input type="text" name="UFname" title="Enter your First Name" id="UFname" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay('UFname') ?>" maxlength="50" /><br/>
 								<span id="register_UFname_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -96,7 +100,7 @@
 						<tr>
 							<td class="container">
 								<label for="ULname">Last Name*: </label><br/>
-								<input type="text" name="ULname" title="Enter your Last Name"id="ULname" value="<?php echo $fgmembersite->SafeDisplay('ULname') ?>" maxlength="50" /><br/>
+								<input type="text" name="ULname" title="Enter your Last Name"id="ULname" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay('ULname') ?>" maxlength="50" /><br/>
 								<span id="register_ULname_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -105,7 +109,7 @@
 						<tr>
 							<td class="container">
 								<label for="UuserName">Username*: </label><br/>
-								<input type="text" name="UuserName" title="Enter your Username" id="UuserName" value="<?php echo $fgmembersite->SafeDisplay("UuserName") ?>" maxlength="50" /><br/>
+								<input type="text" name="UuserName" title="Enter your Username" id="UuserName" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay("UuserName") ?>" maxlength="50" /><br/>
 								<span id="register_UuserName_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -137,7 +141,7 @@
 						<tr>
 							<td class="container">
 								<label for="Uemail" >Email*: </label><br/>
-								<input type="text" name="Uemail" title="Enter your Email"id="Uemail" value="<?php echo $fgmembersite->SafeDisplay('Uemail') ?>" maxlength="50" /><br/>
+								<input type="text" name="Uemail" title="Enter your Email"id="Uemail" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay('Uemail') ?>" maxlength="50" /><br/>
 								<span id="register_Uemail_errorloc" class="error"></span>
 							</td>
 						</tr>
