@@ -35,11 +35,14 @@
   		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script src="js/jquery.validate.js"></script>
+		<script src="js/jquery.ui.datepicker.validation.js"></script>
 		<script>
   		$(function() {
 		$( document ).tooltip();
   		});
 		</script>
+		
 		<!--Calendar-->
 		
 		<!--Script to show whether the event is 'Other'-->
@@ -57,6 +60,7 @@
 				}).change();
 			});
 		</script>
+		
 		<!--Counts the number of characters-->
 		<script type="text/javascript">
 			function textCounter(field, cnt, maxlimit) {         
@@ -78,7 +82,6 @@
 		<script type="text/javascript" src="js/jquery.ui.datepicker.validation.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$('#validBeforeDatepicker,#validAfterDatepicker').datepicker();
 				$("#EstartDate").datepicker();
 				$("#EendDate").datepicker();
 			});
@@ -252,6 +255,7 @@
 				</fieldset>
 			</form>
 		</div>
+		
 		<script type="text/javascript">
 			// <![CDATA[
 			var frmvalidator = new Validator("event");
