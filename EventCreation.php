@@ -35,14 +35,11 @@
   		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="/resources/demos/style.css">
-		<script src="js/jquery.validate.js"></script>
-		<script src="js/jquery.ui.datepicker.validation.js"></script>
 		<script>
   		$(function() {
 		$( document ).tooltip();
   		});
 		</script>
-		
 		<!--Calendar-->
 		
 		<!--Script to show whether the event is 'Other'-->
@@ -60,7 +57,6 @@
 				}).change();
 			});
 		</script>
-		
 		<!--Counts the number of characters-->
 		<script type="text/javascript">
 			function textCounter(field, cnt, maxlimit) {         
@@ -75,11 +71,6 @@
 		</script>
 		
 		<!--date pickers-->
-		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/south-street/jquery-ui.css"> 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script> 
-		<script type="text/javascript" src="js/jquery.validate.js"></script>
-		<script type="text/javascript" src="js/jquery.ui.datepicker.validation.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$("#EstartDate").datepicker();
@@ -255,7 +246,6 @@
 				</fieldset>
 			</form>
 		</div>
-		
 		<script type="text/javascript">
 			// <![CDATA[
 			var frmvalidator = new Validator("event");
