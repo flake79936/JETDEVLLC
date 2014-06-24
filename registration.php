@@ -43,31 +43,36 @@
 				window.history.back()
 			}
 		</script>
+<!-- 
 		<script>
 			$(function() {
 				$( "#progressbar" ).progressbar({
-					value: 20
+					value: 0
+
+					
 				});
 			});
   		</script>
+ -->
 
   		
   		<script type="text/javascript">
         function check() {
-            //var completion = 0;
+            var completion = 0;
             if (document.getElementById("UFname").value != "") {
-                value=30;
+                completion=completion + 10;
+                value= completion;
             }
             if (document.getElementById("ULname").value != "") {
-                value=40;
+                completion=completion + 10;
             }
             if (document.getElementById("UuserName").value != "") {
-                value=50;
+                completion=completion + 10;
             }
                         if (document.getElementById("Uemail").value != "") {
-                value=60;
+                completion=completion + 10;
             }
-            document.getElementById("progressbar").style.width = value * 20 + "px" ;
+            document.getElementById("progressbar").style.width = completion ;//* 20 + "px";
        	 }
 		</script>
 	</head>
@@ -79,7 +84,10 @@
 				<fieldset>
 					<table>
 						<legend>User Registration</legend>
-						<div id="progressbar"></div>
+						<!-- <div id="progressbar"></div> -->
+						<div style="width: 100%; height: 30px; border: 2px solid green;">
+       					<div style="width: 0px; height: 30px; background-color: green;" id="progressbar"></div>
+						</div>
 						<input type="hidden" name="submitted" id="submitted" value="1"/>
 
 						<tr><td class="short_explanation">* required fields</td></tr>
