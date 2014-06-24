@@ -60,19 +60,21 @@
         function check() {
             var completion = 0;
             if (document.getElementById("UFname").value != "") {
-                completion=completion + 10;
-                value= completion;
+                completion=completion + 20;
             }
             if (document.getElementById("ULname").value != "") {
-                completion=completion + 10;
+                completion=completion + 20;
             }
             if (document.getElementById("UuserName").value != "") {
-                completion=completion + 10;
+                completion=completion + 20;
             }
-                        if (document.getElementById("Uemail").value != "") {
-                completion=completion + 10;
+            if (document.getElementById("Uemail").value != "") {
+                completion=completion + 20;
             }
-            document.getElementById("progressbar").style.width = completion ;//* 20 + "px";
+             if (document.getElementById("Uphone").value != "") {
+                completion=completion + 20;
+            }
+            document.getElementById("progressbar").style.width = completion + "%";//* 20 + "px";
        	 }
 		</script>
 	</head>
@@ -85,8 +87,8 @@
 					<table>
 						<legend>User Registration</legend>
 						<!-- <div id="progressbar"></div> -->
-						<div style="width: 100%; height: 30px; border: 2px solid green;">
-       					<div style="width: 0px; height: 30px; background-color: green;" id="progressbar"></div>
+						<div style="width: 100%; height: 30px; border: 1px solid green; border-radius: 4px;">
+       					<div style="width: 0px; height: 30px; border:0px; background-color: lightgreen;" id="progressbar">   	Progress</div>
 						</div>
 						<input type="hidden" name="submitted" id="submitted" value="1"/>
 
@@ -158,7 +160,7 @@
 						<tr>
 							<td class="container">
 								<label for="Uphone" >Phone*: </label><br/>
-								<input type="text" name="Uphone" title="Enter your Phone Number"id="Uphone" value="<?php echo $fgmembersite->SafeDisplay("Uphone") ?>" maxlength="50" /><br/>
+								<input type="text" name="Uphone" title="Enter your Phone Number"id="Uphone" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay("Uphone") ?>" maxlength="50" /><br/>
 								<span id="register_Uphone_errorloc" class="error"></span>
 							</td>
 						</tr>
