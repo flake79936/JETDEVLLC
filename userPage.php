@@ -28,12 +28,12 @@
 		
 		<!--Scripts-->
 		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
-		<script src="js/iepngfix_tilebg.js" type="text/javascript"></script>
-		<script src="js/scrollTo.js" type="text/javascript"></script>
-		<script src="js/global.js" type="text/javascript"></script>
+		<script src="js/iepngfix_tilebg.js"  type="text/javascript"></script>
+		<script src="js/scrollTo.js"         type="text/javascript"></script>
+		<script src="js/global.js"           type="text/javascript"></script>
 		<script type="text/javascript">
 			$(function(){
-				$("#talktous-nav, #findstadarena-nav, #emaildeals-nav, #product-nav, #faq-nav").scrollTo({ offset:-54 });
+				$("#createEvent-nav, #findstadarena-nav, #emaildeals-nav, #product-nav, #faq-nav").scrollTo({ offset:-54 });
 				$(".mobile-nav").scrollTo({ offset:0 });
 			});
 
@@ -48,7 +48,7 @@
 		
 	</head>
 	
-	<body>
+	<body style="background-color: black;">
 		<div class="header-wrap">
 			<div class="header">
 				<a class="login-btn" href="login.php">Log In</a>
@@ -73,7 +73,7 @@
 				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
 			</div><!--//header-->
 		</div><!--//header-wrap-->
-
+		
 		<div class="mobile-menu-list">
 			<ul>
 				<li><a class="mobile-nav" href="#talktous">Talk to Us</a></li>
@@ -85,17 +85,5 @@
 			</ul>   
 		</div><!--//mobile-menu-list-->
 
-		<div class="wrap">
-			<div id="talktous" class="below-header-bg"></div>
-			<div class="banner-box">
-				<div class="left-col"><img src="images/two-phone-with-shadow.png" alt="" /></div>
-				<div class="right-col">
-					
-				</div><!--//right-col-->
-				
-			</div><!--//banner-box-->
-			<div class="black-bar-banner"></div>
-
-		</div><!--//wrap-->
 	</body>
 </html>
