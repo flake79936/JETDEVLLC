@@ -19,9 +19,9 @@
 		
 		<!--Scripts-->
 		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
-		<script src="js/iepngfix_tilebg.js" type="text/javascript"></script>
-		<script src="js/scrollTo.js" type="text/javascript"></script>
-		<script src="js/global.js" type="text/javascript"></script>
+		<script src="js/iepngfix_tilebg.js"  type="text/javascript"></script>
+		<script src="js/scrollTo.js"         type="text/javascript"></script>
+		<script src="js/global.js"           type="text/javascript"></script>
 		<script type="text/javascript">
 			$(function(){
 				$("#talktous-nav, #findstadarena-nav, #emaildeals-nav, #product-nav, #faq-nav").scrollTo({ offset:-54 });
