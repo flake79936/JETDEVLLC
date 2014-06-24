@@ -13,7 +13,7 @@
 	font-size:     14px;
 	border:        1px solid #542437;
 	border-radius: 10px;
-	width:         600px;
+	width:         900px;
 	padding:       10px;
 	background:    #fff;
 }
@@ -100,6 +100,6 @@
 }
 
 .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
-	height: 300px;
+	height: auto;
 	border: 1px solid #542437;
 }
