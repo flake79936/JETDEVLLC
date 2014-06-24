@@ -71,8 +71,14 @@
 		</script>
 		
 		<!--date pickers-->
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/south-street/jquery-ui.css"> 
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script> 
+		<script type="text/javascript" src="js/jquery.validate.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.datepicker.validation.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
+				$('#validBeforeDatepicker,#validAfterDatepicker').datepicker();
 				$("#EstartDate").datepicker();
 				$("#EendDate").datepicker();
 			});
