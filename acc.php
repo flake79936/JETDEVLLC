@@ -17,7 +17,7 @@
 
 	mysqli_select_db($con, "EventAdvisor");
 	
-	$sql = "SELECT Evename FROM Events WHERE UuserName = 'ecorral2'";
+	$sql = "SELECT Evename FROM Events WHERE UuserName = '" . $usrname . "'";
 	
 	$result = mysqli_query($con, $sql);
 ?>
