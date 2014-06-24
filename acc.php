@@ -17,7 +17,7 @@
 
 	mysqli_select_db($con, "EventAdvisor");
 	
-	$sql = "SELECT Evename FROM Events WHERE UuserName = '" . $usrname . "'";
+	$sql = "SELECT Evename, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
 	
 	$result = mysqli_query($con, $sql);
 ?>
@@ -35,6 +35,8 @@
 		<?PHP
 			$i = 0;
 			while($row = mysqli_fetch_array($result)){ 
+			
+			$street = $row['Eaddress'] . ", " . $row['Ecity'] . ", " . $row['Estate'] . ", " . $row['Ezip'];
 		?>
 			<div class="accordion vertical">
 				<ul>
@@ -44,6 +46,12 @@
 						<div class="content">
 							<h3>hello test</h3>
 							<p><?= $row['Evename'] ?></p>
+							<p><iframe
+								width="600"
+								height="450"
+								frameborder="0" style="border:0"
+								src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0uLEbR6K9fehSmaCyR4-NdWmIUaYevjY&q=<?= $street?>">
+							</iframe></p>
 						</div>
 					</li>
 				</ul>
