@@ -27,15 +27,16 @@
 		<script src="scripts/pwdwidget.js" type="text/javascript"></script>
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-				<!--code for tooltip-->
+		
+		<!--code for tooltip-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="/resources/demos/style.css">
 		<script>
-  		$(function() {
-		$( document ).tooltip();
-  		});
+			$(function() {
+				$( document ).tooltip();
+			});
 		</script>
 		<script>
 			function goBack() {
@@ -43,24 +44,12 @@
 			}
 		</script>
 		<script>
-  			$(function() {
-   			 $( "#progressbar" ).progressbar({
-     		 value: 20
-   		});
-  		});
+			$(function() {
+				$( "#progressbar" ).progressbar({
+					value: 20
+				});
+			});
   		</script>
-	<!-- 
-	<style>
-  		label {
-		display: inline-block;
-		width: 5em;
-  		}
-		</style>
- -->
-		
-		
-	
-		
 	</head>
 	
 	<body>
@@ -172,7 +161,6 @@
 			frmvalidator.addValidation("Uemail",    "req", "Please Please fill in Name");
 			frmvalidator.addValidation("Uphone",    "req", "Please Provide a Phone Number");
 			//frmvalidator.addValidation("Uadmin",    "req", "Please fill in Name");
-			
 			
 			// ]]>
 		</script>

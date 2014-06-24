@@ -40,9 +40,6 @@
 		$( document ).tooltip();
   		});
 		</script>
-
-		
-		
 		<!--Calendar-->
 		
 		<!--Script to show whether the event is 'Other'-->
@@ -85,7 +82,6 @@
 				window.history.back()
 			}
 		</script>
-		
 	</head>
 	
 	<body>
@@ -101,23 +97,6 @@
 						<input type="text" class="spmhidip" name="<?php echo $fgmembersite->GetSpamTrapInputName(); ?>" />
 
 						<tr><td><span class="error"><?php echo $fgmembersite->GetErrorMessage(); ?></span></td></tr>
-						
-						<!--<tr>-->
-							<!--First Name-->
-							<!--<td class="container">
-								<label for="Efname">First Name*: </label><br/>
-								<input type="text" name="Efname" title="Enter your First Name" id="Efname" value="<?php echo $fgmembersite->SafeDisplay('Efname') ?>" maxlength="50" /><br/>
-								<span id="event_Efname_errorloc" class="error"></span>
-							</td>-->
-							
-							<!--Last Name-->
-							<!--<td class="container">
-								<label for="Elname">Last Name*: </label><br/>
-								<input type="text" name="Elname" title="Enter your Last Name" id="Elname" value="<?php echo $fgmembersite->SafeDisplay('Elname') ?>" maxlength="50" /><br/>
-								<span id="event_Elname_errorloc" class="error"></span>
-							</td>
-						</tr>-->
-						
 						
 						<tr>
 							<!--Event Name-->
@@ -185,7 +164,6 @@
 							</td>
 						</tr>
 						
-
 						<tr>
 							<!--Type of Event-->
 							<td class="container">
@@ -218,12 +196,14 @@
 								<input type="text" name="Edescription" title="Enter the Description of the Event" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>" maxlength="50" /><br/>
 								<span id="event_Edescription_errorloc" class="error"></span>
 							</td>
+							
 							<!--hastags-->
 							<td class="container">
 								<label for="Ehashtage">Hastags: </label><br/>
 								<input type="text" name="Ehashtage" title="Enter Hashtag" id="Ehashtage" value="<?php echo $fgmembersite->SafeDisplay("Ehashtage") ?>" maxlength="50" /><br/>
 								<span id="event_Ehashtage_errorloc" class="error"></span>
 							</td>
+							
 							<!--website-->
 							<td class="container">
 								<label for="Ewebsite">Website*: </label><br/>
@@ -239,12 +219,14 @@
 								<input type="text" name="Efacebook" title="Enter Facebook Website" id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="20" /><br/>
 								<span id="event_Efacebook_errorloc" class="error"></span>
 							</td>
+							
 							<!--twitter-->
 							<td class="container">
 								<label for="Etwitter">Twitter: </label><br/>
 								<input type="text" name="Etwitter" title="Enter Twitter Username" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="20" /><br/>
 								<span id="event_Etwitter_errorloc" class="error"></span>
 							</td>
+							
 							<!--google+-->
 							<td class="container">
 								<label for="Egoogle">Google+: </label><br/>
@@ -270,8 +252,6 @@
 			frmvalidator.EnableOnPageErrorDisplay();
 			frmvalidator.EnableMsgsTogether();
 			
-			//frmvalidator.addValidation("Efname",       "req", "Please fill in First Name");
-			//frmvalidator.addValidation("Elname",       "req", "Please fill in Last Name");
 			frmvalidator.addValidation("Evename",      "req", "Please fill in Event Name");
 			frmvalidator.addValidation("Eaddress",     "req", "Please fill in address");
 			frmvalidator.addValidation("Ecity",        "req", "Please fill in City");
@@ -280,9 +260,8 @@
 			frmvalidator.addValidation("EphoneNumber", "req", "Please fill in Phone Number");
 			frmvalidator.addValidation("EstartDate",   "req", "Please Select a Start Date");
 			frmvalidator.addValidation("EendDate",     "req", "Please Select an End Date");
-			//frmvalidator.addValidation("Etype",        "req", "Please fill in Type of Event");
+			frmvalidator.addValidation("Etype",        "req", "Please fill in Type of Event");
 			frmvalidator.addValidation("Edescription", "req", "Please fill in Description");
-			//test
 			// ]]>
 		</script>
 	</body>

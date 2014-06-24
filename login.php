@@ -17,28 +17,24 @@
 		
 		<!--Scripts-->
 		<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
+		
 		<!--Go Back function-->
 		<script>
 			function goBack() {
 				window.history.back()
 			}
 		</script>
+		
 		<!--code for tooltip-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="/resources/demos/style.css">
 		<script>
-  		$(function() {
-		$( document ).tooltip();
-  		});
+			$(function() {
+				$( document ).tooltip();
+			});
 		</script>
-		<style>
-  		label {
-		display: inline-block;
-		width: 5em;
-  		}
-		</style>
 	</head>
 	<body>
 		<!-- Form Code Start -->
@@ -73,8 +69,6 @@
 					<div class='short_explanation'><a href='registration.php'>Register Here</a></div>
 				</fieldset>
 			</form>
-			<!-- client-side Form Validations:
-			Uses the excellent form validation script from JavaScript-coder.com-->
 
 			<script type='text/javascript'>
 				// <![CDATA[
@@ -90,6 +84,5 @@
 				// ]]>
 			</script>
 		</div>
-		<!--Form Code End (see html-form-guide.com for more info.)-->
 	</body>
 </html>

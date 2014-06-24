@@ -40,8 +40,6 @@
 					</div>
 				</fieldset>
 			</form>
-			<!-- client-side Form Validations:
-			Uses the excellent form validation script from JavaScript-coder.com-->
 
 			<script type='text/javascript'>
 				// <![CDATA[
@@ -56,6 +54,5 @@
 				// ]]>
 			</script>
 		</div>
-		<!--Form Code End (see html-form-guide.com for more info.)-->
 	</body>
 </html>

@@ -9,7 +9,6 @@
 		if($fgmembersite->ChangePassword()){
 		    $fgmembersite->LogOut();
 			$fgmembersite->RedirectToURL("index.php");
-			
 		}
 	}
 ?>
@@ -28,8 +27,8 @@
 				window.history.back()
 			}
 		</script>
-		     
 	</head>
+	
 	<body>
 		<!--Form Code Start-->
 		<div id='fg_membersite'>
@@ -92,6 +91,5 @@
 
 			<p><a href='login-home.php'>Home</a></p>
 		</div>
-		<!--Form Code End (see html-form-guide.com for more info.)-->
 	</body>
 </html>

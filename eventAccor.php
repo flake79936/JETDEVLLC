@@ -26,8 +26,6 @@
 	<head>
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
 		<link href="css/accordion.css" rel="stylesheet" type="text/css" />
-		
-		
 	</head>
 	
 	<body >
