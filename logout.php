@@ -1,8 +1,8 @@
+<meta http-equiv="refresh" content="2; index.php">
+
 <?PHP
 	require_once("./include/membersite_config.php");
 	$fgmembersite->LogOut();
-// 	$fgmembersite->RedirectToURL("index.php");
-	
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -15,6 +15,5 @@
 	</head>
 	<body>
 		<h2>You have logged out</h2>
-		<p><a href='login.php'>Login Again</a></p>
 	</body>
 </html>
