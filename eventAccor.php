@@ -40,8 +40,12 @@
 					while($row = mysqli_fetch_array($result)){ 
 					
 					//if the street name contains two or more words, the map will not recognize the street.
-					$street = $row['Eaddress'] . ", " . $row['Ecity'] . ", " . $row['Estate'] . " " . $row['Ezip'];
-					
+					$address = $row['Eaddress'] . ", " . $row['Ecity'] . ", " . $row['Estate'] . " " . $row['Ezip'];
+					$expression = "/\s/";
+					$replace = "+";
+
+					$street = preg_replace($expression, $replace, $address);
+
 					echo $street;
 				?>
 					<div class="accordion vertical">
