@@ -45,8 +45,6 @@
 					$replace = "+";
 
 					$street = preg_replace($expression, $replace, $address);
-
-					echo $street;
 				?>
 					<div class="accordion vertical">
 						<ul>

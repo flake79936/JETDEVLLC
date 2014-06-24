@@ -8,7 +8,7 @@
 	
 	if(isset($_POST["submitted"])){
 		if($fgmembersite->CreateEvent()){
-			$fgmembersite->RedirectToURL("EventCreation.php");
+			$fgmembersite->RedirectToURL("event_thank_you.php");
 		}
 	}
 ?>
