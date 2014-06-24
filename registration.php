@@ -50,6 +50,22 @@
 				});
 			});
   		</script>
+  		
+  		<script type="text/javascript">
+        function check() {
+            var completion = 0;
+            if (document.getElementById("UFname").value != "") {
+                completion++;
+            }
+            if (document.getElementById("ULname").value != "") {
+                completion++;
+            }
+            if (document.getElementById("UuserName").value != "") {
+                completion++;
+            }
+            document.getElementById("progressbar").style.width = completion * 20 + "px";
+       	 }
+		</script>
 	</head>
 	
 	<body>
