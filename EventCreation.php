@@ -216,21 +216,21 @@
 							<!--Facebook-->
 							<td class="container">
 								<label for="Efacebook">FaceBook: </label><br/>
-								<input type="text" name="Efacebook" title="Enter Facebook Website" id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="20" /><br/>
+								<input type="text" name="Efacebook" title="Enter Facebook Website" id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="50" /><br/>
 								<span id="event_Efacebook_errorloc" class="error"></span>
 							</td>
 							
 							<!--twitter-->
 							<td class="container">
 								<label for="Etwitter">Twitter: </label><br/>
-								<input type="text" name="Etwitter" title="Enter Twitter Username" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="20" /><br/>
+								<input type="text" name="Etwitter" title="Enter Twitter Username" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="50" /><br/>
 								<span id="event_Etwitter_errorloc" class="error"></span>
 							</td>
 							
 							<!--google+-->
 							<td class="container">
 								<label for="Egoogle">Google+: </label><br/>
-								<input type="text" name="Egoogle" title="Enter Google+ Username " id="Egoogle" value="<?php echo $fgmembersite->SafeDisplay("Egoogle") ?>" maxlength="20" /><br/>
+								<input type="text" name="Egoogle" title="Enter Google+ Username " id="Egoogle" value="<?php echo $fgmembersite->SafeDisplay("Egoogle") ?>" maxlength="50" /><br/>
 								<span id="event_Egoogle_errorloc" class="error"></span>
 							</td>
 						</tr>

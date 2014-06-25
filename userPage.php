@@ -89,7 +89,7 @@
 				<!--<li><a class="mobile-nav" href="#emaildeals">Email Deals</a></li>-->
 				<!--<li><a class="mobile-nav" href="#product">Product</a></li>-->
 				<li><a class="mobile-nav" href="#Events">Events</a></li>
-				<li><a class="mobile-nav" href="#"><span class="icon-lock"></span> Login</a></li>
+				<li><a class="mobile-nav" href="login.php"><span class="icon-lock"></span> Login</a></li>
 			</ul>   
 		</div><!--//mobile-menu-list-->
 

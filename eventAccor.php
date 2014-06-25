@@ -77,9 +77,22 @@
 									<p><?= $row['Edescription'] ?></p>
 									<p><?= $row['Ewebsite'] ?></p>
 									<p><?= $row['Ehashtag'] ?></p>
-									<p><?= $row['Efacebook'] ?></p>
-									<p><?= $row['Etwitter'] ?></p>
-									<p><?= $row['Egoogle'] ?></p>	
+									
+									<a href="<?= $row['Efacebook'] ?>" >
+									<img src="./img/icons/facebook.ico"
+								    width="54" height="54" title="Facebook" 
+								    border="0" style="display:inline;"></a>
+									
+									<a href="<?= $row['Etwitter'] ?>" >
+									<img src="./img/icons/twitter.ico"
+								    width="54" height="54" title="twitter" 
+								    border="0" style="display:inline;"></a>
+								    
+									<a href="<?= $row['Egoogle'] ?>" rel="publisher" >
+									<img src="./img/icons/googleplus.ico"
+								    width="54" height="54" title="google+" 
+								    border="0" style="display:inline;"></a>
+								    <p><?= $row['Eother'] ?></p>	
 									<p><iframe
 										width="300"
 										height="150"
@@ -95,3 +108,4 @@
 		</div>
 	</body>
 </html>
+<?PHP mysqli_close($con) ?>
