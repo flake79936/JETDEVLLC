@@ -75,7 +75,7 @@
 									<p><?= $row['Evename'] ?></p>
 									<p><?= $row['Eaddress'] ?></p>
 									<p><?= $row['Edescription'] ?></p>
-								<link rel="icon" type="image/ico" href="./img/twitter.ico"><?= $row['Ewebsite'] ?></link>	<p><?= $row['Ewebsite'] ?></p>
+									<p><?= $row['Ewebsite'] ?></p>
 									<p><?= $row['Ehashtag'] ?></p>
 									<p><?= $row['Efacebook'] ?></p>
 									<p><?= $row['Etwitter'] ?></p>
