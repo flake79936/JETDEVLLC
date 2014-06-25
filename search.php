@@ -31,7 +31,8 @@ if($searchTerm == "")
 	mysqli_select_db($con, "EventAdvisor");
 	
 // 	$sql = "SELECT Evename, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
-	$sql = "SELECT Evename, EstartDate, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE Ecity LIKE '" . $searchTerm . "' ORDER BY EstartDate";
+	$sql = "SELECT Evename, EstartDate, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE Ecity LIKE '" . $searchTerm . "' UNION ALL
+	SELECT Evename, EstartDate, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE Estate LIKE '" . $searchTerm . "' ORDER BY EstartDate";
 	
 	$result = mysqli_query($con, $sql);
 	
@@ -95,7 +96,7 @@ by counting the number of results returned */
 								<label for="radio-<?= $i?>"><?= $row['Evename'] ?></label>
 								<!-- <label for="radio-<?= $i?>">Event <?= $i?></label> -->
 								<div class="content">
-									<!-- <h3>hello test</h3 -->>
+									<!-- <h3>hello test</h3 -->
 									<p><?= $row['Evename'] ?></p>
 									<p><?= $row['Eaddress'] ?></p>
 									<p><?= $row['Edescription'] ?></p>
