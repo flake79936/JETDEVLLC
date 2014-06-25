@@ -72,27 +72,28 @@
 								<!-- <label for="radio-<?= $i?>">Event <?= $i?></label> -->
 								<div class="content">
 									<!-- <h3>hello test</h3 -->
+									<!-- <h3>hello test</h3 -->
 									<p><?= $row['Evename'] ?></p>
 									<p><?= $row['Eaddress'] ?></p>
 									<p><?= $row['Edescription'] ?></p>
-									<p><?= $row['Ewebsite'] ?></p>
+									<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
 									<p><?= $row['Ehashtag'] ?></p>
 									
-									<a href="<?= $row['Efacebook'] ?>" >
+									<a href="<?= $row['Efacebook'] ?>" target="_blank" >
 									<img src="./img/icons/facebook.ico"
-								    width="54" height="54" title="Facebook" 
+								    width="20" height="20" title="Facebook" 
 								    border="0" style="display:inline;"></a>
 									
-									<a href="<?= $row['Etwitter'] ?>" >
+									<a href="<?= $row['Etwitter'] ?>" target="_blank">
 									<img src="./img/icons/twitter.ico"
-								    width="54" height="54" title="twitter" 
+								    width="20" height="20" title="twitter" 
 								    border="0" style="display:inline;"></a>
 								    
-									<a href="<?= $row['Egoogle'] ?>" rel="publisher" >
+									<a href="<?= $row['Egoogle'] ?>" rel="publisher" target="_blank">
 									<img src="./img/icons/googleplus.ico"
-								    width="54" height="54" title="google+" 
+								    width="20" height="20" title="google+" 
 								    border="0" style="display:inline;"></a>
-								    <p><?= $row['Eother'] ?></p>	
+								    <p><?= $row['Eother'] ?></p>		
 									<p><iframe
 										width="300"
 										height="150"
