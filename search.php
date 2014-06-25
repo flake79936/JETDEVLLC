@@ -14,7 +14,7 @@ $searchTerm = trim($_GET['Search']);
 //check whether the name parsed is empty
 if($searchTerm == "")
 {
-	echo "Enter name you are searching for.";
+	echo "No events found, Please try again.";
 	exit();
 }
 
