@@ -9,7 +9,7 @@
 // 	$usrname = $fgmembersite->UsrName();
 // 	
 //capture search term and remove spaces at its both ends if the is any
-$searchTerm = trim($_GET['Esearch']);
+$searchTerm = trim($_GET['Search']);
 
 //check whether the name parsed is empty
 if($searchTerm == "")
@@ -22,7 +22,8 @@ if($searchTerm == "")
 
 
 	
-	$con = mysqli_connect('localhost', 'root', 'password', 'EventAdvisor');
+ 	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
+//  $con = mysqli_connect('localhost', 'root', 'password', 'EventAdvisor');
 	
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
@@ -68,6 +69,15 @@ by counting the number of results returned */
 	<head>
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
 		<link href="css/accordion.css" rel="stylesheet" type="text/css" />
+		
+		<!-- Script -->
+		<script>
+			function goBack() {
+				window.history.back()
+			}
+		</script>
+<!-- End of Script		 -->
+
 	</head>
 	
 	<body >
@@ -78,6 +88,9 @@ by counting the number of results returned */
 				<p>Logged in as: <?= $fgmembersite->UserFullName() ?></p>
 				<p>Logged in as: <?= $usrname?></p>
  -->
+ 
+ 		<input type="button" onclick="goBack();" value="Go Back" />
+ 		
 				<?PHP
 					$i = 0;
 					while($row = mysqli_fetch_array($result)){ 

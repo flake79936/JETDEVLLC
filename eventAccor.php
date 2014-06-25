@@ -9,7 +9,8 @@
 	$usrname = $fgmembersite->UsrName();
 	
 	
-	$con = mysqli_connect('localhost', 'root', 'password', 'EventAdvisor');
+//  $con = mysqli_connect('localhost', 'root', 'password', 'EventAdvisor');
+ 	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
 	
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
@@ -21,12 +22,26 @@
 	$sql = "SELECT Evename, EstartDate, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "' ORDER BY EstartDate";
 	
 	$result = mysqli_query($con, $sql);
+	
+//Script
+
+	
+	
 ?>
 
 <html>
 	<head>
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
 		<link href="css/accordion.css" rel="stylesheet" type="text/css" />
+		
+<!-- Script -->
+		<script>
+			function goBack() {
+				window.history.back()
+			}
+		</script>
+<!-- End of Script		 -->
+
 	</head>
 	
 	<body >
@@ -35,6 +50,8 @@
 				<!--displays the full name and username of the user-->
 				<p>Logged in as: <?= $fgmembersite->UserFullName() ?></p>
 				<p>Logged in as: <?= $usrname?></p>
+				
+				<input type="button" onclick="goBack();" value="Go Back" />
 		
 				<?PHP
 					$i = 0;
@@ -54,7 +71,7 @@
 								<label for="radio-<?= $i?>"><?= $row['Evename'] ?></label>
 								<!-- <label for="radio-<?= $i?>">Event <?= $i?></label> -->
 								<div class="content">
-									<!-- <h3>hello test</h3 -->>
+									<!-- <h3>hello test</h3 -->
 									<p><?= $row['Evename'] ?></p>
 									<p><?= $row['Eaddress'] ?></p>
 									<p><?= $row['Edescription'] ?></p>

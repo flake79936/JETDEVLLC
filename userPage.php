@@ -59,7 +59,8 @@
 				</ul><!--//head-social-icons-->
 
 				<ul class="nav">
-					<li><a href="./eventCreation.php">Create Event</a></li>
+					<li><a href="./EventCreation.php">Create Event</a></li>
+					<li><a href="./Search-Form.php">Search</a></li>
 					
 					<li><span class="shadow">|</span></li>
 					
