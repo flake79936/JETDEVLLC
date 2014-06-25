@@ -19,7 +19,7 @@
 	mysqli_select_db($con, "EventAdvisor");
 	
 // 	$sql = "SELECT Evename, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
-	$sql = "SELECT Evename, EstartDate, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "' ORDER BY EstartDate";
+	$sql = "SELECT * FROM Events WHERE UuserName = '" . $usrname . "' ORDER BY EstartDate";
 	
 	$result = mysqli_query($con, $sql);
 	
@@ -75,6 +75,11 @@
 									<p><?= $row['Evename'] ?></p>
 									<p><?= $row['Eaddress'] ?></p>
 									<p><?= $row['Edescription'] ?></p>
+								<link rel="icon" type="image/ico" href="./img/twitter.ico"><?= $row['Ewebsite'] ?></link>	<p><?= $row['Ewebsite'] ?></p>
+									<p><?= $row['Ehashtag'] ?></p>
+									<p><?= $row['Efacebook'] ?></p>
+									<p><?= $row['Etwitter'] ?></p>
+									<p><?= $row['Egoogle'] ?></p>	
 									<p><iframe
 										width="300"
 										height="150"

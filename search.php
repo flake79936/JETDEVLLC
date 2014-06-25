@@ -32,8 +32,8 @@ if($searchTerm == "")
 	mysqli_select_db($con, "EventAdvisor");
 	
 // 	$sql = "SELECT Evename, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
-	$sql = "SELECT Evename, EstartDate, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE Ecity LIKE '" . $searchTerm . "' UNION ALL
-	SELECT Evename, EstartDate, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE Estate LIKE '" . $searchTerm . "' ORDER BY EstartDate";
+	$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $searchTerm . "' UNION ALL
+	SELECT * FROM Events WHERE Estate LIKE '" . $searchTerm . "' ORDER BY EstartDate";
 	
 	$result = mysqli_query($con, $sql);
 	
@@ -113,6 +113,11 @@ by counting the number of results returned */
 									<p><?= $row['Evename'] ?></p>
 									<p><?= $row['Eaddress'] ?></p>
 									<p><?= $row['Edescription'] ?></p>
+									<p><?= $row['Ewebsite'] ?></p>
+									<p><?= $row['Ehashtag'] ?></p>
+									<p><?= $row['Efacebook'] ?></p>
+									<p><?= $row['Etwitter'] ?></p>
+									<p><?= $row['Egoogle'] ?></p>																												
 									<p><iframe
 										width="300"
 										height="150"
