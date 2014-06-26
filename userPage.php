@@ -42,7 +42,7 @@
 		</script>
 	</head>
 	
-	<body style="background-color: black;">
+	<body>
 		<div class="header-wrap">
 			<div class="header">
 				<a class="logout-btn" href='logout.php'>Log Out</a>
@@ -53,7 +53,7 @@
 				</ul><!--//head-social-icons-->
 
 				<ul class="nav">
-					<li><a href="./EventCreation.php">Create Event</a></li>
+					<li><a href="./eventCreation.php">Create Event</a></li>
 					
 					<li><span class="shadow">|</span></li>
 					
@@ -77,12 +77,9 @@
 		
 		<div class="mobile-menu-list">
 			<ul>
-				<li><a class="mobile-nav" href="#createEvent">createEvent</a></li>
-				<!--<li><a class="mobile-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
-				<!--<li><a class="mobile-nav" href="#emaildeals">Email Deals</a></li>-->
-				<li><a class="mobile-nav" href="./Search-Form.php">Search</a></li>
+				<li><a href="./EventCreation.php">createEvent</a></li>
+				<li><a href="./Search-Form.php">Search</a></li>
 				<li><a class="mobile-nav" href="#Events">Events</a></li>
-				<li><a class="mobile-nav" href="./login.php"><span class="icon-lock"></span> Login</a></li>
 			</ul>   
 		</div><!--//mobile-menu-list-->
 	</body>

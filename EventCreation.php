@@ -24,20 +24,50 @@
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" href="/resources/demos/style.css">
 		
+		<!--(Start) Provided by JetDevLLC-->
+		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css"            rel="stylesheet" type="text/css" />
+		<link href="css/responsive.css"       rel="stylesheet" type="text/css" />
+		<link href="favicon.ico"              rel="shortcut icon"  />	
+		<!--[if IE 6]>
+		<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
+		</style>
+		<![endif]-->
+		<!--(End) Provided by JetDevLLC-->
+		<!--(End) Style Sheets-->
+		
 		<!--Scripts-->
 		<script type="text/javascript" src="scripts/gen_validatorv31.js"></script>
+		
 		<script src="scripts/pwdwidget.js" type="text/javascript"></script>
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		
-						<!--code for tooltip-->
+		<!--(Start) Provided by JetDevLLC-->
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+		<script src="js/iepngfix_tilebg.js"  type="text/javascript"></script>
+		<script src="js/scrollTo.js"         type="text/javascript"></script>
+		<script src="js/global.js"           type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".mobile-menu-list").hide();
+				$('.mobile-menu-btn').click(function(){
+					$(this).toggleClass("active");
+					$(".mobile-menu-list").slideToggle(200);
+				});
+			});
+		</script>
+		<!--(End) Provided by JetDevLLC-->
+		<!--(End) Scripts-->
+		
+		<!--code for tooltip-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="/resources/demos/style.css">
 		<script>
   		$(function() {
-		$( document ).tooltip();
+			$( document ).tooltip();
   		});
 		</script>
 		<!--Calendar-->
@@ -57,6 +87,7 @@
 				}).change();
 			});
 		</script>
+		
 		<!--Counts the number of characters-->
 		<script type="text/javascript">
 			function textCounter(field, cnt, maxlimit) {         
@@ -85,9 +116,45 @@
 	</head>
 	
 	<body>
-		<div id='fg_membersite'>
+		<div class="header-wrap">
+			<div class="header">
+				<!--<a class="login-btn" href="login.php">Log In</a>-->
+				<ul class="head-social-icons">
+					<li><a class="facebook"   href="#"></a></li>
+					<li><a class="twitter"    href="#"></a></li>
+					<li><a class="googleplus" href="#"></a></li>
+				</ul><!--//head-social-icons-->
+
+				<ul class="nav">
+					<li><a id="talktous-nav" href="#talktous">Talk to Us</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a id="emaildeals-nav" href="#emaildeals">Email Deals</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a id="product-nav" href="#product">Product</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a href="#Events">Events</a></li>
+					<!--<li><a id="faq-nav" href="#faq">Event</a></li>-->
+				</ul>
+				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
+			</div><!--//header-->
+		</div><!--//header-wrap-->
+
+		<div class="mobile-menu-list">
+			<ul>
+				<li><a class="mobile-nav" href="#talktous">Talk to Us</a></li>
+				<li><a class="mobile-nav" href="#findstadarena">Find a Stadium/Arena</a></li>
+				<li><a class="mobile-nav" href="#emaildeals">Email Deals</a></li>
+				<li><a class="mobile-nav" href="#product">Product</a></li>
+				<li><a class="mobile-nav" href="#faq">FAQ</a></li>
+				<li><a class="mobile-nav" href="#"><span class="icon-lock"></span> Login</a></li>
+			</ul>   
+		</div><!--//mobile-menu-list-->
+		
+		<div id='fg_membersite' align="center">
 			<form id="event" action="<?php echo $fgmembersite->GetSelfScript(); ?>" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
-				<fieldset>
+				<fieldset align="left">
 					<table>
 						<legend>Event Info</legend>
 

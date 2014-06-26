@@ -3,6 +3,7 @@ You can customize all the aspects of the form in this style sheet*/
 
 #fg_membersite fieldset{
 	width:                 316px;
+	margin-top:            65px;
 	padding:               20px;
 	border:                1px solid #ccc;
 	-moz-border-radius:    10px;

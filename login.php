@@ -110,7 +110,7 @@
 		<!-- Form Code Start -->
 		<div id='fg_membersite' align="center">
 			<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-				<fieldset>
+				<fieldset align="left">
 					<legend>Login</legend>
 
 					<input type='hidden' name='submitted' id='submitted' value='1'/>
