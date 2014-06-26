@@ -18,8 +18,6 @@
 	$sql = "SELECT * FROM Events WHERE UuserName = '" . $usrname . "' ORDER BY EstartDate";
 	
 	$result = mysqli_query($con, $sql);
-	
-//Script
 ?>
 
 <html>
@@ -27,32 +25,39 @@
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
 		<link href="css/accordion.css" rel="stylesheet" type="text/css" />
 		
-<!-- Script -->
+		<!-- Script -->
 		<script>
 			function goBack() {
 				window.history.back()
 			}
 		</script>
-<!-- End of Script		 -->
+		<!-- End of Script		 -->
 	
-<!-- Twitter script -->
+		<!-- Twitter script -->
 		<script>
-			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
-			if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";
-			fjs.parentNode.insertBefore(js,fjs);}}
-			(document,"script","twitter-wjs");
+			!function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0];
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;js.src="//platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}(document,"script","twitter-wjs");
 		</script>
-<!-- End of Twitter script -->
+		<!-- End of Twitter script -->
 
-<!-- Hashtag script -->
+		<!-- Hashtag script -->
 		<script>
-			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-			if(!d.getElementById(id)){js=d.createElement(s);
-			js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-			fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+			!function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}(document, 'script', 'twitter-wjs');
 		</script>
-<!-- End Hashtag script -->
-
+		<!-- End Hashtag script -->
 	</head>
 	
 	<body >
