@@ -24,14 +24,16 @@
 	<head>
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
 		<link href="css/accordion.css" rel="stylesheet" type="text/css" />
-		
-		<!-- Script -->
-		<script>
-			function goBack() {
-				window.history.back()
-			}
-		</script>
-		<!-- End of Script		 -->
+		<!--(Start) Provided by JetDevLLC-->
+		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css"            rel="stylesheet" type="text/css" />
+		<link href="css/responsive.css"       rel="stylesheet" type="text/css" />
+		<link href="favicon.ico"              rel="shortcut icon"  />	
+		<!--[if IE 6]>
+		<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
+		</style>
+		<![endif]-->
+		<!--(End) Provided by JetDevLLC-->
 	
 		<!-- Twitter script -->
 		<script>
@@ -58,17 +60,58 @@
 			}(document, 'script', 'twitter-wjs');
 		</script>
 		<!-- End Hashtag script -->
+		
+		<!--(Start) Provided by JetDevLLC-->
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+		<script src="js/iepngfix_tilebg.js"  type="text/javascript"></script>
+		<script src="js/scrollTo.js"         type="text/javascript"></script>
+		<script src="js/global.js"           type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".mobile-menu-list").hide();
+				$('.mobile-menu-btn').click(function(){
+					$(this).toggleClass("active");
+					$(".mobile-menu-list").slideToggle(200);
+				});
+			});
+		</script>
+		<!--(End) Provided by JetDevLLC-->
+		<!--(End) Scripts-->
+		
 	</head>
 	
 	<body >
+		<div class="header-wrap">
+			<div class="header">
+				<a class="logout-btn" href='logout.php'>Log Out</a>
+				<ul class="head-social-icons">
+					<!---<li><a class="facebook"   href="#"></a></li>
+					<li><a class="twitter"    href="#"></a></li>
+					<li><a class="googleplus" href="#"></a></li>-->
+					<li>Welcome Back! <?= $fgmembersite->UserFullName() ?>!</li>
+				</ul><!--//head-social-icons-->
+
+				<ul class="nav">
+					<li><a href="./userPage.php">User Page</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a href="./eventCreation.php">Create Event</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a href="./searchForm.php">Search Events</a></li>
+				</ul>
+				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
+			</div><!--//header-->
+		</div><!--//header-wrap-->
+		
+		<div class="mobile-menu-list">
+			<ul>
+				<li><a href="./EventCreation.php">createEvent</a></li>
+				<li><a href="./searchForm.php">Search</a></li>
+				<li><a href="#Events">Events</a></li>
+			</ul>   
+		</div><!--//mobile-menu-list-->
+		
 		<div id="main_container">
 			<div id='middle_box'>
-				<!--displays the full name and username of the user-->
-				<p>Logged in as: <?= $fgmembersite->UserFullName() ?></p>
-				<p>Logged in as: <?= $usrname?></p>
-				
-				<input type="button" onclick="goBack();" value="Go Back" />
-		
 				<?PHP
 					$i = 0;
 					while($row = mysqli_fetch_array($result)){ 

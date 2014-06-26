@@ -55,22 +55,10 @@
 
 				<ul class="nav">
 					<li><a href="./eventCreation.php">Create Event</a></li>
-					
 					<li><span class="shadow">|</span></li>
-					
-					<li><a href="./searchForm.php">Search</a></li>
-					
-					<!--<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
-					
-					<!--<li><a id="emaildeals-nav" href="#emaildeals">Email Deals</a></li>-->
-					
+					<li><a href="./searchForm.php">Search Events</a></li>
 					<li><span class="shadow">|</span></li>
-					
 					<li><a href="./eventAccor.php">Your Events</a></li>
-					
-					<li><span class="shadow">|</span></li>
-					
-					<li><a href="#events">Events</a></li>
 				</ul>
 				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
 			</div><!--//header-->
@@ -80,7 +68,7 @@
 			<ul>
 				<li><a href="./EventCreation.php">createEvent</a></li>
 				<li><a href="./searchForm.php">Search</a></li>
-				<li><a class="mobile-nav" href="#Events">Events</a></li>
+				<li><a href="#Events">Events</a></li>
 			</ul>   
 		</div><!--//mobile-menu-list-->
 	</body>

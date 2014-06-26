@@ -5,6 +5,11 @@
 			$fgmembersite->RedirectToURL("userPage.php");
 		}
 	}*/
+	
+	if(!$fgmembersite->CheckLogin()){
+		$fgmembersite->RedirectToURL("index.php");
+		exit;
+	}
 ?>
 
 <html dir="ltr" lang="en-US" >
@@ -33,13 +38,6 @@
 		
 		<!--(Start) Scripts-->
 		<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-		
-		<!--Go Back function-->
-		<script>
-			function goBack() {
-				window.history.back()
-			}
-		</script>
 		
 		<!--code for tooltip-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
@@ -82,23 +80,11 @@
 				</ul><!--//head-social-icons-->
 
 				<ul class="nav">
+					<li><a href="./userPage.php">User Page</a></li>
+					<li><span class="shadow">|</span></li>
 					<li><a href="./eventCreation.php">Create Event</a></li>
-					
 					<li><span class="shadow">|</span></li>
-					
-					<li><a href="./searchForm.php">Search</a></li>
-					
-					<!--<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
-					
-					<!--<li><a id="emaildeals-nav" href="#emaildeals">Email Deals</a></li>-->
-					
-					<li><span class="shadow">|</span></li>
-					
 					<li><a href="./eventAccor.php">Your Events</a></li>
-					
-					<li><span class="shadow">|</span></li>
-					
-					<li><a href="#events">Events</a></li>
 				</ul>
 				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
 			</div><!--//header-->
@@ -108,7 +94,7 @@
 			<ul>
 				<li><a href="./EventCreation.php">createEvent</a></li>
 				<li><a href="./searchForm.php">Search</a></li>
-				<li><a class="mobile-nav" href="#Events">Events</a></li>
+				<li><a href="#Events">Events</a></li>
 			</ul>   
 		</div><!--//mobile-menu-list-->
 		
@@ -129,7 +115,6 @@
 					</div>
 					
 					<input type="submit" value="Search" />
-					<input type="button" onclick="goBack();" value="Go Back" />
 				</fieldset>
 			</form>
 		</div>

@@ -1,34 +1,32 @@
 <?PHP
 	require_once("./include/membersite_config.php");
-// 	if(!$fgmembersite->CheckLogin()){
-// 		$fgmembersite->RedirectToURL("login.php");
-// 		exit;
-// 	}
-// 	
-//capture search term and remove spaces at its both ends if the is any
-$searchTerm = trim($_GET['Search']);
+ 	if(!$fgmembersite->CheckLogin()){
+ 		$fgmembersite->RedirectToURL("login.php");
+ 		exit;
+ 	}
+ 	
+	//capture search term and remove spaces at its both ends if the is any
+	$searchTerm = trim($_GET['Search']);
 
-//check whether the name parsed is empty
-if($searchTerm == "")
-{
-	echo "No events found, Please try again.";
-	exit();
-}
+	//check whether the name parsed is empty
+	if($searchTerm == ""){
+		echo "No events found, Please try again.";
+		exit();
+	}
 
- 	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
-	
+	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
+
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
 	}
 
 	mysqli_select_db($con, "EventAdvisor");
-	
-// 	$sql = "SELECT Evename, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
-	$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $searchTerm . "' UNION ALL
+
+	// 	$sql = "SELECT Evename, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
+	$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $searchTerm . "' UNION ALL 
 	SELECT * FROM Events WHERE Estate LIKE '" . $searchTerm . "' ORDER BY EstartDate";
-	
+
 	$result = mysqli_query($con, $sql);
-	
 ?>
 
 <html>
@@ -55,24 +53,83 @@ if($searchTerm == "")
 
 		<!-- Hashtag script -->
 		<script>
-			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-			if(!d.getElementById(id)){js=d.createElement(s);
-			js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-			fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+			!function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}(document, 'script', 'twitter-wjs');
 		</script>
 		<!-- End Hashtag script -->
+		
+		<!--(Start) Provided by JetDevLLC-->
+		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css"            rel="stylesheet" type="text/css" />
+		<link href="css/responsive.css"       rel="stylesheet" type="text/css" />
+		<link href="favicon.ico"              rel="shortcut icon"  />	
+		<!--[if IE 6]>
+		<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
+		</style>
+		<![endif]-->
+		<!--(End) Provided by JetDevLLC-->
+		<!--(End) Style Sheets-->
+		
+		<!--(Start) Provided by JetDevLLC-->
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+		<script src="js/iepngfix_tilebg.js"  type="text/javascript"></script>
+		<script src="js/scrollTo.js"         type="text/javascript"></script>
+		<script src="js/global.js"           type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".mobile-menu-list").hide();
+				$('.mobile-menu-btn').click(function(){
+					$(this).toggleClass("active");
+					$(".mobile-menu-list").slideToggle(200);
+				});
+			});
+		</script>
+		<!--(End) Provided by JetDevLLC-->
+		<!--(End) Scripts-->
 	</head>
 	
 	<body >
+		<div class="header-wrap">
+			<div class="header">
+				<a class="logout-btn" href='logout.php'>Log Out</a>
+				<ul class="head-social-icons">
+					<!---<li><a class="facebook"   href="#"></a></li>
+					<li><a class="twitter"    href="#"></a></li>
+					<li><a class="googleplus" href="#"></a></li>-->
+					<li>Welcome Back! <?= $fgmembersite->UserFullName() ?>!</li>
+				</ul><!--//head-social-icons-->
+
+				<ul class="nav">
+					<li><a href="./eventCreation.php">Create Event</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a href="./searchForm.php">Search</a></li>
+					<!--<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
+					<!--<li><a id="emaildeals-nav" href="#emaildeals">Email Deals</a></li>-->
+					<li><span class="shadow">|</span></li>
+					<li><a href="./eventAccor.php">Your Events</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a href="#events">Events</a></li>
+				</ul>
+				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
+			</div><!--//header-->
+		</div><!--//header-wrap-->
+		
+		<div class="mobile-menu-list">
+			<ul>
+				<li><a href="./EventCreation.php">createEvent</a></li>
+				<li><a href="./searchForm.php">Search</a></li>
+				<li><a class="mobile-nav" href="#Events">Events</a></li>
+			</ul>   
+		</div><!--//mobile-menu-list-->
+		
 		<div id="main_container">
 			<div id='middle_box'>
-				<!--displays the full name and username of the user-->
-<!-- 
-				<p>Logged in as: <?= $fgmembersite->UserFullName() ?></p>
-				<p>Logged in as: <?= $usrname?></p>
- -->
- 
- 		<input type="button" onclick="goBack();" value="Go Back" />
 				<?PHP
 					$i = 0;
 					while($row = mysqli_fetch_array($result)){ 
@@ -103,10 +160,10 @@ if($searchTerm == "")
 								    width="20" height="20" title="Facebook" 
 								    border="0" style="display:inline;"></a>
 								    
+									
 									<a href="https://twitter.com/intent/tweet?button_hashtag=<?= $row['Ehashtag'] ?>" 
 									class="twitter-hashtag-button">Tweet#<?= $row['Ehashtag'] ?></a>
-
-
+									
 									
 									<a href="https://twitter.com/<?= $row['Etwitter'] ?>" class="twitter-follow-button" 
 									data-show-count="false" data-lang="en">Follow<?= $row['Etwitter'] ?></a>
