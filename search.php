@@ -18,10 +18,6 @@ if($searchTerm == "")
 	exit();
 }
 
-
-
-
-	
  	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
 //  $con = mysqli_connect('localhost', 'root', 'password', 'EventAdvisor');
 	
@@ -76,25 +72,25 @@ by counting the number of results returned */
 				window.history.back()
 			}
 		</script>
-<!-- End of Script		 -->
+		<!-- End of Script		 -->
 
-<!-- Twitter script -->
+		<!-- Twitter script -->
 		<script>
 			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
 			if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";
 			fjs.parentNode.insertBefore(js,fjs);}}
 			(document,"script","twitter-wjs");
 		</script>
-<!-- End of Twitter script -->
+		<!-- End of Twitter script -->
 
-<!-- Hashtag script -->
+		<!-- Hashtag script -->
 		<script>
 			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
 			if(!d.getElementById(id)){js=d.createElement(s);
 			js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
 			fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 		</script>
-<!-- End Hashtag script -->
+		<!-- End Hashtag script -->
 
 	</head>
 	

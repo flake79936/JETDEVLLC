@@ -57,7 +57,7 @@
 					
 					<li><span class="shadow">|</span></li>
 					
-					<li><a href="./Search-Form.php">Search</a></li>
+					<li><a href="./searchForm.php">Search</a></li>
 					
 					<!--<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
 					
