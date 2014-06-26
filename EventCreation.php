@@ -22,7 +22,6 @@
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
 		<link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-		<link rel="stylesheet" href="/resources/demos/style.css">
 		
 		<!--(Start) Provided by JetDevLLC-->
 		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
