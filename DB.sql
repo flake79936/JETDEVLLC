@@ -37,29 +37,3 @@ CREATE TABLE Events(
 
 USERNAME:JetDevSQL
 PASSWORD:DevTeamSQL!!12
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","a","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none");
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","b","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","c","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","d","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","e","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","f","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","g","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","h","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","j","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","k","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","l","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","m","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
-
-INSERT INTO 'Events'('UuserName','Evename','EstartDate','EendDate','Eaddress','Ecity','Estate','Ezip','Edescription','Etype','Ewebsite') VALUES ("ecorral2","n","12/15/4651","02/21/1234","11432 Backus","EL Paso","Texas",79925,"this is a test from a - n","fair","none")
