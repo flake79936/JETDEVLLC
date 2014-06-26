@@ -32,11 +32,6 @@
 		<script src="js/scrollTo.js"         type="text/javascript"></script>
 		<script src="js/global.js"           type="text/javascript"></script>
 		<script type="text/javascript">
-			$(function(){
-				$("#createEvent-nav, #findstadarena-nav, #emaildeals-nav, #product-nav, #events-nav").scrollTo({ offset:-54 });
-				$(".mobile-nav").scrollTo({ offset:0 });
-			});
-
 			$(document).ready(function(){
 				$(".mobile-menu-list").hide();
 				$('.mobile-menu-btn').click(function(){
@@ -45,7 +40,6 @@
 				});
 			});
 		</script>
-		
 	</head>
 	
 	<body style="background-color: black;">
@@ -60,13 +54,12 @@
 
 				<ul class="nav">
 					<li><a href="./EventCreation.php">Create Event</a></li>
+					
+					<li><span class="shadow">|</span></li>
+					
 					<li><a href="./Search-Form.php">Search</a></li>
 					
-					<li><span class="shadow">|</span></li>
-					
 					<!--<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
-					
-					<li><span class="shadow">|</span></li>
 					
 					<!--<li><a id="emaildeals-nav" href="#emaildeals">Email Deals</a></li>-->
 					
@@ -87,11 +80,10 @@
 				<li><a class="mobile-nav" href="#createEvent">createEvent</a></li>
 				<!--<li><a class="mobile-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
 				<!--<li><a class="mobile-nav" href="#emaildeals">Email Deals</a></li>-->
-				<!--<li><a class="mobile-nav" href="#product">Product</a></li>-->
+				<li><a class="mobile-nav" href="./Search-Form.php">Search</a></li>
 				<li><a class="mobile-nav" href="#Events">Events</a></li>
-				<li><a class="mobile-nav" href="login.php"><span class="icon-lock"></span> Login</a></li>
+				<li><a class="mobile-nav" href="./login.php"><span class="icon-lock"></span> Login</a></li>
 			</ul>   
 		</div><!--//mobile-menu-list-->
-
 	</body>
 </html>
