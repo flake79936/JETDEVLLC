@@ -169,3 +169,7 @@ clear: both;
 margin: auto;
 background: url(../images/middle_banner.jpg) no-repeat center;
 }
+
+#inner-mid-box{
+	margin-top: 65px;
+}
