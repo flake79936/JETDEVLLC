@@ -47,9 +47,10 @@
 			<div class="header">
 				<a class="logout-btn" href='logout.php'>Log Out</a>
 				<ul class="head-social-icons">
-					<li><a class="facebook"   href="#"></a></li>
+					<!---<li><a class="facebook"   href="#"></a></li>
 					<li><a class="twitter"    href="#"></a></li>
-					<li><a class="googleplus" href="#"></a></li>
+					<li><a class="googleplus" href="#"></a></li>-->
+					<li>Welcome Back! <?= $fgmembersite->UserFullName() ?>!</li>
 				</ul><!--//head-social-icons-->
 
 				<ul class="nav">
@@ -78,7 +79,7 @@
 		<div class="mobile-menu-list">
 			<ul>
 				<li><a href="./EventCreation.php">createEvent</a></li>
-				<li><a href="./Search-Form.php">Search</a></li>
+				<li><a href="./searchForm.php">Search</a></li>
 				<li><a class="mobile-nav" href="#Events">Events</a></li>
 			</ul>   
 		</div><!--//mobile-menu-list-->

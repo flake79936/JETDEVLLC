@@ -1,10 +1,10 @@
 <?PHP
 	require_once("./include/membersite_config.php");
-	/*if(isset($_POST['submitted'])){
+	if(isset($_POST['submitted'])){
 		if($fgmembersite->Login()){
 			$fgmembersite->RedirectToURL("userPage.php");
 		}
-	}*/
+	}
 ?>
 
 <html dir="ltr" lang="en-US" >
@@ -72,6 +72,50 @@
 	</head>
 	
 	<body>
+		<div class="header-wrap">
+			<div class="header">
+				<a class="logout-btn" href='logout.php'>Log Out</a>
+				<ul class="head-social-icons">
+					<!---<li><a class="facebook"   href="#"></a></li>
+					<li><a class="twitter"    href="#"></a></li>
+					<li><a class="googleplus" href="#"></a></li>-->
+					<li>Welcome Back! <?= $fgmembersite->UserFullName() ?>!</li>
+				</ul><!--//head-social-icons-->
+
+				<ul class="nav">
+					<li><a href="./eventCreation.php">Create Event</a></li>
+					
+					<li><span class="shadow">|</span></li>
+					
+					<li><a href="./searchForm.php">Search</a></li>
+					
+					<!--<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
+					
+					<!--<li><a id="emaildeals-nav" href="#emaildeals">Email Deals</a></li>-->
+					
+					<li><span class="shadow">|</span></li>
+					
+					<li><a href="./eventAccor.php">Your Events</a></li>
+					
+					<li><span class="shadow">|</span></li>
+					
+					<li><a href="#events">Events</a></li>
+				</ul>
+				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
+			</div><!--//header-->
+		</div><!--//header-wrap-->
+		
+		<div class="mobile-menu-list">
+			<ul>
+				<li><a href="./EventCreation.php">createEvent</a></li>
+				<li><a href="./searchForm.php">Search</a></li>
+				<li><a class="mobile-nav" href="#Events">Events</a></li>
+			</ul>   
+		</div><!--//mobile-menu-list-->
+		
+		
+		
+		
 		<div id='fg_membersite' align="center">
 			<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='GET' accept-charset='UTF-8'>
 				<fieldset align="left">

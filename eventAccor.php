@@ -5,12 +5,9 @@
 		exit;
 	}
 	
-	$street = "vista+del+sol,el+paso+tx";
 	$usrname = $fgmembersite->UsrName();
 	
-	
-//  $con = mysqli_connect('localhost', 'root', 'password', 'EventAdvisor');
- 	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
+	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
 	
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
@@ -18,15 +15,11 @@
 
 	mysqli_select_db($con, "EventAdvisor");
 	
-// 	$sql = "SELECT Evename, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
 	$sql = "SELECT * FROM Events WHERE UuserName = '" . $usrname . "' ORDER BY EstartDate";
 	
 	$result = mysqli_query($con, $sql);
 	
 //Script
-
-	
-	
 ?>
 
 <html>
@@ -91,9 +84,9 @@
 								<div class="content">
 									<!-- <h3>hello test</h3 -->
 									<!-- <h3>hello test</h3 -->
-									<p><?= $row['Evename'] ?></p>
-									<p><?= $row['Eaddress'] ?></p>
-									<p><?= $row['Edescription'] ?></p>
+									
+									<p><b>Address of Event:</b>&nbsp;<?= $row['Eaddress'] ?></p>
+									<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
 									
 									<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
 									
