@@ -199,15 +199,15 @@
 							
 							<!--hastags-->
 							<td class="container">
-								<label for="Ehashtage">Hastags: </label><br/>
-								<input type="text" name="Ehashtage" title="Enter Hashtag" id="Ehashtage" value="<?php echo $fgmembersite->SafeDisplay("Ehashtage") ?>" maxlength="50" /><br/>
-								<span id="event_Ehashtage_errorloc" class="error"></span>
+								<label for="Ehashtag">Hastags: </label><br/>
+								<input type="text" name="Ehashtag" title="Enter Hashtag" id="Ehashtag" value="<?php echo $fgmembersite->SafeDisplay("Ehashtag") ?>" maxlength="50" /><br/>
+								<span id="event_Ehashtag_errorloc" class="error"></span>
 							</td>
 							
 							<!--website-->
 							<td class="container">
 								<label for="Ewebsite">Website*: </label><br/>
-								<input type="text" name="Ewebsite" title="Enter Website" id="Ewebsite" value="<?php echo $fgmembersite->SafeDisplay("Ewebsite") ?>" maxlength="50" /><br/>
+								<input type="text" name="Ewebsite" title="correct format: http://www.website.com" id="Ewebsite" value="<?php echo $fgmembersite->SafeDisplay("Ewebsite") ?>" maxlength="50" /><br/>
 								<span id="event_Ewebsite_errorloc" class="error"></span>
 							</td>
 						</tr>
@@ -216,14 +216,15 @@
 							<!--Facebook-->
 							<td class="container">
 								<label for="Efacebook">FaceBook: </label><br/>
-								<input type="text" name="Efacebook" title="Enter Facebook Website" id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="50" /><br/>
+								<input type="text" name="Efacebook" title="correct format: http://www.facebook.com/USERNAME where the USERNAME should be replaced with your facebook username"
+								 id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="50" /><br/>
 								<span id="event_Efacebook_errorloc" class="error"></span>
 							</td>
 							
 							<!--twitter-->
 							<td class="container">
 								<label for="Etwitter">Twitter: </label><br/>
-								<input type="text" name="Etwitter" title="Enter Twitter Username" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="50" /><br/>
+								<input type="text" name="Etwitter" title="Do not include the @ symbol" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="50" /><br/>
 								<span id="event_Etwitter_errorloc" class="error"></span>
 							</td>
 							

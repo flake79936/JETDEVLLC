@@ -428,7 +428,7 @@ class FGMembersite{
 		$formvars['Edescription'] = $this->Sanitize($_POST['Edescription']);
 		$formvars['Etype']        = $this->Sanitize($_POST['Etype']);
 		$formvars['Ewebsite']     = $this->Sanitize($_POST['Ewebsite']);
-		$formvars['Ehashtage']    = $this->Sanitize($_POST['Ehashtage']);
+		$formvars['Ehashtag']    = $this->Sanitize($_POST['Ehashtag']);
 		$formvars['Efacebook']    = $this->Sanitize($_POST['Efacebook']);
 		$formvars['Etwitter']     = $this->Sanitize($_POST['Etwitter']);
 		$formvars['Egoogle']      = $this->Sanitize($_POST['Egoogle']);
@@ -470,7 +470,7 @@ class FGMembersite{
 		echo $uName . " here i am"; 
 		if($formvars['Etype'] === 'Other'){
 			//
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtage, Efacebook, Etwitter, Egoogle, Eflyer, Eother)
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtag, Efacebook, Etwitter, Egoogle, Eflyer, Eother)
 				VALUES(
 					"' . $this->SanitizeForSQL($uName) . '",
 					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
@@ -484,7 +484,7 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
 					"' . $this->SanitizeForSQL($formvars['Ewebsite']) . '",
-					"' . $this->SanitizeForSQL($formvars['Ehashtage']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ehashtag']) . '",
 					"' . $this->SanitizeForSQL($formvars['Efacebook']) . '",
 					"' . $this->SanitizeForSQL($formvars['Etwitter']) . '",
 					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
@@ -493,7 +493,7 @@ class FGMembersite{
 				);';
 		} else {
 			//
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtage, Efacebook, Etwitter, Eflyer, Egoogle)
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtag, Efacebook, Etwitter, Eflyer, Egoogle)
 				VALUES(
 					"' . $this->SanitizeForSQL($uName) . '",
 					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
@@ -507,7 +507,7 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
 					"' . $this->SanitizeForSQL($formvars['Ewebsite']) . '",
-					"' . $this->SanitizeForSQL($formvars['Ehashtage']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ehashtag']) . '",
 					"' . $this->SanitizeForSQL($formvars['Efacebook']) . '",
 					"' . $this->SanitizeForSQL($formvars['Etwitter']) . '",
 					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",

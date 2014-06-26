@@ -78,6 +78,24 @@ by counting the number of results returned */
 		</script>
 <!-- End of Script		 -->
 
+<!-- Twitter script -->
+		<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+			if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js,fjs);}}
+			(document,"script","twitter-wjs");
+		</script>
+<!-- End of Twitter script -->
+
+<!-- Hashtag script -->
+		<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+			if(!d.getElementById(id)){js=d.createElement(s);
+			js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+			fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+		</script>
+<!-- End Hashtag script -->
+
 	</head>
 	
 	<body >
@@ -114,17 +132,21 @@ by counting the number of results returned */
 									<p><?= $row['Eaddress'] ?></p>
 									<p><?= $row['Edescription'] ?></p>
 									<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
-									<p><?= $row['Ehashtag'] ?></p>
+
 									
 									<a href="<?= $row['Efacebook'] ?>"target="_blank" >
 									<img src="./img/icons/facebook.ico"
 								    width="20" height="20" title="Facebook" 
 								    border="0" style="display:inline;"></a>
+								    
+									<a href="https://twitter.com/intent/tweet?button_hashtag=<?= $row['Ehashtag'] ?>" 
+									class="twitter-hashtag-button">Tweet#<?= $row['Ehashtag'] ?></a>
+
+
 									
-									<a href="<?= $row['Etwitter'] ?>" target="_blank">
-									<img src="./img/icons/twitter.ico"
-								    width="20" height="20" title="twitter" 
-								    border="0" style="display:inline;"></a>
+									<a href="https://twitter.com/<?= $row['Etwitter'] ?>" class="twitter-follow-button" 
+									data-show-count="false" data-lang="en">Follow<?= $row['Etwitter'] ?></a>
+
 								    
 									<a href="<?= $row['Egoogle'] ?>" rel="publisher" target="_blank">
 									<img src="./img/icons/googleplus.ico"
