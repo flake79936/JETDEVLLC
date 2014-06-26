@@ -112,11 +112,8 @@
 			</ul>   
 		</div><!--//mobile-menu-list-->
 		
-		
-		
-		
 		<div id='fg_membersite' align="center">
-			<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='GET' accept-charset='UTF-8'>
+			<form id='login' action='search.php' method='GET' accept-charset='UTF-8'>
 				<fieldset align="left">
 					<legend>Search</legend>
 					<input type='hidden' name='submitted' id='submitted' value='1'/>

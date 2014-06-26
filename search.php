@@ -4,9 +4,6 @@
 // 		$fgmembersite->RedirectToURL("login.php");
 // 		exit;
 // 	}
-	
-// 	$street = "vista+del+sol,el+paso+tx";
-// 	$usrname = $fgmembersite->UsrName();
 // 	
 //capture search term and remove spaces at its both ends if the is any
 $searchTerm = trim($_GET['Search']);
@@ -19,7 +16,6 @@ if($searchTerm == "")
 }
 
  	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
-//  $con = mysqli_connect('localhost', 'root', 'password', 'EventAdvisor');
 	
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
@@ -32,32 +28,6 @@ if($searchTerm == "")
 	SELECT * FROM Events WHERE Estate LIKE '" . $searchTerm . "' ORDER BY EstartDate";
 	
 	$result = mysqli_query($con, $sql);
-	
-// 	
-//MYSQL search statement
-// $query = "SELECT * FROM Events WHERE student_name LIKE '%$searchTerm%'";
-// 
-// $results = mysqli_query($link, $query);
-
-/* check whethere there were matching records in the table
-by counting the number of results returned */
-// if(mysqli_num_rows($result) >= 1)
-// {
-// 	$output = "";
-// 	while($row = mysqli_fetch_array($result))
-// 	{
-// 		$output .= "Student ID: " . $row['Evename'] . "<br />";
-// 		$output .= "Name: " . $row['Ecity'] . "<br />";
-// 		$output .= "Course: " . $row['Etype'] . "<br />";
-// 		$output .= "Age: " . $row['Ezip'] . "<br /><br />";
-// 	}
-// 	echo $output;
-// }
-// else
-// 	echo "There was no matching record for the name " . $searchTerm;	
-// 	
-// 	
-// 	
 	
 ?>
 
@@ -91,7 +61,6 @@ by counting the number of results returned */
 			fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 		</script>
 		<!-- End Hashtag script -->
-
 	</head>
 	
 	<body >
@@ -104,7 +73,6 @@ by counting the number of results returned */
  -->
  
  		<input type="button" onclick="goBack();" value="Go Back" />
- 		
 				<?PHP
 					$i = 0;
 					while($row = mysqli_fetch_array($result)){ 
