@@ -26,7 +26,7 @@ CREATE TABLE Events(
 	Edescription VARCHAR(26) NOT NULL,
 	Etype VARCHAR(26) NOT NULL,
 	Ewebsite VARCHAR(26) NOT NULL,
-	Ehashtage CHAR(255),
+	Ehashtag CHAR(255),
 	Efacebook CHAR(255),
 	Etwitter CHAR(255),
 	Egoogle CHAR(255),
