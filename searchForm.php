@@ -126,6 +126,10 @@
 					<legend>Search</legend>
 					<input type='hidden' name='submitted' id='submitted' value='1'/>
 					
+					<div>
+						<span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span>
+					</div>
+					
 					<div class='container'>
 						<label for='eventSearch' >Search:</label><br/>
 						<input type='text' name='eventSearch' title="..." id='eventSearch' value='<?php echo $fgmembersite->SafeDisplay('eventSearch') ?>' maxlength="50" /><br/>
@@ -133,10 +137,8 @@
 					</div>
 					
 					<input id="submitButton" type="submit" name="Submit" value="Search" />
+					
 				</fieldset>
-				<div>
-					<span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span>
-				</div>
 			</form>
 		</div>
 		
