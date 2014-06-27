@@ -24,7 +24,13 @@
 
 	// 	$sql = "SELECT Evename, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
 	$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $searchTerm . "' UNION ALL 
-	SELECT * FROM Events WHERE Estate LIKE '" . $searchTerm . "' ORDER BY EstartDate";
+	SELECT * FROM Events WHERE Estate LIKE '" . $searchTerm . "' UNION ALL
+	SELECT * FROM Events WHERE Evename LIKE '" . $searchTerm . "' UNION ALL
+	SELECT * FROM Events WHERE Ezip LIKE '" . $searchTerm . "'UNION ALL
+	SELECT * FROM Events WHERE EphoneNumber LIKE '" . $searchTerm . "'UNION ALL
+	SELECT * FROM Events WHERE Edescription LIKE '" . $searchTerm . "' UNION ALL 
+	SELECT * FROM Events WHERE Etype LIKE '" . $searchTerm . "' UNION ALL
+	SELECT * FROM Events WHERE Ehashtag  LIKE '" . $searchTerm . "'ORDER BY EstartDate";
 
 	$result = mysqli_query($con, $sql);
 ?>
