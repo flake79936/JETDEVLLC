@@ -33,15 +33,7 @@
 		<!--(End) Style Sheets-->
 		
 		<!--(Start) Scripts-->
-<<<<<<< HEAD
 			<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-			
-			<!--Go Back function-->
-			<script>
-				function goBack() {
-					window.history.back()
-				}
-			</script>
 			
 			<!--(Start) Tooltip Scripts-->
 				<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
@@ -73,37 +65,6 @@
 					</script>
 				<!--(End) Mobile Menu Toggle-->
 			<!--(End) Provided by JetDevLLC-->
-=======
-		<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-
-		
-		<!--code for tooltip-->
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-		<link rel="stylesheet" href="/resources/demos/styleEdit.css">
-		<script>
-			$(function() {
-				$( document ).tooltip();
-			});
-		</script>
-		
-		<!--(Start) Provided by JetDevLLC-->
-		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
-		<script src="js/iepngfix_tilebg.js"  type="text/javascript"></script>
-		<script src="js/scrollTo.js"         type="text/javascript"></script>
-		<script src="js/global.js"           type="text/javascript"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$(".mobile-menu-list").hide();
-				$('.mobile-menu-btn').click(function(){
-					$(this).toggleClass("active");
-					$(".mobile-menu-list").slideToggle(200);
-				});
-			});
-		</script>
-		<!--(End) Provided by JetDevLLC-->
->>>>>>> origin/master
 		<!--(End) Scripts-->
 	</head>
 	
