@@ -221,31 +221,31 @@
 				</fieldset>
 			</form>
 		</div>
-		
-		<!--This script needs to wihtin the file. 
-		It is validating the form.-->
-		<script type="text/javascript">
-			// <![CDATA[
-			//'PasswordWidget()'
-			// @param1: The IDname of the <div> that it is going to be used in.
-			// @param2: The name of the <input> field.
-			var pwdwidget = new PasswordWidget('thepwddiv', 'UPswd');
-			pwdwidget.MakePWDWidget();
-
-			var frmvalidator = new Validator("register");
-			frmvalidator.EnableOnPageErrorDisplay();
-			frmvalidator.EnableMsgsTogether();
-			
-			frmvalidator.addValidation("UFname",    "req", "Please Input Your First Name");
-			frmvalidator.addValidation("ULname",    "req", "Please Input Your Last Name");
-			frmvalidator.addValidation("UuserName", "req", "Please Provide a User Name");
-			frmvalidator.addValidation("UPswd",     "req", "Please Provide a Password");
-			frmvalidator.addValidation("ConPswd",   "req", "Please Confirm Your Password");
-			frmvalidator.addValidation("Uemail",    "req", "Please Please fill in Name");
-			frmvalidator.addValidation("Uphone",    "req", "Please Provide a Phone Number");
-			//frmvalidator.addValidation("Uadmin",    "req", "Please fill in Name");
-			
-			// ]]>
-		</script>
 	</body>
+	
+	<!--This script needs to wihtin the file. 
+		It is validating the form.-->
+	<script type="text/javascript">
+		// <![CDATA[
+		//'PasswordWidget()'
+		// @param1: The IDname of the <div> that it is going to be used in.
+		// @param2: The name of the <input> field.
+		var pwdwidget = new PasswordWidget('thepwddiv', 'UPswd');
+		pwdwidget.MakePWDWidget();
+
+		var frmvalidator = new Validator("register");
+		frmvalidator.EnableOnPageErrorDisplay();
+		frmvalidator.EnableMsgsTogether();
+		
+		frmvalidator.addValidation("UFname",    "req", "Please Input Your First Name");
+		frmvalidator.addValidation("ULname",    "req", "Please Input Your Last Name");
+		frmvalidator.addValidation("UuserName", "req", "Please Provide a User Name");
+		frmvalidator.addValidation("UPswd",     "req", "Please Provide a Password");
+		frmvalidator.addValidation("ConPswd",   "req", "Please Confirm Your Password");
+		frmvalidator.addValidation("Uemail",    "req", "Please Please fill in Name");
+		frmvalidator.addValidation("Uphone",    "req", "Please Provide a Phone Number");
+		//frmvalidator.addValidation("Uadmin",    "req", "Please fill in Name");
+		
+		// ]]>
+	</script>
 </html>
