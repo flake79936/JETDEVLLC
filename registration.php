@@ -1,10 +1,5 @@
 <?PHP
 	require_once("./include/membersite_config.php");
-	/*This part ckecks whether there is a session or not.*/
-	/*if(!$fgmembersite->CheckLogin()){
-		$fgmembersite->RedirectToURL("index.php");
-		exit;
-	}*/
 	
 	if(isset($_POST["submitted"])){
 		if($fgmembersite->RegisterUser()){
@@ -213,9 +208,11 @@
 					</table>
 					<input id="submitButton" type="submit" name="Submit" value="submit" />
 				</fieldset>
-				
 			</form>
 		</div>
+		
+		<!--This script needs to wihtin the file. 
+		It is validating the form.-->
 		<script type="text/javascript">
 			// <![CDATA[
 			//'PasswordWidget()'

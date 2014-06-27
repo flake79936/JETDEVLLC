@@ -1,18 +1,12 @@
 /* Responsive Layout */
-
 @media only screen and (max-width: 1024px) {
-	
-	
 	.wrap { width:100%; padding:0; }
 	
 	.header-wrap { position:relative; }
 	.header { width:100%; }
 	
-	
-	.nav,
-	.login-btn { display:none; }
+	.nav, .login-btn { display:none; }
 	.mobile-menu-btn { display:inline-block; }
-	
 	
 	.banner-box { overflow:hidden; background-position:right top; }
 
@@ -30,12 +24,9 @@
 	.banner-box .icons-row .burger-drink-icon img { max-width:100%; }
 	.banner-box .icons-row .download-box { float:left; margin-left:18px; }
 
-
-
 	.gray-box-logos { padding:20px 0; }
 	.gray-box-logos .each-logo { width:17%; padding:0 3%; }
 	.gray-box-logos .each-logo img { max-width:100%; }
-
 
 	.home-content { padding:30px 20px; }
 	.home-content .text-left-col { width:45%;  } 
@@ -47,22 +38,16 @@
 	.home-content .last-row .text-left-col { padding:124px 0 0 5%; width:45%; }
 	.home-content .last-row  .image-right-col { width:47%; padding:0 0 0 3%; }
 
-
 	.testi-wrap { padding:20px 20px; }
 	.testi-wrap h1 { width:20%; font-size:32px; }
 	.testi-wrap .testi-box {width:65%; padding:0 42px 0 40px; font-size:24px; line-height:30px;  }
 
-
 	.home-two-column { display:block; overflow:hidden; padding:47px 40px 0 40px; }
 	.home-two-column .text-col  { width:33%;padding:0; }
 	.home-two-column .image-col  { float:left; width:60%; padding:0 0 0 7%; }
-
-
 }
 
-
 @media only screen and (max-width: 800px) {
-	
 	.show-r800 { display:block!important; }
 	.hide-r800 { display:none!important; }
 	
@@ -73,14 +58,9 @@
 	.banner-box .icons-row { display:block; width:100%; margin:auto; padding:38px 0 0 0; clear:both; overflow:hidden; text-align:center; }
 	.banner-box .icons-row .burger-drink-icon { float:none; display:inline-block; }
 	.banner-box .icons-row .download-box { width:290px; display:inline-block; float:none; }
-	
-	
 }
 
-
-
 @media only screen and (max-width: 766px) {
-	
 	.home-content h2,
 	.home-content p { text-align:center; }
 	
@@ -96,7 +76,6 @@
 	.home-content .last-row .text-left-col { width:100%; padding:0 0 10px 0; }
 	.home-content .last-row  .image-right-col { width:100%; padding:0 0 0 0; text-align:center; }
 	
-	
 	.gray-box { padding-bottom:30px; }
 	.testi-wrap h1 { float:none; width:100%; clear:both; overflow:hidden; clear:both; text-align:center; padding-bottom:20px; }
 	.testi-wrap .testi-box { float:none; width:80%; margin:auto; padding:0 42px 20px 40px; }
@@ -106,17 +85,13 @@
 	.home-two-column .image-col  { width:100%; padding:0 0 0 0; }
 	
 	.footer-wrap { padding:37px 10px 15px 10px; }
-	
 }
 
-
 @media only screen and (max-width: 480px) {
-	
 	.banner-box .intro-text .logo { display:block; padding-bottom:20px; }
 	.banner-box .intro-text .logo img { }
 	.banner-box .intro-text p { font-size:16px; color:#fff; line-height:20px; }
 	.banner-box ul li { font-size:14px; line-height:16px; color:#fff; margin-bottom:6px; }
-	
 	
 	.home-content h2 { font-size:20px; }
 	.home-content p { font-size:16px; line-height:22px; }
@@ -124,18 +99,13 @@
 	.home-content .image-right-col { width:70%; padding:0 15%; }
 	.home-content .image-left-col { width:70%; padding:0 15%; }
 	
-
-
 	.home-two-column { padding:47px 20px 0 20px; }
 	.home-two-column .text-col h2 { font-size:20px; }
 	.home-two-column .text-col p { font-size:16px; line-height:22px; }
 	.home-two-column .image-col .each-image { width:40%; padding:0 5%; }
-	
 }
 
-
 @media only screen and (max-width: 479px) {
-	
 	.show-r479 { display:block!important; }
 	.hide-r479 { display:none!important; }
 	
@@ -147,7 +117,6 @@
 	.icons-row .download-box .title { font-size:22px; } 
 	.icons-row .download-box .app-store-btn { margin:0; float:none; display:inline-block; margin:auto; }
 	.icons-row .download-box .google-play-btn { margin:0; float:none; display:inline-block; margin:auto; }
-	
 	
 	.banner-box .left-col { width:50%; float:left; padding:56px 25% 0 25%; }
 	.banner-box .right-col { width:90%; float:left; padding:20px 5% 0 5%; }
@@ -162,7 +131,5 @@
 	.testi-wrap h1 { float:none; width:100%; font-size:24px; clear:both; overflow:hidden; clear:both; text-align:center; padding-bottom:20px; }
 	.testi-wrap .testi-box { float:none; width:auto!important; display:block; margin:auto; padding:0 42px 20px 40px; font-size:18px; line-height:24px; }
 
-
 	.home-two-column { padding:47px 14px 0 14px; }
-
 }

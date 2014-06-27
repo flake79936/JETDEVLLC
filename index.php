@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="favicon.ico" />
+		
 		<title>SEAT - Developed by JET App Development, LLC</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<meta name="format-detection" content="telephone=no" />
@@ -11,7 +13,7 @@
 		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/responsive.css" rel="stylesheet" type="text/css" />
-		<link rel="shortcut icon" href="favicon.ico" />	
+			
 		<!--[if IE 6]>
 		<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
 		</style>
