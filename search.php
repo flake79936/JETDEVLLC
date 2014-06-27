@@ -106,7 +106,7 @@
 				</ul><!--//head-social-icons-->
 
 				<ul class="nav">
-					<li><a href="./eventCreation.php">Create Event</a></li>
+					<li><a href="./EventCreation.php">Create Event</a></li>
 					<li><span class="shadow">|</span></li>
 					<li><a href="./searchForm.php">Search</a></li>
 					<!--<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>-->
