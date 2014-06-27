@@ -14,7 +14,7 @@
 <html dir="ltr" lang="en-US" >
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Search</title>
+		<title>Search Event</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<meta name="format-detection" content="telephone=no" />
@@ -46,9 +46,31 @@
 		<link rel="stylesheet" href="/resources/demos/style.css">
 		<script>
 			$(function() {
-				$( document ).tooltip();
+				$(document).tooltip();
 			});
 		</script>
+		
+		<!-- Twitter script -->
+		<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+			if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js,fjs);}}
+			(document,"script","twitter-wjs");
+		</script>
+		<!-- End of Twitter script -->
+		
+		<!-- Hashtag script -->
+		<script>
+			!function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}(document, 'script', 'twitter-wjs');
+		</script>
+		<!-- End Hashtag script -->
 		
 		<!--(Start) Provided by JetDevLLC-->
 		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
@@ -116,8 +138,9 @@
 					<span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span>
 				</div>
 			</form>
-			
-			<?php
+		</div>
+		
+		<?php
 				if(isset($_POST["submitted"])){ ?>
 				<div id="main_container">
 					<div id='middle_box'>
@@ -137,13 +160,10 @@
 									<ul>
 										<li>
 											<input type="radio" id="radio-<?= $i?>" name="radio-accordion" checked="checked" />
-											<label for="radio-<?= $i?>"><?= $row['Evename'] ?></label>
-											<!-- <label for="radio-<?= $i?>">Event <?= $i?></label> -->
+											<label for="radio-<?= $i?>"><?= $row['Evename']?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$row['EstartDate']?></label>
 											<div class="content">
-												<!-- <h3>hello test</h3 -->
-												<p><?= $row['Evename'] ?></p>
-												<p><?= $row['Eaddress'] ?></p>
-												<p><?= $row['Edescription'] ?></p>
+												<p><b>Address of Event:</b> <?= $row['Eaddress'] ?></p>
+												<p><b>Description:</b> <?= $row['Edescription'] ?></p>
 												<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
 
 												
@@ -183,7 +203,6 @@
 			<?PHP } else {
 				 echo "";
 				} ?>
-		</div>
 	</body>
 	<script type="text/javascript">
 		// <![CDATA[

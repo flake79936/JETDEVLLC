@@ -796,7 +796,14 @@ class FGMembersite{
 			return false;
 		}
 		
-		$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $formvars['eventSearch'] . "' UNION ALL SELECT * FROM Events WHERE Estate LIKE '" . $formvars['eventSearch'] . "' ORDER BY EstartDate";
+		$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $formvars['eventSearch'] . "' UNION ALL 
+		SELECT * FROM Events WHERE Estate LIKE '" . $formvars['eventSearch'] . "' UNION ALL
+		SELECT * FROM Events WHERE Evename LIKE '" . $formvars['eventSearch'] . "' UNION ALL
+		SELECT * FROM Events WHERE Ezip LIKE '" . $formvars['eventSearch'] . "'UNION ALL
+		SELECT * FROM Events WHERE EphoneNumber LIKE '" . $formvars['eventSearch'] . "'UNION ALL
+		SELECT * FROM Events WHERE Edescription LIKE '" . $formvars['eventSearch'] . "' UNION ALL 
+		SELECT * FROM Events WHERE Etype LIKE '" . $formvars['eventSearch'] . "' UNION ALL
+		SELECT * FROM Events WHERE Ehashtag  LIKE '" . $formvars['eventSearch'] . "'ORDER BY EstartDate";
 		
 		$result = mysql_query($sql, $this->connection);
 		

@@ -152,10 +152,9 @@
 							<ul>
 								<li>
 									<input type="radio" id="radio-<?= $i?>" name="radio-accordion" checked="checked" />
-									<label for="radio-<?= $i?>"><?= $row['Evename'] ?></label>
+									<label for="radio-<?= $i?>"><?= $row['Evename'] . " " . $row['EstartDate']?></label>
 									<!-- <label for="radio-<?= $i?>">Event <?= $i?></label> -->
 									<div class="content">
-										<!-- <h3>hello test</h3 -->
 										<p><?= $row['Evename'] ?></p>
 										<p><?= $row['Eaddress'] ?></p>
 										<p><?= $row['Edescription'] ?></p>
