@@ -1,4 +1,8 @@
 /* Responsive Layout */
+/*
+ * Provided by JETDevLLC
+ * Modified By Robert Madrid & Eduardo Corral
+ */
 @media only screen and (max-width: 1024px) {
 	.wrap { width:100%; padding:0; }
 	
@@ -120,7 +124,7 @@
 	
 	.banner-box .left-col { width:50%; float:left; padding:56px 25% 0 25%; }
 	.banner-box .right-col { width:90%; float:left; padding:20px 5% 0 5%; }
-	.banner-box .intro-text { height:auto; }
+	.banner-box .intro-text { height: auto; }
 	.banner-box .intro-text .logo { padding-bottom:15px; text-align:left; }
 	.banner-box .intro-text .logo img { max-width:70%; }
 	.banner-box .intro-text p { }
