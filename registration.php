@@ -68,25 +68,25 @@
 		</script>
   		
   		<script type="text/javascript">
-        function check() {
-            var completion = 0;
-            if (document.getElementById("UFname").value != "") {
-                completion=completion + 20;
-            }
-            if (document.getElementById("ULname").value != "") {
-                completion=completion + 20;
-            }
-            if (document.getElementById("UuserName").value != "") {
-                completion=completion + 20;
-            }
-            if (document.getElementById("Uemail").value != "") {
-                completion=completion + 20;
-            }
-             if (document.getElementById("Uphone").value != "") {
-                completion=completion + 20;
-            }
-            document.getElementById("progressbar").style.width = completion + "%";//* 20 + "px";
-       	 }
+			function check() {
+				var completion = 0;
+				if (document.getElementById("UFname").value != "") {
+					completion=completion + 20;
+				}
+				if (document.getElementById("ULname").value != "") {
+					completion=completion + 20;
+				}
+				if (document.getElementById("UuserName").value != "") {
+					completion=completion + 20;
+				}
+				if (document.getElementById("Uemail").value != "") {
+					completion=completion + 20;
+				}
+				 if (document.getElementById("Uphone").value != "") {
+					completion=completion + 20;
+				}
+				document.getElementById("progressbar").style.width = completion + "%";//* 20 + "px";
+			 }
 		</script>
 	</head>
 	

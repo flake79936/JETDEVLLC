@@ -109,36 +109,41 @@
 		
 		<!-- Form Code Start -->
 		<div id='fg_membersite' align="center">
-			<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-				<fieldset align="left">
-					<legend>Login</legend>
+			<fieldset align="left">
+				<legend>Login</legend>
+				<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+						<input type='hidden' name='submitted' id='submitted' value='1'/>
 
-					<input type='hidden' name='submitted' id='submitted' value='1'/>
+						<div class='short_explanation'>* required fields</div>
 
-					<div class='short_explanation'>* required fields</div>
+						<div>
+							<span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span>
+						</div>
+						<div class='container'>
+							<label for='UuserName' >UserName*:</label><br/>
+							<input type='text' name='UuserName' title="Enter your Username" id='UuserName' value='<?php echo $fgmembersite->SafeDisplay('UuserName') ?>' maxlength="50" /><br/>
+							<span id='login_UuserName_errorloc' class='error'></span>
+						</div>
+						<div class='container'>
+							<label for='UPswd' >Password*:</label><br/>
+							<input type='password' title="Enter your Password" name='UPswd' id='UPswd' maxlength="50" /><br/>
+							<span id='login_UPswd_errorloc' class='error'></span>
+						</div>
 
-					<div>
-						<span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span>
-					</div>
-					<div class='container'>
-						<label for='UuserName' >UserName*:</label><br/>
-						<input type='text' name='UuserName' title="Enter your Username" id='UuserName' value='<?php echo $fgmembersite->SafeDisplay('UuserName') ?>' maxlength="50" /><br/>
-						<span id='login_UuserName_errorloc' class='error'></span>
-					</div>
-					<div class='container'>
-						<label for='UPswd' >Password*:</label><br/>
-						<input type='password' title="Enter your Password" name='UPswd' id='UPswd' maxlength="50" /><br/>
-						<span id='login_UPswd_errorloc' class='error'></span>
-					</div>
-
-					<div class='container'>
-						<input type='submit' name='Submit' value='Submit' />
-						<input type="button" onclick="goBack();" value="Go Back" />
-					</div>
-					<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-					<div class='short_explanation'><a href='registration.php'>Register Here</a></div>
-				</fieldset>
-			</form>
+						<div class='container'>
+							<input type='submit' name='Submit' value='Submit' />
+							<input type="button" onclick="goBack();" value="Go Back" />
+						</div>
+				</form>
+				<div class='container'>
+					<form id="register" action="./registration.php" method="GET">
+						<input type="submit" value="Register" name="Register"/>
+					</form>
+					<form id="ForgotPswd" action="./reset-pwd-req.php" method="GET">
+						<input type="submit" value="Forgot Password?" name="ForgotPswd"/>
+					</form>
+				</div>
+			</fieldset>
 
 			<script type='text/javascript'>
 				// <![CDATA[
