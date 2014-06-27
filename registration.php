@@ -17,10 +17,6 @@
 		<!--(Start) Style Sheets-->
 			<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
 			<link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
-			
-			<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-			<link href="css/styleEdit.css"        rel="stylesheet" type="text/css" />
-			<link href="css/responsiveEdit.css"   rel="stylesheet" type="text/css" />
 				
 			<!--(Start) Provided by JetDevLLC-->
 				<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
