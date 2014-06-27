@@ -10,79 +10,90 @@
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="favicon.ico" />
 		<title>User Registration</title>
 		
-		<!--Stylesheets-->
-		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
-		<link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
+		<!--(Start) Style Sheets-->
+			<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
+			<link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
+			
+			<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+			<link href="css/styleEdit.css"        rel="stylesheet" type="text/css" />
+			<link href="css/responsiveEdit.css"   rel="stylesheet" type="text/css" />
+				
+			<!--(Start) Provided by JetDevLLC-->
+				<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+				<link href="css/styleEdit.css"            rel="stylesheet" type="text/css" />
+				<link href="css/responsiveEdit.css"       rel="stylesheet" type="text/css" />	
+				<!--[if IE 6]>
+				<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
+				</style>
+				<![endif]-->
+			<!--(End) Provided by JetDevLLC-->
+		<!--(End) Style Sheets-->
 		
-		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-		<link href="css/styleEdit.css" rel="stylesheet" type="text/css" />
-		<link href="css/responsiveEdit.css" rel="stylesheet" type="text/css" />
-		<link rel="shortcut icon" href="favicon.ico" />	
-		<!--[if IE 6]>
-		<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
-		</style>
-		<![endif]-->
-		
-		<!--Scripts-->
-		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
-		<script src="js/iepngfix_tilebg.js"  type="text/javascript"></script>
-		<script src="js/scrollTo.js"         type="text/javascript"></script>
-		<script src="js/global.js"           type="text/javascript"></script>
-		<script type="text/javascript">
-			$(function(){
-				$("#talktous-nav, #findstadarena-nav, #emaildeals-nav, #product-nav, #faq-nav").scrollTo({ offset:-54 });
-				$(".mobile-nav").scrollTo({ offset:0 });
-			});
-
-			$(document).ready(function(){
-				$(".mobile-menu-list").hide();
-				$('.mobile-menu-btn').click(function(){
-					$(this).toggleClass("active");
-					$(".mobile-menu-list").slideToggle(200);
-				});
-			});
-		</script>
-		
-		<script type="text/javascript" src="scripts/gen_validatorv31.js"></script>
-		<script src="scripts/pwdwidget.js" type="text/javascript"></script>
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-		
-		<!--code for tooltip-->
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-		<link rel="stylesheet" href="/resources/demos/styleEdit.css">
-		<script>
-			$(function() {
-				$( document ).tooltip();
-			});
-		</script>
-  		
-  		<script type="text/javascript">
-			function check() {
-				var completion = 0;
-				if (document.getElementById("UFname").value != "") {
-					completion=completion + 20;
-				}
-				if (document.getElementById("ULname").value != "") {
-					completion=completion + 20;
-				}
-				if (document.getElementById("UuserName").value != "") {
-					completion=completion + 20;
-				}
-				if (document.getElementById("Uemail").value != "") {
-					completion=completion + 20;
-				}
-				 if (document.getElementById("Uphone").value != "") {
-					completion=completion + 20;
-				}
-				document.getElementById("progressbar").style.width = completion + "%";//* 20 + "px";
-			 }
-		</script>
+		<!--(Start) Scripts-->
+			<script type="text/javascript" src="scripts/gen_validatorv31.js"></script>
+			<script src="scripts/pwdwidget.js" type="text/javascript"></script>
+			<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+			<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+			
+			<!--(Start) Tooltip Scripts-->
+				<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+				<link rel="stylesheet" href="/resources/demos/styleEdit.css">
+				<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+				<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+				<script type="text/javascript">
+					$(function(){
+						$(document).tooltip();
+					});
+				</script>
+			<!--(End) Tooltip Scripts-->
+			
+			<!--(Start) Progress Bar-->
+				<script type="text/javascript">
+					function check() {
+						var completion = 0;
+						if (document.getElementById("UFname").value != "") {
+							completion=completion + 20;
+						}
+						if (document.getElementById("ULname").value != "") {
+							completion=completion + 20;
+						}
+						if (document.getElementById("UuserName").value != "") {
+							completion=completion + 20;
+						}
+						if (document.getElementById("Uemail").value != "") {
+							completion=completion + 20;
+						}
+						 if (document.getElementById("Uphone").value != "") {
+							completion=completion + 20;
+						}
+						document.getElementById("progressbar").style.width = completion + "%";//* 20 + "px";
+					 }
+				</script>
+			<!--(End) Progress Bar-->
+			
+			<!--(Start) Provided by JetDevLLC-->
+				<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+				<script src="js/iepngfix_tilebg.js"  type="text/javascript"></script>
+				<script src="js/scrollTo.js"         type="text/javascript"></script>
+				<script src="js/global.js"           type="text/javascript"></script>
+				
+				<!--(Start) Mobile Menu Toggle-->
+					<script type="text/javascript">
+						$(function(){
+							$(".mobile-menu-list").hide();
+							$('.mobile-menu-btn').click(function(){
+								$(this).toggleClass("active");
+								$(".mobile-menu-list").slideToggle(200);
+							});
+						});
+					</script>
+				<!--(End) Mobile Menu Toggle-->
+			<!--(End) Provided by JetDevLLC-->
+		<!--(End) Scripts-->
 	</head>
 	
 	<body>
