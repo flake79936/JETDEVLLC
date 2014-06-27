@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?PHP
 	require_once("./include/membersite_config.php");
  	if(!$fgmembersite->CheckLogin()){
@@ -190,7 +190,7 @@
 		</div>
 	</body>
 </html>
-=======
+
 <?PHP
 	require_once("./include/membersite_config.php");
  	if(!$fgmembersite->CheckLogin()){
@@ -382,5 +382,5 @@
 		</div>
 	</body>
 </html>
->>>>>>> FETCH_HEAD
+
 <?PHP mysqli_close($con)?>

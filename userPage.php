@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?PHP
 	require_once("./include/membersite_config.php");
 	/*This part ckecks whether there is a session or not.*/
@@ -73,7 +73,7 @@
 			</ul>   
 		</div><!--//mobile-menu-list-->
 	</body>
-=======
+
 <?PHP
 	require_once("./include/membersite_config.php");
 	/*This part ckecks whether there is a session or not.*/
@@ -148,5 +148,5 @@
 			</ul>   
 		</div><!--//mobile-menu-list-->
 	</body>
->>>>>>> FETCH_HEAD
+
 </html>

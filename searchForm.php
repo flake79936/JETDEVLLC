@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?PHP
 	require_once("./include/membersite_config.php");
 	/*if(isset($_POST['submitted'])){
@@ -120,7 +120,7 @@
 			</form>
 		</div>
 	</body>
-=======
+
 <?PHP
 	require_once("./include/membersite_config.php");
 	/*if(isset($_POST['submitted'])){
@@ -242,5 +242,5 @@
 			</form>
 		</div>
 	</body>
->>>>>>> FETCH_HEAD
+
 </html>
