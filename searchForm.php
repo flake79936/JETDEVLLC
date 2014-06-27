@@ -31,8 +31,8 @@
 			
 			<!--(Start) Provided by JetDevLLC-->
 				<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-				<link href="css/style.css"            rel="stylesheet" type="text/css" />
-				<link href="css/responsive.css"       rel="stylesheet" type="text/css" />	
+				<link href="css/styleEdit.css"            rel="stylesheet" type="text/css" />
+				<link href="css/responsiveEdit.css"       rel="stylesheet" type="text/css" />	
 				<!--[if IE 6]>
 				<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
 				</style>
@@ -73,7 +73,7 @@
 			
 			<!--(Start) Tooltip Scripts-->
 				<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-				<link rel="stylesheet" href="/resources/demos/style.css">
+				<link rel="stylesheet" href="/resources/demos/styleEdit.css">
 				<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 				<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 				<script type="text/javascript">

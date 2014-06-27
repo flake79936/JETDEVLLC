@@ -18,8 +18,8 @@
 		<link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
 		
 		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
-		<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+		<link href="css/styleEdit.css" rel="stylesheet" type="text/css" />
+		<link href="css/responsiveEdit.css" rel="stylesheet" type="text/css" />
 		<link rel="shortcut icon" href="favicon.ico" />	
 		<!--[if IE 6]>
 		<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
@@ -55,7 +55,7 @@
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-		<link rel="stylesheet" href="/resources/demos/style.css">
+		<link rel="stylesheet" href="/resources/demos/styleEdit.css">
 		<script>
 			$(function() {
 				$( document ).tooltip();

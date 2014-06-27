@@ -16,8 +16,8 @@
 			
 			<!--(Start) Provided by JetDevLLC-->
 				<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-				<link href="css/style.css"            rel="stylesheet" type="text/css" />
-				<link href="css/responsive.css"       rel="stylesheet" type="text/css" />
+				<link href="css/styleEdit.css"            rel="stylesheet" type="text/css" />
+				<link href="css/responsiveEdit.css"       rel="stylesheet" type="text/css" />
 				<!--[if IE 6]>
 				<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
 				</style>

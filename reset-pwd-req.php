@@ -20,8 +20,8 @@
 		
 		<!--(Start) Provided by JetDevLLC-->
 		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-		<link href="css/style.css"            rel="stylesheet" type="text/css" />
-		<link href="css/responsive.css"       rel="stylesheet" type="text/css" />
+		<link href="css/styleEdit.css"            rel="stylesheet" type="text/css" />
+		<link href="css/responsiveEdit.css"       rel="stylesheet" type="text/css" />
 		<link href="favicon.ico"              rel="shortcut icon"  />	
 		<!--[if IE 6]>
 		<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
@@ -49,9 +49,8 @@
 		<!--(End) Provided by JetDevLLC-->
 		
 		<!--(End) Scripts-->
-		
-		
 	</head>
+	
 	<body>
 		<div class="header-wrap">
 			<div class="header">
@@ -87,40 +86,44 @@
 		</div><!--//mobile-menu-list-->
 	
 		<!-- Form Code Start -->
-		<div id='fg_membersite' align="center">
-			<form id='resetreq' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-				<fieldset align="left">
-					<legend>Reset Password</legend>
+		<div class="wrap">
+			<div id='fg_membersite' align="center">
+				<form id='resetreq' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+					<fieldset align="left">
+						<legend>Reset Password</legend>
 
-					<input type='hidden' name='submitted' id='submitted' value='1'/>
+						<input type='hidden' name='submitted' id='submitted' value='1'/>
 
-					<div class='short_explanation'>* required fields</div>
+						<div class='short_explanation'>* required fields</div>
 
-					<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-					<div class='container'>
-						<label for='username' >Your Email*:</label><br/>
-						<input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
-						<span id='resetreq_email_errorloc' class='error'></span>
-					</div>
-					<div class='short_explanation'>A link to reset your password will be sent to the email address</div>
-					<div class='container'>
-						<input type='submit' name='Submit' value='Submit' />
-					</div>
-				</fieldset>
-			</form>
-
-			<script type='text/javascript'>
-				// <![CDATA[
-
-				var frmvalidator  = new Validator("resetreq");
-				frmvalidator.EnableOnPageErrorDisplay();
-				frmvalidator.EnableMsgsTogether();
-
-				frmvalidator.addValidation("email","req","Please provide the email address used to sign-up");
-				frmvalidator.addValidation("email","email","Please provide the email address used to sign-up");
-
-				// ]]>
-			</script>
+						<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+						<div class='container'>
+							<label for='username' >Your Email*:</label><br/>
+							<input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
+							<span id='resetreq_email_errorloc' class='error'></span>
+						</div>
+						<div class='short_explanation'>A link to reset your password will be sent to the email address</div>
+						<div class='container'>
+							<input type='submit' name='Submit' value='Submit' />
+						</div>
+					</fieldset>
+				</form>
+			</div>
 		</div>
 	</body>
+	
+	<!--This script needs to wihtin the file. 
+		It is validating the form.-->
+	<script type='text/javascript'>
+		// <![CDATA[
+
+		var frmvalidator  = new Validator("resetreq");
+		frmvalidator.EnableOnPageErrorDisplay();
+		frmvalidator.EnableMsgsTogether();
+
+		frmvalidator.addValidation("email","req","Please provide the email address used to sign-up");
+		frmvalidator.addValidation("email","email","Please provide the email address used to sign-up");
+
+		// ]]>
+	</script>
 </html>
