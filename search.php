@@ -14,13 +14,13 @@
 		exit();
 	}
 
-	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
+	//$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
 
-	if (!$con) {
+	/*if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
-	}
+	}*/
 
-	mysqli_select_db($con, "EventAdvisor");
+	//mysqli_select_db($con, "EventAdvisor");
 
 	// 	$sql = "SELECT Evename, Edescription, Etype, Eaddress, Ecity, Estate, Ezip FROM Events WHERE UuserName = '" . $usrname . "'";
 	$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $searchTerm . "' UNION ALL 
@@ -100,7 +100,7 @@
 		<!--(End) Scripts-->
 	</head>
 	
-	<body >
+	<body>
 		<div class="header-wrap">
 			<div class="header">
 				<a class="logout-btn" href='logout.php'>Log Out</a>

@@ -183,17 +183,19 @@ class FGMembersite{
     }
 	
 	function DBLogin(){
-        $this->connection = mysql_connect($this->db_host,$this->username,$this->pwd);
+        $this->connection = mysql_connect($this->db_host, $this->username, $this->pwd);
 
         if(!$this->connection){   
             $this->HandleDBError("Database Login failed! Please make sure that the DB login credentials provided are correct");
             return false;
         }
+		
         if(!mysql_select_db($this->database, $this->connection)){
             $this->HandleDBError('Failed to select database: '.$this->database.' Please make sure that the database name provided is correct');
             return false;
         }
-        if(!mysql_query("SET NAMES 'UTF8'",$this->connection)){
+		
+        if(!mysql_query("SET NAMES 'UTF8'", $this->connection)){
             $this->HandleDBError('Error setting utf8 encoding');
             return false;
         }
@@ -738,10 +740,74 @@ class FGMembersite{
 	/*----(End) Database Management----*/
 	
 	/*----(Start) Search Event----*/
+	function searchEvent(){
+		if(!isset($_POST['submitted'])){
+			return false;
+		}
+
+		$formvars = array();
+
+		if(!$this->ValidateSearchSubmission()){
+			return false;
+		}
+		
+		$this->CollectSearchSubmission($formvars);
+		
+		if(!$this->searchEventHelper($formvars)){
+			//$this->HandleError("Did not Find any Results by 2 " . $formvars['eventSearch']);
+			return false;
+		} else {
+			$result = $this->searchEventHelper($formvars);
+		}
+
+		return $result;
+	}
 	
+	function ValidateSearchSubmission(){
+		//This is a hidden input field. Humans won't fill this field.
+		if(!empty($_POST[$this->GetSpamTrapInputName()]) ){
+			//The proper error is not given intentionally
+			$this->HandleError("Automated submission prevention: case 2 failed");
+			return false;
+		}
+
+		$validator = new FormValidator();
+		$validator->addValidation("eventSearch", "req", "Search Field is Empty!");
+
+		if(!$validator->ValidateForm()){
+			$error = '';
+			$error_hash = $validator->GetErrors();
+			foreach($error_hash as $inpname => $inp_err){
+				$error .= $inpname.':'.$inp_err."\n";
+			}
+			$this->HandleError($error);
+			return false;
+		}        
+		return true;
+	}
 	
+	function CollectSearchSubmission(&$formvars){
+		$formvars['eventSearch'] = $this->Sanitize($_POST['eventSearch']);
+	}
 	
-	/*----(End)   Search Event----*/
+	function searchEventHelper(&$formvars){
+		if(!$this->DBLogin()){
+			$this->HandleError("Database login failed!");
+			return false;
+		}
+		
+		$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $formvars['eventSearch'] . "' UNION ALL SELECT * FROM Events WHERE Estate LIKE '" . $formvars['eventSearch'] . "' ORDER BY EstartDate";
+		
+		$result = mysql_query($sql, $this->connection);
+		
+		if(!$result || mysql_num_rows($result) <= 0){
+			$this->HandleError("Did Not Find Any Results For " . $formvars['eventSearch']);
+			return false;
+		}
+		
+		return $result;
+	}
+	/*----(End) Search Event----*/
 	
 	/*----(Start) Password Management----*/
 	function EmailResetPasswordLink(){

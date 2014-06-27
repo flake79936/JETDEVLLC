@@ -1,14 +1,13 @@
 <?PHP
 	require_once("./include/membersite_config.php");
-	/*if(isset($_POST['submitted'])){
-		if($fgmembersite->Login()){
-			$fgmembersite->RedirectToURL("userPage.php");
-		}
-	}*/
-	
+	//assuming the user is registered
 	if(!$fgmembersite->CheckLogin()){
 		$fgmembersite->RedirectToURL("index.php");
 		exit;
+	}
+	
+	if(isset($_POST["submitted"])){
+		$result = $fgmembersite->searchEvent();
 	}
 ?>
 
@@ -22,7 +21,8 @@
 		<meta name="format-detection" content="email=no" />
 		
 		<!--(Start) Style Sheets-->
-		<link href="css/fg_membersite.css"    rel="STYLESHEET" type="text/css"  />
+		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
+		<link href="css/accordion.css" rel="stylesheet" type="text/css" />
 		
 		<!--(Start) Provided by JetDevLLC-->
 		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -99,24 +99,99 @@
 		</div><!--//mobile-menu-list-->
 		
 		<div id='fg_membersite' align="center">
-			<form id='login' action='search.php' method='GET' accept-charset='UTF-8'>
+			<form id='search' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='POST' accept-charset='UTF-8'>
 				<fieldset align="left">
 					<legend>Search</legend>
 					<input type='hidden' name='submitted' id='submitted' value='1'/>
 					
-					<div>
-						<span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span>
-					</div>
-					
 					<div class='container'>
-						<label for='search' >Search:</label><br/>
-						<input type='text' name='Search' title="..." id='Search' value='<?php echo $fgmembersite->SafeDisplay('Search') ?>' maxlength="50" /><br/>
-						<span id='login_UuserName_errorloc' class='error'></span>
+						<label for='eventSearch' >Search:</label><br/>
+						<input type='text' name='eventSearch' title="..." id='eventSearch' value='<?php echo $fgmembersite->SafeDisplay('eventSearch') ?>' maxlength="50" /><br/>
+						<span id='search_eventSearch_errorloc' class='error'></span>
 					</div>
 					
-					<input type="submit" value="Search" />
+					<input id="submitButton" type="submit" name="Submit" value="Search" />
 				</fieldset>
+				<div>
+					<span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span>
+				</div>
 			</form>
+			
+			<?php
+				if(isset($_POST["submitted"])){ ?>
+				<div id="main_container">
+					<div id='middle_box'>
+						<div id="inner-mid-box">
+							<?PHP
+								$i = 0;
+								while($row = mysql_fetch_assoc($result)){ 
+								
+								//if the street name contains two or more words, the map will not recognize the street.
+								$address = $row['Eaddress'] . ", " . $row['Ecity'] . ", " . $row['Estate'] . " " . $row['Ezip'];
+								$expression = "/\s/";
+								$replace = "+";
+
+								$street = preg_replace($expression, $replace, $address);
+							?>
+								<div class="accordion vertical">
+									<ul>
+										<li>
+											<input type="radio" id="radio-<?= $i?>" name="radio-accordion" checked="checked" />
+											<label for="radio-<?= $i?>"><?= $row['Evename'] ?></label>
+											<!-- <label for="radio-<?= $i?>">Event <?= $i?></label> -->
+											<div class="content">
+												<!-- <h3>hello test</h3 -->
+												<p><?= $row['Evename'] ?></p>
+												<p><?= $row['Eaddress'] ?></p>
+												<p><?= $row['Edescription'] ?></p>
+												<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
+
+												
+												<a href="<?= $row['Efacebook'] ?>"target="_blank" >
+												<img src="./img/icons/facebook.ico"
+												width="20" height="20" title="Facebook" 
+												border="0" style="display:inline;"></a>
+												
+												
+												<a href="https://twitter.com/intent/tweet?button_hashtag=<?= $row['Ehashtag'] ?>" 
+												class="twitter-hashtag-button">Tweet#<?= $row['Ehashtag'] ?></a>
+												
+												
+												<a href="https://twitter.com/<?= $row['Etwitter'] ?>" class="twitter-follow-button" 
+												data-show-count="false" data-lang="en">Follow<?= $row['Etwitter'] ?></a>
+
+												
+												<a href="<?= $row['Egoogle'] ?>" rel="publisher" target="_blank">
+												<img src="./img/icons/googleplus.ico"
+												width="20" height="20" title="google+" 
+												border="0" style="display:inline;"></a>
+												<p><?= $row['Eother'] ?></p>																											
+												<p><iframe
+													width="300"
+													height="150"
+													frameborder="0" style="border:0"
+													src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0uLEbR6K9fehSmaCyR4-NdWmIUaYevjY&q=<?= $street?>">
+												</iframe></p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							<?PHP $i++; } ?>
+						</div>
+					</div>
+				</div>
+			<?PHP } else {
+				 echo "";
+				} ?>
 		</div>
 	</body>
+	<script type="text/javascript">
+		// <![CDATA[
+		var frmvalidator = new Validator("search");
+		frmvalidator.EnableOnPageErrorDisplay();
+		frmvalidator.EnableMsgsTogether();
+		
+		frmvalidator.addValidation("eventSearch", "req", "Search Field is Empty!");
+		// ]]>
+	</script>
 </html>
