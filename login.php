@@ -33,13 +33,7 @@
 		
 		<!--(Start) Scripts-->
 		<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-		
-		<!--Go Back function-->
-		<script>
-			function goBack() {
-				window.history.back()
-			}
-		</script>
+
 		
 		<!--code for tooltip-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
