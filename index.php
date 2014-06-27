@@ -71,7 +71,7 @@
 				<li><a class="mobile-nav" href="#emaildeals">Email Deals</a></li>
 				<li><a class="mobile-nav" href="#product">Product</a></li>
 				<li><a class="mobile-nav" href="#faq">FAQ</a></li>
-				<li><a class="mobile-nav" href="#"><span class="icon-lock"></span> Login</a></li>
+				<li><a href="./login.php"><span class="icon-lock"></span> Login</a></li>
 			</ul>   
 		</div><!--//mobile-menu-list-->
 

@@ -73,7 +73,6 @@
 	<body>
 		<div class="header-wrap">
 			<div class="header">
-				<!--<a class="login-btn" href="login.php">Log In</a>-->
 				<ul class="head-social-icons">
 					<li><a class="facebook"   href="#"></a></li>
 					<li><a class="twitter"    href="#"></a></li>
@@ -81,7 +80,7 @@
 				</ul><!--//head-social-icons-->
 
 				<ul class="nav">
-					<li><a id="talktous-nav" href="#talktous">Talk to Us</a></li>
+					<li><a href="./index.php">Home</a></li>
 					<li><span class="shadow">|</span></li>
 					<li><a id="findstadarena-nav" href="#findstadarena">Find a Stadium/Arena</a></li>
 					<li><span class="shadow">|</span></li>
@@ -90,7 +89,6 @@
 					<li><a id="product-nav" href="#product">Product</a></li>
 					<li><span class="shadow">|</span></li>
 					<li><a href="#Events">Events</a></li>
-					<!--<li><a id="faq-nav" href="#faq">Event</a></li>-->
 				</ul>
 				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
 			</div><!--//header-->
@@ -98,12 +96,11 @@
 
 		<div class="mobile-menu-list">
 			<ul>
-				<li><a class="mobile-nav" href="#talktous">Talk to Us</a></li>
-				<li><a class="mobile-nav" href="#findstadarena">Find a Stadium/Arena</a></li>
-				<li><a class="mobile-nav" href="#emaildeals">Email Deals</a></li>
-				<li><a class="mobile-nav" href="#product">Product</a></li>
-				<li><a class="mobile-nav" href="#faq">FAQ</a></li>
-				<li><a class="mobile-nav" href="#"><span class="icon-lock"></span> Login</a></li>
+				<li><a href="./index.php">Home</a></li>
+				<!--<li><a href="#findstadarena">Find a Stadium/Arena</a></li>
+				<li><a href="#emaildeals">Email Deals</a></li>
+				<li><a href="#product">Product</a></li>
+				<li><a href="#faq">FAQ</a></li>-->
 			</ul>   
 		</div><!--//mobile-menu-list-->
 		
@@ -132,18 +129,28 @@
 
 						<div class='container'>
 							<input type='submit' name='Submit' value='Submit' />
-							<input type="button" onclick="goBack();" value="Go Back" />
 						</div>
 				</form>
-				<div class='container'>
-					<form id="register" action="./registration.php" method="GET">
-						<input type="submit" value="Register" name="Register"/>
-					</form>
-					<form id="ForgotPswd" action="./reset-pwd-req.php" method="GET">
-						<input type="submit" value="Forgot Password?" name="ForgotPswd"/>
-					</form>
-				</div>
 			</fieldset>
+			
+			<fieldset align="left">
+				<legend>Help?</legend>
+				<table>
+					<tr>
+						<td>
+							<form id="register" action="./registration.php" method="GET">
+								<input type="submit" value="Register" name="Register"/>
+							</form>
+						</td>
+						<td>
+							<form id="ForgotPswd" action="./reset-pwd-req.php" method="GET">
+								<input type="submit" value="Forgot Password?" name="ForgotPswd"/>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+			
 
 			<script type='text/javascript'>
 				// <![CDATA[
