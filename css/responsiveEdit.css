@@ -6,7 +6,7 @@
 @media only screen and (max-width: 1024px) {
 	.wrap { width:100%; padding:0; }
 	
-	.header-wrap { position:relative; }
+	/*.header-wrap { position:relative; }*/
 	.header { width:100%; }
 	
 	.nav, .login-btn { display:none; }

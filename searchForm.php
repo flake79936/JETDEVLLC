@@ -126,7 +126,7 @@
 			</div><!--//header-->
 		</div><!--//header-wrap-->
 		
-		<div class="mobile-menu-list" onload="mobileMenuBtn();">
+		<div class="mobile-menu-list">
 			<ul>
 				<li><a href="./userPage.php">User Page</a></li>
 				<li><a href="./eventCreation.php">Create Event</a></li>
@@ -135,10 +135,9 @@
 		</div><!--//mobile-menu-list-->
 		
 		<div id='fg_membersite' align="center">
-			<div class="wrap">
+			<fieldset align="left">
+				<legend>Search</legend>
 				<form id='search' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='POST' accept-charset='UTF-8'>
-					<fieldset align="left">
-						<legend>Search</legend>
 						<input type='hidden' name='submitted' id='submitted' value='1'/>
 						
 						<div>
@@ -152,10 +151,8 @@
 						</div>
 						
 						<input id="submitButton" type="submit" name="Submit" value="Search" />
-						
-					</fieldset>
 				</form>
-			</div>
+			</fieldset>
 		</div>
 		
 		<?php
