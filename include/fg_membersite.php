@@ -113,8 +113,6 @@ class FGMembersite{
 		$validator->addValidation("Uemail",    "req",   "Please Please fill in Name");
 		$validator->addValidation("Uemail",    "email", "Please Provide a Valid Email: Syntax is Wrong");
 		$validator->addValidation("Uphone",    "req",   "Please Provide a Phone Number");
-		//$validator->addValidation("Uadmin",    "req",   "Please fill in Name");
-		
 
         if(!$validator->ValidateForm()){
             $error='';

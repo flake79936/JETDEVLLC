@@ -130,92 +130,73 @@
 		</div><!--//mobile-menu-list-->
 		
 		<div id='fg_membersite' align='center'>
-			<form id="register" action="<?php echo $fgmembersite->GetSelfScript(); ?>" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
-				<fieldset align='left'>
-					<table>
-						<legend>User Registration</legend>
+			<fieldset align='left'>
+				<legend>User Registration</legend>
+				<form id="register" action="<?php echo $fgmembersite->GetSelfScript(); ?>" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
 						<!-- <div id="progressbar"></div> -->
 						<div style="width: 100%; height: 30px; border: 1px solid green; border-radius: 4px;">
        					<div style="width: 0px; height: 30px; border:0px; background-color: lightgreen;" id="progressbar">   	Progress</div>
 						</div>
 						<input type="hidden" name="submitted" id="submitted" value="1"/>
 
-						<tr><td class="short_explanation">* required fields</td></tr>
+						<div class="short_explanation">* required fields</div>
 						<input type="text" class="spmhidip" name="<?php echo $fgmembersite->GetSpamTrapInputName(); ?>" />
 
-						<tr><td><span class="error"><?php echo $fgmembersite->GetErrorMessage(); ?></span></td></tr>
+						<div><span class="error"><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 						<!--First Name-->
-						<tr>
-							<td class="container">
-							
+							<div class="container">
 								<label for="UFname">First Name*: </label><br/>
 								<input type="text" name="UFname" title="Enter your First Name" id="UFname" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay('UFname') ?>" maxlength="50" /><br/>
 								<span id="register_UFname_errorloc" class="error"></span>
-							</td>
-						</tr>
+							</div>
 						
 						<!--Last Name-->
-						<tr>
-							<td class="container">
+							<div class="container">
 								<label for="ULname">Last Name*: </label><br/>
 								<input type="text" name="ULname" title="Enter your Last Name"id="ULname" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay('ULname') ?>" maxlength="50" /><br/>
 								<span id="register_ULname_errorloc" class="error"></span>
-							</td>
-						</tr>
+							</div>
 						
 						<!--Username-->
-						<tr>
-							<td class="container">
+							<div class="container">
 								<label for="UuserName">Username*: </label><br/>
 								<input type="text" name="UuserName" title="Enter your Username" id="UuserName" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay("UuserName") ?>" maxlength="50" /><br/>
 								<span id="register_UuserName_errorloc" class="error"></span>
-							</td>
-						</tr>
+							</div>
 						
 						<!--Password-->
-						<tr>
-							<td class='container' style='height:80px;'>
-									<label for='UPswd' >Password*:</label><br/>
-									<div class='pwdwidgetdiv' id='thepwddiv' ></div>
-									<noscript>
-										<input type='password' name='UPswd' title="Enter your Password" id='UPswd' value="<?php echo $fgmembersite->SafeDisplay("UPswd") ?>" maxlength="50" />
-									</noscript>    
-									<div id='register_UPswd_errorloc' class='error' style='clear:both'></div>
-							</td>
-						</tr>
+							<div class='container' style='height:80px;'>
+								<label for='UPswd' >Password*:</label><br/>
+								<div class='pwdwidgetdiv' id='thepwddiv' ></div>
+								<noscript>
+									<input type='password' name='UPswd' title="Enter your Password" id='UPswd' value="<?php echo $fgmembersite->SafeDisplay("UPswd") ?>" maxlength="50" />
+								</noscript>
+								<br/><span id='register_UPswd_errorloc' class='error' style='clear:both'></span>
+							</div>
 						
 						<!--Confirm Password-->
-						<tr>
-							<td class="container">
+							<div class="container">
 								<label for="ConPswd" >Confirm Password*: </label><br/>
 								<input type='password' name="ConPswd" title="Confirm your Password"id="ConPswd" value="<?php echo $fgmembersite->SafeDisplay("ConPswd") ?>" maxlength="50" /><br/>
-								<span id="register_ConPswd_errorloc" class="error" style="clear"></span>
-							</td>
-						</tr>
-						
-						
+								<span id="register_ConPswd_errorloc" class="error" style="clear: both"></span>
+							</div>
 						
 						<!--Email-->
-						<tr>
-							<td class="container">
+							<div class="container">
 								<label for="Uemail" >Email*: </label><br/>
 								<input type="text" name="Uemail" title="Enter your Email"id="Uemail" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay('Uemail') ?>" maxlength="50" /><br/>
 								<span id="register_Uemail_errorloc" class="error"></span>
-							</td>
-						</tr>
+							</div>
 						
 						<!--Phone-->
-						<tr>
-							<td class="container">
+							<div class="container">
 								<label for="Uphone" >Phone*: </label><br/>
 								<input type="text" name="Uphone" title="Enter your Phone Number"id="Uphone" onchange="check()" value="<?php echo $fgmembersite->SafeDisplay("Uphone") ?>" maxlength="50" /><br/>
 								<span id="register_Uphone_errorloc" class="error"></span>
-							</td>
-						</tr>
-					</table>
+							</div>
 					<input id="submitButton" type="submit" name="Submit" value="submit" />
-				</fieldset>
-			</form>
+				</form>
+			</fieldset>
 		</div>
 	</body>
 	
