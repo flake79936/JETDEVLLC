@@ -112,7 +112,6 @@
 					<li><a id="product-nav" href="#product">Product</a></li>
 					<li><span class="shadow">|</span></li>
 					<li><a href="#Events">Events</a></li>
-					<!--<li><a id="faq-nav" href="#faq">Event</a></li>-->
 				</ul>
 				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
 			</div><!--//header-->
@@ -120,12 +119,12 @@
 
 		<div class="mobile-menu-list">
 			<ul>
-				<li><a class="mobile-nav" href="#talktous">Talk to Us</a></li>
+				<li><a href="./index.php">Home</a></li>
 				<li><a class="mobile-nav" href="#findstadarena">Find a Stadium/Arena</a></li>
 				<li><a class="mobile-nav" href="#emaildeals">Email Deals</a></li>
 				<li><a class="mobile-nav" href="#product">Product</a></li>
 				<li><a class="mobile-nav" href="#faq">FAQ</a></li>
-				<li><a class="mobile-nav" href="#"><span class="icon-lock"></span> Login</a></li>
+				<li><a href="./login.php"><span class="icon-lock"></span> Login</a></li>
 			</ul>   
 		</div><!--//mobile-menu-list-->
 		
