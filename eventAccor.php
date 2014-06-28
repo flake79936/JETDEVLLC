@@ -22,18 +22,25 @@
 
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="favicon.ico" />	
 		<title>Your Events</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		
 		<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
-		<link href="css/accordion.css" rel="stylesheet" type="text/css" />
+		<link href="css/responsiveAccordion.css" rel="stylesheet" type="text/css" />
+		
 		<!--(Start) Provided by JetDevLLC-->
-		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-		<link href="css/style.css"            rel="stylesheet" type="text/css" />
-		<link href="css/responsive.css"       rel="stylesheet" type="text/css" />
-		<link href="favicon.ico"              rel="shortcut icon"  />	
-		<!--[if IE 6]>
-		<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
-		</style>
-		<![endif]-->
+			<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+			<link href="css/styleEdit.css"        rel="stylesheet" type="text/css" />
+			<link href="css/responsiveEdit.css"   rel="stylesheet" type="text/css" />
+			<!--[if IE 6]>
+			<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
+			</style>
+			<![endif]-->
 		<!--(End) Provided by JetDevLLC-->
 	
 		<!-- Twitter script -->
@@ -55,7 +62,8 @@
 				var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
 				if(!d.getElementById(id)){
 					js=d.createElement(s);
-					js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+					js.id=id;
+					js.src=p+'://platform.twitter.com/widgets.js';
 					fjs.parentNode.insertBefore(js,fjs);
 				}
 			}(document, 'script', 'twitter-wjs');
@@ -78,7 +86,6 @@
 		</script>
 		<!--(End) Provided by JetDevLLC-->
 		<!--(End) Scripts-->
-		
 	</head>
 	
 	<body >
@@ -130,10 +137,7 @@
 								<li>
 									<input type="radio" id="radio-<?= $i?>" name="radio-accordion" checked="checked" />
 									<label for="radio-<?= $i?>"><?= $row['Evename'] ?></label>
-									<!-- <label for="radio-<?= $i?>">Event <?= $i?></label> -->
 									<div class="content">
-										<!-- <h3>hello test</h3 -->
-										<!-- <h3>hello test</h3 -->
 										
 										<p><b>Address of Event:</b>&nbsp;<?= $row['Eaddress'] ?></p>
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
