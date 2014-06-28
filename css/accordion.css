@@ -38,7 +38,8 @@
 	display:            block;
 	font-size:          16px;
 	line-height:        16px;
-	background:         #D95B43;
+	background:         #ffffff;
+/* 	background:         #D95B43; */
 	border:             1px solid #542437;
 	color:              #542437;
 	text-shadow:        1px 1px 1px rgba(255,255,255,0.3);
@@ -52,8 +53,9 @@
 .accordion ul li label:hover,
 .accordion [type=radio]:checked ~ label, 
 .accordion [type=checkbox]:checked ~ label {
-	background:  #C02942;
-	color:       #FFF;
+	background:  #CF4224;
+/* 	background:  #C02942; */
+	color:       #000000;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5)
 }
 
