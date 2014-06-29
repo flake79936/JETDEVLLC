@@ -37,7 +37,7 @@ class FGMembersite{
     
     /*----(Start) Initialization----*/
     function FGMembersite(){
-        $this->sitename = 'YourWebsiteName.com';
+        $this->sitename = 'jetdevllc.com';
         $this->rand_key = '0iQx5oBk66oVZep';
     }
     
@@ -113,8 +113,6 @@ class FGMembersite{
 		$validator->addValidation("Uemail",    "req",   "Please Please fill in Name");
 		$validator->addValidation("Uemail",    "email", "Please Provide a Valid Email: Syntax is Wrong");
 		$validator->addValidation("Uphone",    "req",   "Please Provide a Phone Number");
-		//$validator->addValidation("Uadmin",    "req",   "Please fill in Name");
-		
 
         if(!$validator->ValidateForm()){
             $error='';
@@ -183,17 +181,19 @@ class FGMembersite{
     }
 	
 	function DBLogin(){
-        $this->connection = mysql_connect($this->db_host,$this->username,$this->pwd);
+        $this->connection = mysql_connect($this->db_host, $this->username, $this->pwd);
 
         if(!$this->connection){   
             $this->HandleDBError("Database Login failed! Please make sure that the DB login credentials provided are correct");
             return false;
         }
+		
         if(!mysql_select_db($this->database, $this->connection)){
             $this->HandleDBError('Failed to select database: '.$this->database.' Please make sure that the database name provided is correct');
             return false;
         }
-        if(!mysql_query("SET NAMES 'UTF8'",$this->connection)){
+		
+        if(!mysql_query("SET NAMES 'UTF8'", $this->connection)){
             $this->HandleDBError('Error setting utf8 encoding');
             return false;
         }
@@ -428,7 +428,7 @@ class FGMembersite{
 		$formvars['Edescription'] = $this->Sanitize($_POST['Edescription']);
 		$formvars['Etype']        = $this->Sanitize($_POST['Etype']);
 		$formvars['Ewebsite']     = $this->Sanitize($_POST['Ewebsite']);
-		$formvars['Ehashtage']    = $this->Sanitize($_POST['Ehashtage']);
+		$formvars['Ehashtag']    = $this->Sanitize($_POST['Ehashtag']);
 		$formvars['Efacebook']    = $this->Sanitize($_POST['Efacebook']);
 		$formvars['Etwitter']     = $this->Sanitize($_POST['Etwitter']);
 		$formvars['Egoogle']      = $this->Sanitize($_POST['Egoogle']);
@@ -470,7 +470,7 @@ class FGMembersite{
 		echo $uName . " here i am"; 
 		if($formvars['Etype'] === 'Other'){
 			//
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtage, Efacebook, Etwitter, Egoogle, Eflyer, Eother)
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtag, Efacebook, Etwitter, Egoogle, Eflyer, Eother)
 				VALUES(
 					"' . $this->SanitizeForSQL($uName) . '",
 					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
@@ -484,7 +484,7 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
 					"' . $this->SanitizeForSQL($formvars['Ewebsite']) . '",
-					"' . $this->SanitizeForSQL($formvars['Ehashtage']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ehashtag']) . '",
 					"' . $this->SanitizeForSQL($formvars['Efacebook']) . '",
 					"' . $this->SanitizeForSQL($formvars['Etwitter']) . '",
 					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
@@ -493,7 +493,7 @@ class FGMembersite{
 				);';
 		} else {
 			//
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtage, Efacebook, Etwitter, Eflyer, Egoogle)
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtag, Efacebook, Etwitter, Eflyer, Egoogle)
 				VALUES(
 					"' . $this->SanitizeForSQL($uName) . '",
 					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
@@ -507,7 +507,7 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Etype']) . '",
 					"' . $this->SanitizeForSQL($formvars['Edescription']) . '",
 					"' . $this->SanitizeForSQL($formvars['Ewebsite']) . '",
-					"' . $this->SanitizeForSQL($formvars['Ehashtage']) . '",
+					"' . $this->SanitizeForSQL($formvars['Ehashtag']) . '",
 					"' . $this->SanitizeForSQL($formvars['Efacebook']) . '",
 					"' . $this->SanitizeForSQL($formvars['Etwitter']) . '",
 					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
@@ -738,10 +738,81 @@ class FGMembersite{
 	/*----(End) Database Management----*/
 	
 	/*----(Start) Search Event----*/
+	function searchEvent(){
+		if(!isset($_POST['submitted'])){
+			return false;
+		}
+
+		$formvars = array();
+
+		if(!$this->ValidateSearchSubmission()){
+			return false;
+		}
+		
+		$this->CollectSearchSubmission($formvars);
+		
+		if(!$this->searchEventHelper($formvars)){
+			//$this->HandleError("Did not Find any Results by 2 " . $formvars['eventSearch']);
+			return false;
+		} else {
+			$result = $this->searchEventHelper($formvars);
+		}
+
+		return $result;
+	}
 	
+	function ValidateSearchSubmission(){
+		//This is a hidden input field. Humans won't fill this field.
+		if(!empty($_POST[$this->GetSpamTrapInputName()]) ){
+			//The proper error is not given intentionally
+			$this->HandleError("Automated submission prevention: case 2 failed");
+			return false;
+		}
+
+		$validator = new FormValidator();
+		$validator->addValidation("eventSearch", "req", "Search Field is Empty!");
+
+		if(!$validator->ValidateForm()){
+			$error = '';
+			$error_hash = $validator->GetErrors();
+			foreach($error_hash as $inpname => $inp_err){
+				$error .= $inpname.':'.$inp_err."\n";
+			}
+			$this->HandleError($error);
+			return false;
+		}        
+		return true;
+	}
 	
+	function CollectSearchSubmission(&$formvars){
+		$formvars['eventSearch'] = $this->Sanitize($_POST['eventSearch']);
+	}
 	
-	/*----(End)   Search Event----*/
+	function searchEventHelper(&$formvars){
+		if(!$this->DBLogin()){
+			$this->HandleError("Database login failed!");
+			return false;
+		}
+		
+		$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $formvars['eventSearch'] . "' UNION ALL 
+		SELECT * FROM Events WHERE Estate LIKE '" . $formvars['eventSearch'] . "' UNION ALL
+		SELECT * FROM Events WHERE Evename LIKE '" . $formvars['eventSearch'] . "' UNION ALL
+		SELECT * FROM Events WHERE Ezip LIKE '" . $formvars['eventSearch'] . "'UNION ALL
+		SELECT * FROM Events WHERE EphoneNumber LIKE '" . $formvars['eventSearch'] . "'UNION ALL
+		SELECT * FROM Events WHERE Edescription LIKE '" . $formvars['eventSearch'] . "' UNION ALL 
+		SELECT * FROM Events WHERE Etype LIKE '" . $formvars['eventSearch'] . "' UNION ALL
+		SELECT * FROM Events WHERE Ehashtag  LIKE '" . $formvars['eventSearch'] . "'ORDER BY EstartDate";
+		
+		$result = mysql_query($sql, $this->connection);
+		
+		if(!$result || mysql_num_rows($result) <= 0){
+			$this->HandleError("Did Not Find Any Results For " . $formvars['eventSearch']);
+			return false;
+		}
+		
+		return $result;
+	}
+	/*----(End) Search Event----*/
 	
 	/*----(Start) Password Management----*/
 	function EmailResetPasswordLink(){
@@ -1044,14 +1115,14 @@ class FGMembersite{
 	data submitted. Prevents email injections or any other hacker attempts.
 	if $remove_nl is true, newline chracters are removed from the input.
 	*/
-	function Sanitize($str, $remove_nl=true){
+	function Sanitize($str, $remove_nl = true){
 		$str = $this->StripSlashes($str);
 
 		if($remove_nl){
 			$injections = array('/(\n+)/i', '/(\r+)/i',
 								'/(\t+)/i', '/(%0A+)/i',
 								'/(%0D+)/i', '/(%08+)/i',
-								'/(%09+)/i'
+								'/(%09+)/i', '/(%+)/i'
 								);
 			$str = preg_replace($injections, '', $str);
 		}

@@ -2,7 +2,8 @@
 You can customize all the aspects of the form in this style sheet*/
 
 #fg_membersite fieldset{
-	width:                 316px;
+	width:                 200px;
+	margin-top:            65px;
 	padding:               20px;
 	border:                1px solid #ccc;
 	-moz-border-radius:    10px;
@@ -11,8 +12,15 @@ You can customize all the aspects of the form in this style sheet*/
 	border-radius:         10px;
 }
 
+#fg_membersite .wrap {
+	width:1023px;
+	margin:auto;
+	padding:0 0 0 0;
+}
+
 #fg_membersite legend, #fg_membersite h2{
 	font-family: Arial, sans-serif;
+	margin-top:  65px;
 	font-size:   1.3em;
 	font-weight: bold;
 	color:       #333;
@@ -51,14 +59,15 @@ You can customize all the aspects of the form in this style sheet*/
 
 #fg_membersite input[type="submit"],
 #fg_membersite input[type="button"]{
-	width:        100px;
-	height:       30px;
-	padding-left: 0px;
-	border: 1px solid #999;
-	-moz-border-radius: 5px;
+	width:                 100px;
+	height:                30px;
+	margin-top:            10px; 
+	padding-left:          0px;
+	border:                1px solid #999;
+	-moz-border-radius:    5px;
 	-webkit-border-radius: 5px;
-	-khtml-border-radius: 5px;
-	border-radius: 5px;
+	-khtml-border-radius:  5px;
+	border-radius:         5px;
 }
 
 #fg_membersite textarea{
@@ -86,9 +95,7 @@ You can customize all the aspects of the form in this style sheet*/
 	background-color: #ffff00;
 }
 
-#fg_membersite #register_password_errorloc{
-	clear: both;
-}
+#fg_membersite #register_password_errorloc{ clear: both; }
 
 #fg_membersite  fieldset#antispam{
 	padding:       2px;
@@ -127,9 +134,7 @@ You can customize all the aspects of the form in this style sheet*/
 	filter:       alpha(opacity=20);   
 }
 
-#fg_membersite  #fg_crdiv p{
-	display: none;
-}
+#fg_membersite  #fg_crdiv p{ display: none; }
 
 #fg_membersite_content li{
 	font-family:    Arial, sans-serif;
@@ -151,20 +156,20 @@ You can customize all the aspects of the form in this style sheet*/
 }
 
 #main_container{
-	width: 100%;
-	height: auto;
-	margin: auto;
+	width:            100%;
+	height:           auto;
+	margin:           auto;
 	background-color: #fff;
 }
 
-.middle_box_content{
-padding: 30px 0 0 20px;
-}
+.middle_box_content{ padding: 30px 0 0 20px; }
 
 #middle_box{
-width: 900px;
-height: auto;
-clear: both;
-margin: auto;
-background: url(../images/middle_banner.jpg) no-repeat center;
+	width:      900px;
+	height:     auto;
+	clear:      both;
+	margin:     auto;
+	background: url(../images/middle_banner.jpg) no-repeat center;
 }
+
+#inner-mid-box{ margin-top: 65px; }
