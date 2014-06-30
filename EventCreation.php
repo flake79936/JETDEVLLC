@@ -226,18 +226,18 @@
 						</select>
 					</div>
 					
-					<!--Other 'option'-->
-					<div id="other">
+					<!--Description-->
+					<div class="container" id="other">
 						<label for="Eother">Other: </label><br/>
-						<textarea onKeyUp="textCounter(this,'charsLeft', 500)" rows="3" cols="30" name="Eother" id="Eother" value="<?php echo $fgmembersite->SafeDisplay("Eother") ?>"></textarea>
-						<div style="color:red; font-size:12pt; font-style:italic;" id="charsLeft" value="500"> 500 Characters Max</div>
+						<input type="text" name="Eother" title="Enter Other Kind of Event" id="Eother" value="<?php echo $fgmembersite->SafeDisplay("Eother") ?>" maxlength="50" /><br/>
 						<span id="event_Eother_errorloc" class="error"></span>
 					</div>
-				
-					<!--Description-->
-					<div class="container">
-						<label for="Edescription">Description of the Event*: </label><br/>
-						<input type="text" name="Edescription" title="Enter the Description of the Event" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>" maxlength="50" /><br/>
+					
+					<!--Other 'option'-->
+					<div class="container" id="other">
+						<label for="Edescription">* Description of the Event: </label><br/>
+						<textarea onKeyUp="textCounter(this,'charsLeft', 500)" rows="3" cols="30" name="Edescription" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>"></textarea>
+						<div style="color:red; font-size:12pt; font-style:italic;" id="charsLeft" value="500"> 500 Characters Max</div>
 						<span id="event_Edescription_errorloc" class="error"></span>
 					</div>
 					
