@@ -415,8 +415,8 @@ class FGMembersite{
 	}
 	
 	function CollectEventSubmission(&$formvars){
-		//$formvars['UuserName']    = $this->Sanitize($this->UsrName());
-		//$formvars['UuserName']    = $this->Sanitize($_POST['UuserName']);
+
+
 		$formvars['Evename']      = $this->Sanitize($_POST['Evename']);
 		$formvars['EstartDate']   = $this->Sanitize($_POST['EstartDate']);
 		$formvars['EendDate']     = $this->Sanitize($_POST['EendDate']);
@@ -432,7 +432,7 @@ class FGMembersite{
 		$formvars['Efacebook']    = $this->Sanitize($_POST['Efacebook']);
 		$formvars['Etwitter']     = $this->Sanitize($_POST['Etwitter']);
 		$formvars['Egoogle']      = $this->Sanitize($_POST['Egoogle']);
-		//$formvars['Eflyer']       = $this->Sanitize($_POST['Eflyer']);
+
 		$formvars['Eother']       = $this->Sanitize($_POST['Eother']);
 	}
 	
@@ -467,9 +467,20 @@ class FGMembersite{
         //$formvars['confirmcode'] = $confirmcode;
 		
 		$uName = $this->UsrName();
-		echo $uName . " here i am"; 
+
 		if($formvars['Etype'] === 'Other'){
-			//
+			$formvars['Evename']      = strtolower (  $formvars['Evename']       );
+			$formvars['Eaddress']     = strtolower (  $formvars['Eaddress']      );
+			$formvars['Ecity']        = strtolower (  $formvars['Ecity']         );
+			$formvars['Estate']       = strtolower (  $formvars['Estate']        );
+			$formvars['Edescription'] = strtolower (  $formvars['Edescription']  );
+			$formvars['Ewebsite']     = strtolower (  $formvars['Ewebsite']      );
+			$formvars['Ehashtag']     = strtolower (  $formvars['Ehashtag']      );
+			$formvars['Efacebook']    = strtolower (  $formvars['Efacebook']     );
+			$formvars['Etwitter']     = strtolower (  $formvars['Etwitter']      );
+			$formvars['Egoogle']      = strtolower (  $formvars['Egoogle']       );
+			$formvars['Eother']       = strtolower (  $formvars['Eother']        );
+
 			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtag, Efacebook, Etwitter, Egoogle, Eflyer, Eother)
 				VALUES(
 					"' . $this->SanitizeForSQL($uName) . '",
@@ -493,6 +504,18 @@ class FGMembersite{
 				);';
 		} else {
 			//
+			$formvars['Evename']      = strtolower (  $formvars['Evename']       );
+			$formvars['Eaddress']     = strtolower (  $formvars['Eaddress']      );
+			$formvars['Ecity']        = strtolower (  $formvars['Ecity']         );
+			$formvars['Estate']       = strtolower (  $formvars['Estate']        );
+			$formvars['Edescription'] = strtolower (  $formvars['Edescription']  );
+			$formvars['Ewebsite']     = strtolower (  $formvars['Ewebsite']      );
+			$formvars['Ehashtag']     = strtolower (  $formvars['Ehashtag']      );
+			$formvars['Efacebook']    = strtolower (  $formvars['Efacebook']     );
+			$formvars['Etwitter']     = strtolower (  $formvars['Etwitter']      );
+			$formvars['Egoogle']      = strtolower (  $formvars['Egoogle']       );
+			$formvars['Eother']       = strtolower (  $formvars['Eother']        );
+			
 			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, Ewebsite, Ehashtag, Efacebook, Etwitter, Eflyer, Egoogle)
 				VALUES(
 					"' . $this->SanitizeForSQL($uName) . '",
