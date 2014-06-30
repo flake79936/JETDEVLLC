@@ -163,6 +163,13 @@
 						<input type="text" name="Evename" title="Enter the Event Name" id="Evename" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
 						<span id="event_Evename_errorloc" class="error"></span>
 					</div>
+					
+					<!--Upload Picture-->
+					<div class="container">
+						<label for="file" >* Picture of Event:</label><br/>
+						<input type="file" name="file" id="file" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
+						<span id="event_file_errorloc" class="error"></span>
+					</div>
 				
 					<!--Start Date picker-->
 					<div class="container">
@@ -304,6 +311,8 @@
 			frmvalidator.addValidation("Etype",        "req", "Please fill in Type of Event");
 			frmvalidator.addValidation("Edescription", "req", "Please fill in Description");
 			frmvalidator.addValidation("Ewebsite",     "req", "Please fill in Your Website");
+			frmvalidator.addValidation("file",         "req", "Please Insert Picture");
+			
 			// ]]>
 		</script>
 	</body>

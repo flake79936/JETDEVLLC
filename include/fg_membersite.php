@@ -365,6 +365,11 @@ class FGMembersite{
 			return false;
 		}
 		
+		$itemPicture = $this->upLoadPic();
+		if($itemPicture != false){
+			$formvars['file'] = $itemPicture;
+		}
+		
 		$this->CollectEventSubmission($formvars);
 		
 		if(!$this->SaveEventToDatabase($formvars)){
@@ -544,6 +549,43 @@ class FGMembersite{
         }
 		return true;
     }
+	
+	//new
+	function upLoadPic(){
+		/**
+			$_FILES["file"]["name"] - the name of the uploaded file
+			$_FILES["file"]["type"] - the type of the uploaded file
+			$_FILES["file"]["size"] - the size in kilobytes of the uploaded file
+			$_FILES["file"]["tmp_name"] - the name of the temporary copy of the file stored on the server
+			$_FILES["file"]["error"] - the error code resulting from the file upload
+		*/
+		$allowedExts = array("gif", "jpeg", "jpg", "png", "PNG", "JPG", "JPEG", "GIF");
+		$explode = explode(".", $_FILES["file"]["name"]);
+		$extension = end($explode);
+		if (($_FILES["file"]["size"] < 614400) && in_array($extension, $allowedExts)){
+			if ($_FILES["file"]["error"] > 0) {
+				echo "Error: " . $_FILES["file"]["error"] . "<br>";
+				echo "File too big.";
+			} else {
+				echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+				echo "Type: " . $_FILES["file"]["type"] . "<br>";
+				echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+				//echo "Stored in: " . $_FILES["file"]["tmp_name"];
+				
+				if(file_exists("upload/" . $_FILES["file"]["name"])){
+					echo $_FILES["files"]["name"] . " already exists. ";
+				} else {
+					move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
+					//echo "Stored in: " . "./upload/" . $_FILES["file"]["name"];
+					$itemPicture = $this->Sanitize("./upload/" . $_FILES["file"]["name"]);
+					return $itemPicture;
+				}
+			}
+		} else {
+			echo "Invalid file";
+		}
+		return false;
+	}
 	
 	/*----(End) CreateEvent() Submission----*/
 
