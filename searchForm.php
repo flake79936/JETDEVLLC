@@ -179,35 +179,37 @@
 											<div class="content">
 												<p><b>Address of Event:</b> <?= $row['Eaddress'] ?></p>
 												<p><b>Description:</b> <?= $row['Edescription'] ?></p>
+												
 												<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
 									
-											<?PHP
-                                            	if ($row['Efacebook']): ?>
+
+												<?php if ($row['Efacebook']) { ?>
                                             	<a href="<?= $row['Efacebook'] ?>" target="_blank" >
                                             	<img src="./img/icons/facebook.ico"
                                            		width="20" height="20" title="Facebook"
                                             	border="0" style="display:inline;"></a>
-                                        	<?PHP endif; ?>
+												<?PHP }?>
 
-                                        	<?PHP
-                                            	if ($row['EhashTag']): ?>
+
+												<?php if ($row['Ehashtag']) { ?>
 												<a href="https://twitter.com/intent/tweet?button_hashtag=<?= $row['Ehashtag'] ?>"
 												class="twitter-hashtag-button">Tweet#<?= $row['Ehashtag'] ?></a>
-                                        		<?PHP endif; ?>
+												<?PHP }?>
 										
-                                        	<?PHP
-                                            	if ($row['Etwitter']): ?>
+
+												<?php if ($row['Etwitter']) { ?>
 												<a href="https://twitter.com/<?= $row['Etwitter'] ?>" class="twitter-follow-button"
 												data-show-count="false" data-lang="en">Follow<?= $row['Etwitter'] ?></a>
-                                        	<?PHP endif; ?>
+												<?PHP }?>
 
-                                        	<?PHP
-                                            	if ($row['Etwitter']): ?>
+
+												<?php if ($row['Egoogle']) { ?>
 												<a href="<?= $row['Egoogle'] ?>" rel="publisher" target="_blank">
 												<img src="./img/icons/googleplus.ico"
 												width="20" height="20" title="google+" 
 												border="0" style="display:inline;"></a>
-                                        	<?PHP endif; ?>
+												<?PHP }?>
+												
 												<p><?= $row['Eother'] ?></p>	
 																																						
 												<p><iframe

@@ -488,12 +488,12 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Efacebook']) . '",
 					"' . $this->SanitizeForSQL($formvars['Etwitter']) . '",
 					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
-					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
+					"' . $this->SanitizeForSQL($formvars['Eflyer']) . '",
 					"' . $this->SanitizeForSQL($formvars['Eother']) . '"
 				);';
 		} else {
 			//
-			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Edescription, Etype, Ewebsite, Ehashtag, Efacebook, Etwitter, Eflyer, Egoogle)
+			$insert_query = 'INSERT INTO ' . $this->tablename2 . '(UuserName, Evename, EstartDate, EendDate, Eaddress, Ecity, Estate, Ezip, EphoneNumber, Etype, Edescription, Ewebsite, Ehashtag, Efacebook, Etwitter, Eflyer, Egoogle)
 				VALUES(
 					"' . $this->SanitizeForSQL($uName) . '",
 					"' . $this->SanitizeForSQL($formvars['Evename']) . '",
@@ -510,7 +510,7 @@ class FGMembersite{
 					"' . $this->SanitizeForSQL($formvars['Ehashtag']) . '",
 					"' . $this->SanitizeForSQL($formvars['Efacebook']) . '",
 					"' . $this->SanitizeForSQL($formvars['Etwitter']) . '",
-					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '",
+					"' . $this->SanitizeForSQL($formvars['Eflyer']) . '",
 					"' . $this->SanitizeForSQL($formvars['Egoogle']) . '"
 				);';
 		}
