@@ -108,8 +108,8 @@
 			<!--(Start) Date Pickers-->
 				<script type="text/javascript">
 					$(document).ready(function(){
-						$("#EstartDate").datepicker();
-						$("#EendDate").datepicker();
+						$("#EstartDate").datepicker({minDate: 0});
+						$("#EendDate").datepicker({minDate: 0});
 					});
 				</script>
 			<!--(End) Date Pickers-->
@@ -159,57 +159,57 @@
 					
 					<!--Event Name-->
 					<div class="container">
-						<label for="Evename">Event Name*: </label><br/>
+						<label for="Evename">* Event Name: </label><br/>
 						<input type="text" name="Evename" title="Enter the Event Name" id="Evename" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
 						<span id="event_Evename_errorloc" class="error"></span>
 					</div>
 				
 					<!--Start Date picker-->
 					<div class="container">
-						<label for="EstartDate">Start date: </label><br/>
+						<label for="EstartDate">* Start date: </label><br/>
 						<input type="text" name="EstartDate" title="Pick Start Date" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
 						<span id="event_EstartDate_errorloc" class="error"></span>
 					</div>
 					
 					<!--End Date picker-->
 					<div class="container">
-						<label for="EendDate">End date: </label><br/>
+						<label for="EendDate">* End date: </label><br/>
 						<input type="text" name="EendDate" title="Pick Start Date" id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
 						<span id="event_EendDate_errorloc" class="error"></span>
 					</div>
 				
 					<!--Address-->
 					<div class="container">
-						<label for="Eaddress">Address*: </label><br/>
+						<label for="Eaddress">* Address: </label><br/>
 						<input type="text" name="Eaddress" title="Enter the Address of the Event"id="Eaddress" value="<?php echo $fgmembersite->SafeDisplay("Eaddress") ?>" maxlength="50" /><br/>
 						<span id="event_Eaddress_errorloc" class="error"></span>
 					</div>
 					
 					<!--City-->
 					<div class="container">
-						<label for="Ecity">City*: </label><br/>
+						<label for="Ecity">* City: </label><br/>
 						<input type="text" name="Ecity" title="Enter the City of the Event"id="Ecity" value="<?php echo $fgmembersite->SafeDisplay("Ecity") ?>" maxlength="50" /><br/>
 						<span id="event_Ecity_errorloc" class="error"></span>
 					</div>
 				
 					<!--State-->
 					<div class="container">
-						<label for="Estate">State*: </label><br/>
+						<label for="Estate">* State: </label><br/>
 						<input type="text" name="Estate" title="Enter the State of the Event"id="Estate" value="<?php echo $fgmembersite->SafeDisplay("Estate") ?>" maxlength="50" /><br/>
 						<span id="event_Estate_errorloc" class="error"></span>
 					</div>
 					
 					<!--Zip-->
 					<div class="container">
-						<label for="Ezip">Zip*: </label><br/>
+						<label for="Ezip">* Zip: </label><br/>
 						<input type="text" name="Ezip" title="Enter the Zip code of the Event" id="Ezip" value="<?php echo $fgmembersite->SafeDisplay("Ezip") ?>" maxlength="50" /><br/>
 						<span id="event_Ezip_errorloc" class="error"></span>
 					</div>
 				
 					<!--Phone-->
 					<div class="container">
-						<label for="EphoneNumber">Phone number*: </label><br/>
-						<input type="text" name="EphoneNumber" title="Enter the Phone Number for the Event"id="EphoneNumber" value="<?php echo $fgmembersite->SafeDisplay("EphoneNumber") ?>" maxlength="50" /><br/>
+						<label for="EphoneNumber">* Phone number: </label><br/>
+						<input type="text" name="EphoneNumber" title="(e.g., " id="EphoneNumber" value="<?php echo $fgmembersite->SafeDisplay("EphoneNumber") ?>" maxlength="50" /><br/>
 						<span id="event_EphoneNumber_errorloc" class="error"></span>
 					</div>
 				
@@ -236,8 +236,8 @@
 					<!--Other 'option'-->
 					<div class="container" id="other">
 						<label for="Edescription">* Description of the Event: </label><br/>
-						<textarea onKeyUp="textCounter(this,'charsLeft', 500)" rows="3" cols="30" name="Edescription" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>"></textarea>
-						<div style="color:red; font-size:12pt; font-style:italic;" id="charsLeft" value="500"> 500 Characters Max</div>
+						<textarea onKeyUp="textCounter(this,'charsLeft', 500)" title="Enter Your Description" rows="3" cols="30" name="Edescription" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>"></textarea>
+						<div style="color: red; font-size: 12pt; font-style: italic;" id="charsLeft" value="500"> 500 Characters Max</div>
 						<span id="event_Edescription_errorloc" class="error"></span>
 					</div>
 					
@@ -303,6 +303,7 @@
 			frmvalidator.addValidation("EendDate",     "req", "Please Select an End Date");
 			frmvalidator.addValidation("Etype",        "req", "Please fill in Type of Event");
 			frmvalidator.addValidation("Edescription", "req", "Please fill in Description");
+			frmvalidator.addValidation("Ewebsite",     "req", "Please fill in Your Website");
 			// ]]>
 		</script>
 	</body>
