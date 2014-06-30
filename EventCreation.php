@@ -24,14 +24,14 @@
 		<meta name="format-detection" content="email = no" />
 		
 		<!--(Start) Style Sheets-->
-			<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
+			<link rel="STYLESHEET" type="text/css" href="css/fg_membersiteResponsive.css" />
 			<link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
 			<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 			
 			<!--(Start) Provided by JetDevLLC-->
 				<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-				<link href="css/styleEdit.css"            rel="stylesheet" type="text/css" />
-				<link href="css/responsiveEdit.css"       rel="stylesheet" type="text/css" />	
+				<link href="css/styleEdit.css"        rel="stylesheet" type="text/css" />
+				<link href="css/responsiveEdit.css"   rel="stylesheet" type="text/css" />	
 				<!--[if IE 6]>
 				<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
 				</style>
@@ -158,70 +158,70 @@
 					<div><span class="error"><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 					
 					<!--Event Name-->
-					<div class="container">
+					<div class="container" id="eventName">
 						<label for="Evename">* Event Name: </label><br/>
 						<input type="text" name="Evename" title="Enter the Event Name" id="Evename" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
 						<span id="event_Evename_errorloc" class="error"></span>
 					</div>
 					
 					<!--Upload Picture-->
-					<div class="container">
+					<div class="container" id="eventPic">
 						<label for="file" >* Picture of Event:</label><br/>
-						<input type="file" name="file" id="file" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
+						<input type="file" name="file" id="file" title="600 kB max" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
 						<span id="event_file_errorloc" class="error"></span>
 					</div>
 				
 					<!--Start Date picker-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="EstartDate">* Start date: </label><br/>
 						<input type="text" name="EstartDate" title="Pick Start Date" id="EstartDate" value="<?php echo $fgmembersite->SafeDisplay("EstartDate") ?>" maxlength="50" /><br/>
 						<span id="event_EstartDate_errorloc" class="error"></span>
 					</div>
 					
 					<!--End Date picker-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="EendDate">* End date: </label><br/>
 						<input type="text" name="EendDate" title="Pick Start Date" id="EendDate" value="<?php echo $fgmembersite->SafeDisplay("EendDate") ?>" maxlength="50" /><br/>
 						<span id="event_EendDate_errorloc" class="error"></span>
 					</div>
 				
 					<!--Address-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Eaddress">* Address: </label><br/>
 						<input type="text" name="Eaddress" title="Enter the Address of the Event"id="Eaddress" value="<?php echo $fgmembersite->SafeDisplay("Eaddress") ?>" maxlength="50" /><br/>
 						<span id="event_Eaddress_errorloc" class="error"></span>
 					</div>
 					
 					<!--City-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Ecity">* City: </label><br/>
 						<input type="text" name="Ecity" title="Enter the City of the Event"id="Ecity" value="<?php echo $fgmembersite->SafeDisplay("Ecity") ?>" maxlength="50" /><br/>
 						<span id="event_Ecity_errorloc" class="error"></span>
 					</div>
 				
 					<!--State-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Estate">* State: </label><br/>
 						<input type="text" name="Estate" title="Enter the State of the Event"id="Estate" value="<?php echo $fgmembersite->SafeDisplay("Estate") ?>" maxlength="50" /><br/>
 						<span id="event_Estate_errorloc" class="error"></span>
 					</div>
 					
 					<!--Zip-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Ezip">* Zip: </label><br/>
 						<input type="text" name="Ezip" title="Enter the Zip code of the Event" id="Ezip" value="<?php echo $fgmembersite->SafeDisplay("Ezip") ?>" maxlength="50" /><br/>
 						<span id="event_Ezip_errorloc" class="error"></span>
 					</div>
 				
 					<!--Phone-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="EphoneNumber">* Phone number: </label><br/>
 						<input type="text" name="EphoneNumber" title="(e.g., " id="EphoneNumber" value="<?php echo $fgmembersite->SafeDisplay("EphoneNumber") ?>" maxlength="50" /><br/>
 						<span id="event_EphoneNumber_errorloc" class="error"></span>
 					</div>
 				
 					<!--Type of Event-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Etype">Type of Event*: </label><br/>
 						<select name="Etype">
 						 <option>Please Select One</option>
@@ -241,7 +241,7 @@
 					</div>
 					
 					<!--Other 'option'-->
-					<div class="container" id="other">
+					<div class="container" id="">
 						<label for="Edescription">* Description of the Event: </label><br/>
 						<textarea onKeyUp="textCounter(this,'charsLeft', 500)" title="Enter Your Description" rows="3" cols="30" name="Edescription" id="Edescription" value="<?php echo $fgmembersite->SafeDisplay("Edescription") ?>"></textarea>
 						<div style="color: red; font-size: 12pt; font-style: italic;" id="charsLeft" value="500"> 500 Characters Max</div>
@@ -249,21 +249,21 @@
 					</div>
 					
 					<!--hastags-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Ehashtag">Hastags: </label><br/>
 						<input type="text" name="Ehashtag" title="Enter Hashtag" id="Ehashtag" value="<?php echo $fgmembersite->SafeDisplay("Ehashtag") ?>" maxlength="50" /><br/>
 						<span id="event_Ehashtag_errorloc" class="error"></span>
 					</div>
 					
 					<!--website-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Ewebsite">Website*: </label><br/>
 						<input type="text" name="Ewebsite" title="correct format: http://www.website.com" id="Ewebsite" value="<?php echo $fgmembersite->SafeDisplay("Ewebsite") ?>" maxlength="50" /><br/>
 						<span id="event_Ewebsite_errorloc" class="error"></span>
 					</div>
 				
 					<!--Facebook-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Efacebook">FaceBook: </label><br/>
 						<input type="text" name="Efacebook" title="correct format: http://www.facebook.com/USERNAME where the USERNAME should be replaced with your facebook username"
 						 id="Efacebook" value="<?php echo $fgmembersite->SafeDisplay("Efacebook") ?>" maxlength="50" /><br/>
@@ -271,14 +271,14 @@
 					</div>
 					
 					<!--twitter-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Etwitter">Twitter: </label><br/>
 						<input type="text" name="Etwitter" title="Do not include the @ symbol" id="Etwitter" value="<?php echo $fgmembersite->SafeDisplay("Etwitter") ?>" maxlength="50" /><br/>
 						<span id="event_Etwitter_errorloc" class="error"></span>
 					</div>
 					
 					<!--google+-->
-					<div class="container">
+					<div class="container" id="">
 						<label for="Egoogle">Google+: </label><br/>
 						<input type="text" name="Egoogle" title="Enter Google+ Username " id="Egoogle" value="<?php echo $fgmembersite->SafeDisplay("Egoogle") ?>" maxlength="50" /><br/>
 						<span id="event_Egoogle_errorloc" class="error"></span>
