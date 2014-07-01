@@ -182,10 +182,11 @@
 
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
 										
+										<?PHP if ($row['Ewebsite']) { ?>
 										<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
-										
+										<?PHP }?>
 	
-												<?php if ($row['Efacebook']) { ?>
+												<?PHP if ($row['Efacebook']) { ?>
                                             	<a href="<?= $row['Efacebook'] ?>" target="_blank" >
                                             	<img src="./img/icons/facebook.ico"
                                            		width="20" height="20" title="Facebook"
@@ -193,19 +194,19 @@
 												<?PHP }?>
 
 
-												<?php if ($row['Ehashtag']) { ?>
+												<?PHP if ($row['Ehashtag']) { ?>
 												<a href="https://twitter.com/intent/tweet?button_hashtag=<?= $row['Ehashtag'] ?>"
 												class="twitter-hashtag-button">Tweet#<?= $row['Ehashtag'] ?></a>
 												<?PHP }?>
 										
 
-												<?php if ($row['Etwitter']) { ?>
+												<?PHP if ($row['Etwitter']) { ?>
 												<a href="https://twitter.com/<?= $row['Etwitter'] ?>" class="twitter-follow-button"
 												data-show-count="false" data-lang="en">Follow<?= $row['Etwitter'] ?></a>
 												<?PHP }?>
 
 
-												<?php if ($row['Egoogle']) { ?>
+												<?PHP if ($row['Egoogle']) { ?>
 												<a href="<?= $row['Egoogle'] ?>" rel="publisher" target="_blank">
 												<img src="./img/icons/googleplus.ico"
 												width="20" height="20" title="google+" 
