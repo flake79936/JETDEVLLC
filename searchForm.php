@@ -211,7 +211,9 @@
 												width="20" height="20" title="google+" 
 												border="0" style="display:inline;"></a>
 												<?PHP }?>	
-																																						
+												
+
+												
 												<p><iframe
 													width="300"
 													height="150"

@@ -423,6 +423,7 @@ class FGMembersite{
 
 
 		$formvars['Evename']      = $this->Sanitize($_POST['Evename']);
+		$formvars['file']         = $this->Sanitize($_POST['file']);		
 		$formvars['EstartDate']   = $this->Sanitize($_POST['EstartDate']);
 		$formvars['EendDate']     = $this->Sanitize($_POST['EendDate']);
 		$formvars['Eaddress']     = $this->Sanitize($_POST['Eaddress']);
@@ -433,7 +434,7 @@ class FGMembersite{
 		$formvars['Edescription'] = $this->Sanitize($_POST['Edescription']);
 		$formvars['Etype']        = $this->Sanitize($_POST['Etype']);
 		$formvars['Ewebsite']     = $this->Sanitize($_POST['Ewebsite']);
-		$formvars['Ehashtag']    = $this->Sanitize($_POST['Ehashtag']);
+		$formvars['Ehashtag']     = $this->Sanitize($_POST['Ehashtag']);
 		$formvars['Efacebook']    = $this->Sanitize($_POST['Efacebook']);
 		$formvars['Etwitter']     = $this->Sanitize($_POST['Etwitter']);
 		$formvars['Egoogle']      = $this->Sanitize($_POST['Egoogle']);
@@ -760,7 +761,7 @@ class FGMembersite{
 				"EphoneNumber INT(10),".
 				"Etype VARCHAR(26) NOT NULL,".
 				"Edescription VARCHAR(26) NOT NULL,".
-				"Epic BLOB,".
+				"Eflyer BLOB,".
 				"EstartDate VARCHAR(20) NOT NULL,".
 				"EendDate VARCHAR(20) NOT NULL,".
 				"PRIMARY KEY(Eid)".
