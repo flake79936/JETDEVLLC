@@ -858,7 +858,8 @@ class FGMembersite{
 			$this->HandleError("Database login failed!");
 			return false;
 		}
-		
+		 $formvars['eventSearch']       = strtolower (  $formvars['eventSearch']        );
+		 
 		$sql = "SELECT * FROM Events WHERE Ecity LIKE '" . $formvars['eventSearch'] . "' UNION ALL 
 		SELECT * FROM Events WHERE Estate LIKE '" . $formvars['eventSearch'] . "' UNION ALL
 		SELECT * FROM Events WHERE Evename LIKE '" . $formvars['eventSearch'] . "' UNION ALL
