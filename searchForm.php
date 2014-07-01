@@ -178,7 +178,7 @@
 											<label for="radio-<?= $i?>"><?= $row['Evename']?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$row['EstartDate']?></label>
 											<div class="content">
 												
-										<p><b>Address of Event:</b>&nbsp;<?= $row['Eaddress'] ?>, <?= $row['Ecity'] ?>, <?= $row['Estate'] ?> </p>
+										<p><b>Address of Event:</b>&nbsp;<?= $row['Eaddress'] ?>, <?= $row['Ecity'] ?>, <?= $row['Estate'] ?>&nbsp; <?= $row['Ezip'] ?> </p>
 
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
 										

@@ -135,7 +135,7 @@
 										<!-- <h3>hello test</h3 -->
 										<!-- <h3>hello test</h3 -->
 										
-										<p><b>Address of Event:</b>&nbsp;<?= $row['Eaddress'] ?>, <?= $row['Ecity'] ?>, <?= $row['Estate'] ?> </p>
+										<p><b>Address of Event:</b>&nbsp;<?= $row['Eaddress'] ?>, <?= $row['Ecity'] ?>, <?= $row['Estate'] ?>&nbsp; <?= $row['Ezip'] ?> </p>
 
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
 										
