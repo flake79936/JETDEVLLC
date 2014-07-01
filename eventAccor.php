@@ -136,7 +136,7 @@
 										<!-- <h3>hello test</h3 -->
 										
 										<p><b>Address of Event:</b>&nbsp;<?= $row['Eaddress'] ?>, <?= $row['Ecity'] ?>, <?= $row['Estate'] ?> </p>
-<!-- 										<p><b>City:</b>&nbsp;<?= $row['Ecity'] ?></p> -->
+
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
 										
 										<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
@@ -169,7 +169,8 @@
 												border="0" style="display:inline;"></a>
 												<?PHP }?>
 
-										<p><?= $row['Eother'] ?></p>		
+										<p><?= $row['Eother'] ?></p>
+												
 										<p><iframe
 											width="300"
 											height="150"
