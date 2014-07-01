@@ -118,7 +118,7 @@
 				<ul class="nav">
 					<li><a href="./userPage.php">User Page</a></li>
 					<li><span class="shadow">|</span></li>
-					<li><a href="./eventCreation.php">Create Event</a></li>
+					<li><a href="./EventCreation.php">Create Event</a></li>
 					<li><span class="shadow">|</span></li>
 					<li><a href="./eventAccor.php">Your Events</a></li>
 				</ul>
