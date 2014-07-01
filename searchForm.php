@@ -177,7 +177,7 @@
 											<input type="radio" id="radio-<?= $i?>" name="radio-accordion" checked="checked" />
 											<label for="radio-<?= $i?>"><?= $row['Evename']?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$row['EstartDate']?></label>
 											<div class="content">
-										
+												
 										<p><b>Address of Event:</b>&nbsp;<?= $row['Eaddress'] ?>, <?= $row['Ecity'] ?>, <?= $row['Estate'] ?> </p>
 
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
@@ -210,10 +210,8 @@
 												<img src="./img/icons/googleplus.ico"
 												width="20" height="20" title="google+" 
 												border="0" style="display:inline;"></a>
-												<?PHP }?>	
-												
-
-												
+												<?PHP }?>
+																																						
 												<p><iframe
 													width="300"
 													height="150"
