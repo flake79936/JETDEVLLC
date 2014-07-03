@@ -139,18 +139,10 @@
 
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
 										
-<<<<<<< HEAD
 										<?PHP /*if ($row['Ewebsite']) { ?>
-													<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
-										<?PHP }*/?>
-=======
-<!-- 
-										<?PHP if ($row['Ewebsite']) { ?>
 										<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
-										<?PHP }?>
- -->
-												
->>>>>>> origin/master
+										<?PHP }*/?>
+										
 												<p><img src="<?= $row['Eflyer'] ?>"/></p>
 												
 												<?PHP if ($row['Efacebook']) { ?>
