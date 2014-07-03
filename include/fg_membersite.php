@@ -367,7 +367,7 @@ class FGMembersite{
 		
 		$itemPicture = $this->upLoadPic();
 		if($itemPicture != false){
-			$formvars['file'] = $itemPicture;
+			$formvars['Eflyer'] = $itemPicture;
 		}
 		
 		$this->CollectEventSubmission($formvars);
@@ -554,36 +554,51 @@ class FGMembersite{
 	//new
 	function upLoadPic(){
 		/**
-			$_FILES["file"]["name"] - the name of the uploaded file
-			$_FILES["file"]["type"] - the type of the uploaded file
-			$_FILES["file"]["size"] - the size in kilobytes of the uploaded file
-			$_FILES["file"]["tmp_name"] - the name of the temporary copy of the file stored on the server
-			$_FILES["file"]["error"] - the error code resulting from the file upload
+			$_FILES["Eflyer"]["name"] - the name of the uploaded file
+			$_FILES["Eflyer"]["type"] - the type of the uploaded file
+			$_FILES["Eflyer"]["size"] - the size in kilobytes of the uploaded file
+			$_FILES["Eflyer"]["tmp_name"] - the name of the temporary copy of the file stored on the server
+			$_FILES["Eflyer"]["error"] - the error code resulting from the file upload
 		*/
 		$allowedExts = array("gif", "jpeg", "jpg", "png", "PNG", "JPG", "JPEG", "GIF");
-		$explode = explode(".", $_FILES["file"]["name"]);
+		$explode = explode(".", $_FILES["Eflyer"]["name"]);
 		$extension = end($explode);
-		if (($_FILES["file"]["size"] < 614400) && in_array($extension, $allowedExts)){
-			if ($_FILES["file"]["error"] > 0) {
-				echo "Error: " . $_FILES["file"]["error"] . "<br>";
-				echo "File too big.";
+		if (($_FILES["Eflyer"]["size"] < 614400) && in_array($extension, $allowedExts)){
+			if ($_FILES["Eflyer"]["error"] > 0) {
+				$this->HandleError("Error: " . $_FILES["Eflyer"]["error"] . "<br> File too big!");
+				//echo "Error: " . $_FILES["file"]["error"] . "<br>";
+				//echo "File too big.";
 			} else {
-				echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-				echo "Type: " . $_FILES["file"]["type"] . "<br>";
-				echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-				//echo "Stored in: " . $_FILES["file"]["tmp_name"];
-				
-				if(file_exists("upload/" . $_FILES["file"]["name"])){
-					echo $_FILES["files"]["name"] . " already exists. ";
+				echo "Upload: " . $_FILES["Eflyer"]["name"] . "<br>";
+				echo "Type: "   . $_FILES["Eflyer"]["type"] . "<br>";
+				echo "Size: "   . ($_FILES["Eflyer"]["size"] / 1024) . " KiB<br>";
+				//echo "Stored in: " . $_FILES["Eflyer"]["tmp_name"];
+				if(!file_exists("./eventFlyers/")){
+					mkdir("./eventFlyers/", 0700);
+					if(file_exists("./eventFlyers/" . $_FILES["Eflyer"]["name"])){
+						$this->HandleError($_FILES["Eflyer"]["name"] . " already exists. ");
+						//echo $_FILES["Eflyer"]["name"] . " already exists. ";
+					} else {
+						move_uploaded_file($_FILES["Eflyer"]["tmp_name"], "./eventFlyers/" . $_FILES["Eflyer"]["name"]);
+						//echo "Stored in: " . "./eventFlyers/" . $_FILES["Eflyer"]["name"];
+						$itemPicture = $this->Sanitize("./eventFlyers/" . $_FILES["Eflyer"]["name"]);
+						return $itemPicture;
+					}
 				} else {
-					move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
-					//echo "Stored in: " . "./upload/" . $_FILES["file"]["name"];
-					$itemPicture = $this->Sanitize("./upload/" . $_FILES["file"]["name"]);
-					return $itemPicture;
+					if(file_exists("./eventFlyers/" . $_FILES["Eflyer"]["name"])){
+						$this->HandleError($_FILES["Eflyer"]["name"] . " already exists. ");
+						//echo $_FILES["Eflyer"]["name"] . " already exists. ";
+					} else {
+						move_uploaded_file($_FILES["Eflyer"]["tmp_name"], "./eventFlyers/" . $_FILES["Eflyer"]["name"]);
+						//echo "Stored in: " . "./eventFlyers/" . $_FILES["Eflyer"]["name"];
+						$itemPicture = $this->Sanitize("./eventFlyers/" . $_FILES["Eflyer"]["name"]);
+						return $itemPicture;
+					}
 				}
 			}
 		} else {
-			echo "Invalid file";
+			$this->HandleError("Invalid File!");
+			//echo "Invalid file";
 		}
 		return false;
 	}

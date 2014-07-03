@@ -166,9 +166,9 @@
 					
 					<!--Upload Picture-->
 					<div class="container" id="eventPic">
-						<label for="file" >* Picture of Event:</label><br/>
-						<input type="file" name="file" id="file" title="600 kB max" value="<?php echo $fgmembersite->SafeDisplay('Evename') ?>" maxlength="50" /><br/>
-						<span id="event_file_errorloc" class="error"></span>
+						<label for="Eflyer" >* Picture of Event:</label><br/>
+						<input type="file" name="Eflyer" id="Eflyer" title="600 kB max" value="<?php echo $fgmembersite->SafeDisplay('Eflyer') ?>" maxlength="50" /><br/>
+						<span id="event_Eflyer_errorloc" class="error"></span>
 					</div>
 				
 					<!--Start Date picker-->
@@ -387,7 +387,7 @@
 			frmvalidator.addValidation("Etype",        "req", "Please fill in Type of Event");
 			frmvalidator.addValidation("Edescription", "req", "Please fill in Description");
 			frmvalidator.addValidation("Ewebsite",     "req", "Please fill in Your Website");
-			frmvalidator.addValidation("file",         "req", "Please Insert Picture");
+			frmvalidator.addValidation("Eflyer",       "req", "Please Insert Picture");
 			
 			// ]]>
 		</script>

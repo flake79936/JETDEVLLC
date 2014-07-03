@@ -30,7 +30,7 @@ CREATE TABLE Events(
 	Efacebook CHAR(255),
 	Etwitter CHAR(255),
 	Egoogle CHAR(255),
-	Eflyer BLOB,
+	Eflyer CHAR(255),
 	Eother CHAR(255),
 	PRIMARY KEY(Eid, UuserName)
 );
