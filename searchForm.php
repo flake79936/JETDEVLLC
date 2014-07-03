@@ -186,6 +186,8 @@
 										<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
 										<?PHP }*/?>
 	
+												<p><img src="<?= $row['Eflyer'] ?>"/></p>
+												
 												<?PHP if ($row['Efacebook']) { ?>
                                             	<a href="<?= $row['Efacebook'] ?>" target="_blank" >
                                             	<img src="./img/icons/facebook.ico"
