@@ -563,7 +563,7 @@ class FGMembersite{
 		$allowedExts = array("gif", "jpeg", "jpg", "png", "PNG", "JPG", "JPEG", "GIF");
 		$explode = explode(".", $_FILES["Eflyer"]["name"]);
 		$extension = end($explode);
-		if (($_FILES["Eflyer"]["size"] < 614400) && in_array($extension, $allowedExts)){
+		if (($_FILES["Eflyer"]["size"] < 524288) && in_array($extension, $allowedExts)){
 			if ($_FILES["Eflyer"]["error"] > 0) {
 				$this->HandleError("Error: " . $_FILES["Eflyer"]["error"] . "<br> File too big!");
 				//echo "Error: " . $_FILES["file"]["error"] . "<br>";
