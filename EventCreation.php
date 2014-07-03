@@ -165,7 +165,7 @@
 					</div>
 					
 					<!--Upload Picture-->
-					<div class="container" id="eventPic">
+					<div class="container" id="Eflyer">
 						<label for="Eflyer" >* Picture of Event:</label><br/>
 						<input type="file" name="Eflyer" id="Eflyer" title="512 kB max" value="<?php echo $fgmembersite->SafeDisplay('Eflyer') ?>" maxlength="50" /><br/>
 						<span id="event_Eflyer_errorloc" class="error"></span>

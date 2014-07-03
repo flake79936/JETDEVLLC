@@ -139,9 +139,12 @@
 
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
 										
+<!-- 
 										<?PHP if ($row['Ewebsite']) { ?>
 										<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
 										<?PHP }?>
+ -->
+												
 												<p><img src="<?= $row['Eflyer'] ?>"/></p>
 												
 												<?PHP if ($row['Efacebook']) { ?>

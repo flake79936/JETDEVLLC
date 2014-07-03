@@ -569,9 +569,9 @@ class FGMembersite{
 				//echo "Error: " . $_FILES["file"]["error"] . "<br>";
 				//echo "File too big.";
 			} else {
-				echo "Upload: " . $_FILES["Eflyer"]["name"] . "<br>";
-				echo "Type: "   . $_FILES["Eflyer"]["type"] . "<br>";
-				echo "Size: "   . ($_FILES["Eflyer"]["size"] / 1024) . " KiB<br>";
+// 				echo "Upload: " . $_FILES["Eflyer"]["name"] . "<br>";
+// 				echo "Type: "   . $_FILES["Eflyer"]["type"] . "<br>";
+// 				echo "Size: "   . ($_FILES["Eflyer"]["size"] / 1024) . " KiB<br>";
 				//echo "Stored in: " . $_FILES["Eflyer"]["tmp_name"];
 				if(!file_exists("./eventFlyers/")){
 					mkdir("./eventFlyers/", 0700);
