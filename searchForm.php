@@ -182,9 +182,9 @@
 
 										<p><b>Event Type:</b>&nbsp;<?= $row['Edescription'] ?></p>
 										
-										<?PHP if ($row['Ewebsite']) { ?>
+										<?PHP /*if ($row['Ewebsite']) { ?>
 										<p><a href="<?= $row['Ewebsite'] ?>" target="_blank"><?= $row['Ewebsite'] ?></p>
-										<?PHP }?>
+										<?PHP }*/?>
 	
 												<?PHP if ($row['Efacebook']) { ?>
                                             	<a href="<?= $row['Efacebook'] ?>" target="_blank" >
