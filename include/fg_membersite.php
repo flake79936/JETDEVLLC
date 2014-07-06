@@ -294,16 +294,18 @@ class FGMembersite{
 		
 		$mail->IsSMTP();
 		$mail->CharSet    = 'utf-8';
-		$mail->Host       = 'smtp.gmail.com'; // SMTP server example
+		$mail->Host       = 'smtp.jetdevllc.com'; // SMTP server example		
+// 		$mail->Host       = 'smtp.gmail.com'; // SMTP server example
 		$mail->SMTPAuth   = true;             // enable SMTP authentication
 		$mail->SMTPSecure = 'ssl';
-		$mail->Port       = 465;              // set the SMTP port for the GMAIL server
+		$mail->Port       = 25;              // set the SMTP port for the GMAIL server
+// 		$mail->Port       = 465;              // set the SMTP port for the GMAIL server
 		$mail->Encoding   = '7bit';
 		
 		$mail->Subject = "Do not reply to this email: Just a confirmation email";
 		
-		$mail->Username   = "viskodtt@gmail.com"; // SMTP account username example  WHERE YOURE SENDING FROM
-		$mail->Password   = "software2";         // SMTP account password example
+		$mail->Username   = "no.reply@jetdevllc.com"; // SMTP account username example  WHERE YOURE SENDING FROM
+		$mail->Password   = "PassWord11!!!!";         // SMTP account password example
 		
 		$mail->Body = "Hello ".$formvars['name']."\r\n\r\n".
 					"Thanks for your registration with " . $this->sitename . "\r\n".
@@ -1132,7 +1134,7 @@ class FGMembersite{
 		
 		$confirmcode = $this->SanitizeForSQL($_GET['code']);
 
-		$result = mysql_query("Select name, email from $this->tablename where confirmcode='$confirmcode'", $this->connection);   
+		$result = mysql_query("Select Uname, Uemail from $this->tablenameU where confirmcode='$confirmcode'", $this->connection);   
 		
 		if(!$result || mysql_num_rows($result) <= 0){
 			$this->HandleError("Wrong confirm code.");
@@ -1140,10 +1142,10 @@ class FGMembersite{
 		}
 		
 		$row = mysql_fetch_assoc($result);
-		$user_rec['name'] = $row['name'];
-		$user_rec['email']= $row['email'];
+		$user_rec['Uname'] = $row['Uname'];
+		$user_rec['Uemail']= $row['Uemail'];
 
-		$qry = "Update $this->tablename Set confirmcode = 'y' Where confirmcode = '$confirmcode'";
+		$qry = "Update $this->tablename1 Set confirmcode = 'y' Where confirmcode = '$confirmcode'";
 
 		if(!mysql_query( $qry ,$this->connection)){
 			$this->HandleDBError("Error inserting data to the table\nquery:$qry");
