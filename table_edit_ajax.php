@@ -37,7 +37,7 @@ EphoneNumber='$EphoneNumber',Edescription='$Edescription',
 Ewebsite='$Ewebsite',Ehashtag='$Ehashtag',
 Efacebook='$Efacebook',Etwitter='$Etwitter',
 Egoogle='$Egoogle' 
-where id='$id'";
+where Uusername='$id'";
 mysql_query($sql);
 }
 ?>

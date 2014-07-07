@@ -1,3 +1,11 @@
+<?PHP	require_once("./include/membersite_config.php");
+	if(!$fgmembersite->CheckLogin()){
+		$fgmembersite->RedirectToURL("login.php");
+		exit;
+	}
+		$usrname = $fgmembersite->UsrName();
+
+?>
 <!-- Script -->
 
 <script type="text/javascript" src="http://ajax.googleapis.com/
@@ -114,7 +122,8 @@ $(".text").show();
 <table>
 <?php
 include('db.php');
-$sql=mysql_query("select * from Events");
+// 	$sql = "SELECT * FROM Events WHERE UuserName = '" . $usrname . "' ORDER BY EstartDate";
+$sql=mysql_query("SELECT * FROM Events WHERE UuserName = '" . $usrname . "' ");
 while($row=mysql_fetch_array($sql))
 {
 $Evename=$row['Evename'];
@@ -134,62 +143,62 @@ $Egoogle=$row['Egoogle'];
 
 <td class="edit_td">
 <span id="Event Name<?php echo $id; ?>" class="text"><?php echo $Evename; ?></span>
-<input type="text" value="<?php echo $firstname; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
+<input type="text" value="<?php echo $Evename; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
 </td>
 
 <td class="edit_td">
-<span id="last_<?php echo $id; ?>" class="text"><?php echo $lastname; ?></span> 
-<input type="text" value="<?php echo $lastname; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
+<span id="last_<?php echo $id; ?>" class="text"><?php echo $Eaddress; ?></span> 
+<input type="text" value="<?php echo $Eaddress; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
 </td>
 
 <td class="edit_td">
-<span id="first_<?php echo $id; ?>" class="text"><?php echo $firstname; ?></span>
-<input type="text" value="<?php echo $firstname; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
+<span id="first_<?php echo $id; ?>" class="text"><?php echo $Ecity; ?></span>
+<input type="text" value="<?php echo $Ecity; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
 </td>
 
 <td class="edit_td">
-<span id="last_<?php echo $id; ?>" class="text"><?php echo $lastname; ?></span> 
-<input type="text" value="<?php echo $lastname; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
+<span id="last_<?php echo $id; ?>" class="text"><?php echo $Estate; ?></span> 
+<input type="text" value="<?php echo $Estate; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
 </td>
 
 <td class="edit_td">
-<span id="first_<?php echo $id; ?>" class="text"><?php echo $firstname; ?></span>
-<input type="text" value="<?php echo $firstname; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
+<span id="first_<?php echo $id; ?>" class="text"><?php echo $Ezip; ?></span>
+<input type="text" value="<?php echo $Ezip; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
 </td>
 
 <td class="edit_td">
-<span id="last_<?php echo $id; ?>" class="text"><?php echo $lastname; ?></span> 
-<input type="text" value="<?php echo $lastname; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
+<span id="last_<?php echo $id; ?>" class="text"><?php echo $EphoneNumber; ?></span> 
+<input type="text" value="<?php echo $EphoneNumber; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
 </td>
 
 <td class="edit_td">
-<span id="first_<?php echo $id; ?>" class="text"><?php echo $firstname; ?></span>
-<input type="text" value="<?php echo $firstname; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
+<span id="first_<?php echo $id; ?>" class="text"><?php echo $Edescription; ?></span>
+<input type="text" value="<?php echo $Edescription; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
 </td>
 
 <td class="edit_td">
-<span id="last_<?php echo $id; ?>" class="text"><?php echo $lastname; ?></span> 
-<input type="text" value="<?php echo $lastname; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
+<span id="last_<?php echo $id; ?>" class="text"><?php echo $Ewebsite; ?></span> 
+<input type="text" value="<?php echo $Ewebsite; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
 </td>
 
 <td class="edit_td">
-<span id="first_<?php echo $id; ?>" class="text"><?php echo $firstname; ?></span>
-<input type="text" value="<?php echo $firstname; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
+<span id="first_<?php echo $id; ?>" class="text"><?php echo $Ehashtag; ?></span>
+<input type="text" value="<?php echo $Ehashtag; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
 </td>
 
 <td class="edit_td">
-<span id="last_<?php echo $id; ?>" class="text"><?php echo $lastname; ?></span> 
-<input type="text" value="<?php echo $lastname; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
+<span id="last_<?php echo $id; ?>" class="text"><?php echo $Efacebook; ?></span> 
+<input type="text" value="<?php echo $Efacebook; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
 </td>
 
 <td class="edit_td">
-<span id="first_<?php echo $id; ?>" class="text"><?php echo $firstname; ?></span>
-<input type="text" value="<?php echo $firstname; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
+<span id="first_<?php echo $id; ?>" class="text"><?php echo $Etwitter; ?></span>
+<input type="text" value="<?php echo $Etwitter; ?>" class="editbox" id="first_input_<?php echo $id; ?>" /&gt;
 </td>
 
 <td class="edit_td">
-<span id="last_<?php echo $id; ?>" class="text"><?php echo $lastname; ?></span> 
-<input type="text" value="<?php echo $lastname; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
+<span id="last_<?php echo $id; ?>" class="text"><?php echo $Egoogle; ?></span> 
+<input type="text" value="<?php echo $Egoogle; ?>" class="editbox" id="last_input_<?php echo $id; ?>"/>
 </td>
 
 </tr>
