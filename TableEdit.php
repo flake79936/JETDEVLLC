@@ -8,18 +8,65 @@ $(document).ready(function()
 $(".edit_tr").click(function()
 {
 var ID=$(this).attr('id');
-$("#first_"+ID).hide();
-$("#last_"+ID).hide();
+$("#Evename_"+ID).hide();
+$("#Eaddress_"+ID).hide();
+$("#Ecity"+ID).hide();
+$("#Estate"+ID).hide();
+$("#Ezip"+ID).hide();
+$("#EphoneNumber"+ID).hide();
+$("#Edescription"+ID).hide();
+$("#Ewebsite"+ID).hide();
+$("#Ehashtag"+ID).hide();
+$("#Efacebook"+ID).hide();
+$("#Etwitter"+ID).hide();
+$("#Egoogle"+ID).hide();
 
-$("#first_input_"+ID).show();
-$("#last_input_"+ID).show();
+// $Evename=$row['Evename'];
+// $Eaddress=$row['Eaddress'];
+// $Ecity=$row['Ecity'];
+// $Estate=$row['Estate'];
+// $Ezip=$row['Ezip'];
+// $EphoneNumber=$row['EphoneNumber'];
+// $Edescription=$row['Edescription'];
+// $Ewebsite=$row['Ewebsite'];
+// $Ehashtag=$row['Ehashtag'];
+// $Efacebook=$row['Efacebook'];
+// $$Etwitter=$row['Etwitter'];
+// $Egoogle=$row['Egoogle'];
+
+
+
+$("#Evename_input_"+ID).show();
+$("#Eaddress_input_"+ID).show();
+$("#Ecity_input_"+ID).show();
+$("#Estate_input_"+ID).show();
+$("#Ezip_input_"+ID).show();
+$("#EphoneNumber_input_"+ID).show();
+$("#Edescription_input_"+ID).show();
+$("#Ewebsite_input_"+ID).show();
+$("#Ehashtag_input_"+ID).show();
+$("#Efacebook_input_"+ID).show();
+$("#Etwitter_input_"+ID).show();
+$("#Egoogle_input_"+ID).show();
 }).change(function()
 {
 var ID=$(this).attr('id');
-var first=$("#first_input_"+ID).val();
-var last=$("#last_input_"+ID).val();
-var dataString = 'id='+ ID +'&firstname='+first+'&lastname='+last;
-$("#first_"+ID).html('<img src="load.gif" />'); // Loading image
+var first=$("#Evename_input_"+ID).val();
+var last=$("#Eaddress_input_"+ID).val();
+var first=$("#Ecity_input_"+ID).val();
+var first=$("#Estate_input_"+ID).val();
+var last=$("#Ezip_input_"+ID).val();
+var first=$("#EphoneNumber_input_"+ID).val();
+var last=$("#Edescription_input_"+ID).val();
+var first=$("#Ewebsite_input_"+ID).val();
+var last=$("#Ehashtag_input_"+ID).val();
+var first=$("#Efacebook_input_"+ID).val();
+var last=$("#Etwitter_input_"+ID).val();
+var first=$("#Egoogle_input_"+ID).val();
+
+
+var dataString = 'id='+ ID +'&Evename='+Evename+'&Eaddress='+Eaddress;
+$("#Evename_"+ID).html('<img src="load.gif" />'); // Loading image
 
 if(first.length>0&& last.length>0)
 {
