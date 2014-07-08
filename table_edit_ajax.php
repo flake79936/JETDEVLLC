@@ -3,6 +3,7 @@ include("db.php");
 if($_POST['id'])
 {
 $id=mysql_escape_String($_POST['id']);
+$Uusername=mysql_escape_String($_POST['Uusername']);
 $Evename=mysql_escape_String($_POST['Evename']);
 $Eaddress=mysql_escape_String($_POST['Eaddress']);
 $Ecity=mysql_escape_String($_POST['Ecity']);
@@ -30,14 +31,14 @@ $Egoogle=mysql_escape_String($_POST['Egoogle']);
 // $Egoogle=$row['Egoogle'];
 
 
-$sql = "update Events set Evename='$Evename',
+$sql = "UPDATE Events SET Evename='$Evename',
 Eaddress='$Eaddress',Ecity='$Ecity',
 Estate='$Estate',Ezip='$Ezip',
 EphoneNumber='$EphoneNumber',Edescription='$Edescription',
 Ewebsite='$Ewebsite',Ehashtag='$Ehashtag',
 Efacebook='$Efacebook',Etwitter='$Etwitter',
 Egoogle='$Egoogle' 
-where Uusername='$id'";
+WHERE Uusername='$Uusername'";
 mysql_query($sql);
 }
 ?>

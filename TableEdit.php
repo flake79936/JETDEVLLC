@@ -15,7 +15,7 @@ $(document).ready(function()
 {
 $(".edit_tr").click(function()
 {
-var ID=$(this).attr('id');
+var ID=$(this).attr('Eevename');
 $("#Evename_"+ID).hide();
 $("#Eaddress_"+ID).hide();
 $("#Ecity"+ID).hide();
@@ -58,7 +58,7 @@ $("#Etwitter_input_"+ID).show();
 $("#Egoogle_input_"+ID).show();
 }).change(function()
 {
-var ID=$(this).attr('id');
+var ID=$(this).attr('Eevename');
 var first=$("#Evename_input_"+ID).val();
 var last=$("#Eaddress_input_"+ID).val();
 var first=$("#Ecity_input_"+ID).val();
@@ -73,7 +73,9 @@ var last=$("#Etwitter_input_"+ID).val();
 var first=$("#Egoogle_input_"+ID).val();
 
 
-var dataString = 'id='+ ID +'&Evename='+Evename+'&Eaddress='+Eaddress;
+var dataString = 'Eevename='+ ID +'&Evename='+Evename+'&Eaddress='+Eaddress'&Ecity='+Ecity+'&Estate='Estate+'&Ezip='Ezip+'&EphoneNumber='
++EphoneNumber+'&Edescription='+Edescription+'&Ewebsite='+Ewebsite+'&Ehashtage='Ehashtag+'&Efacebook='+facebook+'&Etwitter='Etwitter+
+'&Egoogle='+Egoogle;
 $("#Evename_"+ID).html('<img src="load.gif" />'); // Loading image
 
 if(first.length>0&& last.length>0)
@@ -86,8 +88,8 @@ data: dataString,
 cache: false,
 success: function(html)
 {
-$("#first_"+ID).html(first);
-$("#last_"+ID).html(last);
+$("#Evename"+ID).html(Evename);
+$("#Eaddress_"+ID).html(Eaddress);
 }
 });
 }
