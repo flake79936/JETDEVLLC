@@ -68,7 +68,7 @@ var dataString = 'Eid='+ ID +'&Evename='+Evename+'&Eaddress='+Eaddress'&Ecity='+
 '&Egoogle='+Egoogle;
 $("#Evename_"+ID).html('<img src="./images/load.gif" />'); // Loading image
 
-if(true)//Evename.length>0 || Ewebsite.length>0)
+if(1)//Evename.length>0 || Ewebsite.length>0)
 {
 
 $.ajax({
