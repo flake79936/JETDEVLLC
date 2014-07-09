@@ -1,8 +1,8 @@
 <?php
 include("db.php");
-if($_POST['id'])
+if($_POST['Eid'])
 {
-$id=mysql_escape_String($_POST['id']);
+$id=mysql_escape_String($_POST['Eid']);
 $Uusername=mysql_escape_String($_POST['Uusername']);
 $Evename=mysql_escape_String($_POST['Evename']);
 $Eaddress=mysql_escape_String($_POST['Eaddress']);
@@ -38,7 +38,7 @@ EphoneNumber='$EphoneNumber',Edescription='$Edescription',
 Ewebsite='$Ewebsite',Ehashtag='$Ehashtag',
 Efacebook='$Efacebook',Etwitter='$Etwitter',
 Egoogle='$Egoogle' 
-WHERE Uusername='$Uusername'";
+WHERE Eid='$Eid'";
 mysql_query($sql);
 }
 ?>
