@@ -187,89 +187,89 @@ $Egoogle=$row['Egoogle'];
 				<div id="inner-mid-box">
 				<tr id="<?php echo $id; ?>" class="edit_tr">
 
-<td class="edit_td">
-<span id="Evename_<?php echo $id; ?>" class="text"><?php echo $Evename; ?>
-</span>
-<input type="text" value="<?php echo $Evename; ?>" class="editbox" 
-id="Evename_input_<?php echo $id; ?>" /&gt;
-</td>
+				<td class="edit_td">
+				<span id="Evename_<?php echo $id; ?>" class="text"><?php echo $Evename; ?>
+				</span>
+				<input type="text" value="<?php echo $Evename; ?>" class="editbox" 
+				id="Evename_input_<?php echo $id; ?>" /&gt;
+				</td>
 
-<td class="edit_td">
-<span id="Eaddress_<?php echo $id; ?>" class="text"><?php echo $Eaddress; ?>
-</span> 
-<input type="text" value="<?php echo $Eaddress; ?>" class="editbox" 
-id="Eaddress_input_<?php echo $id; ?>"/>
-</td>
+				<td class="edit_td">
+				<span id="Eaddress_<?php echo $id; ?>" class="text"><?php echo $Eaddress; ?>
+				</span> 
+				<input type="text" value="<?php echo $Eaddress; ?>" class="editbox" 
+				id="Eaddress_input_<?php echo $id; ?>"/>
+				</td>
 
-<td class="edit_td">
-<span id="Ecity_<?php echo $id; ?>" class="text"><?php echo $Ecity; ?>
-</span>
-<input type="text" value="<?php echo $Ecity; ?>" class="editbox" 
-id="Ecity_input_<?php echo $id; ?>" /&gt;
-</td>
+				<td class="edit_td">
+				<span id="Ecity_<?php echo $id; ?>" class="text"><?php echo $Ecity; ?>
+				</span>
+				<input type="text" value="<?php echo $Ecity; ?>" class="editbox" 
+				id="Ecity_input_<?php echo $id; ?>" /&gt;
+				</td>
 
-<td class="edit_td">
-<span id="Estate_<?php echo $id; ?>" class="text"><?php echo $Estate; ?>
-</span> 
-<input type="text" value="<?php echo $Estate; ?>" class="editbox" 
-id="Estate_input_<?php echo $id; ?>"/>
-</td>
+				<td class="edit_td">
+				<span id="Estate_<?php echo $id; ?>" class="text"><?php echo $Estate; ?>
+				</span> 
+				<input type="text" value="<?php echo $Estate; ?>" class="editbox" 
+				id="Estate_input_<?php echo $id; ?>"/>
+				</td>	
 
-<td class="edit_td">
-<span id="Ezip_<?php echo $id; ?>" class="text"><?php echo $Ezip; ?>
-</span>
-<input type="text" value="<?php echo $Ezip; ?>" class="editbox" 
-id="Ezip_input_<?php echo $id; ?>" /&gt;
-</td>
+				<td class="edit_td">
+				<span id="Ezip_<?php echo $id; ?>" class="text"><?php echo $Ezip; ?>
+				</span>
+				<input type="text" value="<?php echo $Ezip; ?>" class="editbox" 
+				id="Ezip_input_<?php echo $id; ?>" /&gt;
+				</td>
 
-<td class="edit_td">
-<span id="EphoneNumber_<?php echo $id; ?>" class="text"><?php echo $EphoneNumber; ?>
-</span> 
-<input type="text" value="<?php echo $EphoneNumber; ?>" class="editbox" 
-id="EphoneNumber_input_<?php echo $id; ?>"/>
-</td>
+				<td class="edit_td">
+				<span id="EphoneNumber_<?php echo $id; ?>" class="text"><?php echo $EphoneNumber; ?>
+				</span> 
+				<input type="text" value="<?php echo $EphoneNumber; ?>" class="editbox" 
+				id="EphoneNumber_input_<?php echo $id; ?>"/>
+				</td>
 
-<td class="edit_td">
-<span id="Edescription_<?php echo $id; ?>" class="text"><?php echo $Edescription; ?>
-</span>
-<input type="text" value="<?php echo $Edescription; ?>" class="editbox" 
-id="Edescription_input_<?php echo $id; ?>" /&gt;
-</td>
+				<td class="edit_td">
+				<span id="Edescription_<?php echo $id; ?>" class="text"><?php echo $Edescription; ?>
+				</span>
+				<input type="text" value="<?php echo $Edescription; ?>" class="editbox" 
+				id="Edescription_input_<?php echo $id; ?>" /&gt;
+				</td>
 
-<td class="edit_td">
-<span id="Ewebsite_<?php echo $id; ?>" class="text"><?php echo $Ewebsite; ?>
-</span> 
-<input type="text" value="<?php echo $Ewebsite; ?>" class="editbox" 
-id="Ewebsite_input_<?php echo $id; ?>"/>
-</td>
+				<td class="edit_td">
+				<span id="Ewebsite_<?php echo $id; ?>" class="text"><?php echo $Ewebsite; ?>
+				</span> 
+				<input type="text" value="<?php echo $Ewebsite; ?>" class="editbox" 
+				id="Ewebsite_input_<?php echo $id; ?>"/>
+				</td>
 
-<td class="edit_td">
-<span id="Ehashtag_<?php echo $id; ?>" class="text"><?php echo $Ehashtag; ?>
-</span>
-<input type="text" value="<?php echo $Ehashtag; ?>" class="editbox" 
-id="Ehashtag_input_<?php echo $id; ?>" /&gt;
-</td>
+				<td class="edit_td">
+				<span id="Ehashtag_<?php echo $id; ?>" class="text"><?php echo $Ehashtag; ?>
+				</span>
+				<input type="text" value="<?php echo $Ehashtag; ?>" class="editbox" 
+				id="Ehashtag_input_<?php echo $id; ?>" /&gt;
+				</td>
 
-<td class="edit_td">
-<span id="Efacebook_<?php echo $id; ?>" class="text"><?php echo $Efacebook; ?>
-</span> 
-<input type="text" value="<?php echo $Efacebook; ?>" class="editbox" 
-id="Efacebook_input_<?php echo $id; ?>"/>
-</td>
+				<td class="edit_td">
+				<span id="Efacebook_<?php echo $id; ?>" class="text"><?php echo $Efacebook; ?>
+				</span> 
+				<input type="text" value="<?php echo $Efacebook; ?>" class="editbox" 
+				id="Efacebook_input_<?php echo $id; ?>"/>
+				</td>
 
-<td class="edit_td">
-<span id="Etwitter_<?php echo $id; ?>" class="text"><?php echo $Etwitter; ?>
-</span>
-<input type="text" value="<?php echo $Etwitter; ?>" class="editbox" 
-id="Etwitter_input_<?php echo $id; ?>" /&gt;
-</td>
+				<td class="edit_td">
+				<span id="Etwitter_<?php echo $id; ?>" class="text"><?php echo $Etwitter; ?>
+				</span>
+				<input type="text" value="<?php echo $Etwitter; ?>" class="editbox" 
+				id="Etwitter_input_<?php echo $id; ?>" /&gt;
+				</td>
 
-<td class="edit_td">
-<span id="Egoogle_<?php echo $id; ?>" class="text"><?php echo $Egoogle; ?>
-</span> 
-<input type="text" value="<?php echo $Egoogle; ?>" class="editbox" 
-id="Egoogle_input_<?php echo $id; ?>"/>
-</td>
+				<td class="edit_td">
+				<span id="Egoogle_<?php echo $id; ?>" class="text"><?php echo $Egoogle; ?>
+				</span> 
+				<input type="text" value="<?php echo $Egoogle; ?>" class="editbox" 
+				id="Egoogle_input_<?php echo $id; ?>"/>
+				</td>
 
 </tr>
 <?php
@@ -282,7 +282,7 @@ id="Egoogle_input_<?php echo $id; ?>"/>
 		</div>
 	</body>
 
-<!--  -->
+</html>
 
 
 
