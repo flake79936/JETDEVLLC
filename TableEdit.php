@@ -151,7 +151,7 @@ $Efacebook=$row['Efacebook'];
 $$Etwitter=$row['Etwitter'];
 $Egoogle=$row['Egoogle'];
 ?>
-<!--  -->
+
 	<body >
 		<div class="header-wrap">
 			<div class="header">
@@ -183,8 +183,8 @@ $Egoogle=$row['Egoogle'];
 		</div><!--//mobile-menu-list-->
 		
 		<div id="main_container">
-			<div id='middle_box'>
-				<div id="inner-mid-box">
+<!-- 			<div id='middle_box'> -->
+<!-- 				<div id="inner-mid-box"> -->
 				<tr id="<?php echo $id; ?>" class="edit_tr">
 
 				<td class="edit_td">
@@ -271,15 +271,19 @@ $Egoogle=$row['Egoogle'];
 				id="Egoogle_input_<?php echo $id; ?>"/>
 				</td>
 
-</tr>
-<?php
-}
+<?PHP  echo "test" 
 ?>
+			</tr>
+		<?php
+	}
+	?>
+	<?PHP 
+	echo "test:" ?>
 </table>
 				
 				</div>
-			</div>
-		</div>
+<!-- 			</div> -->
+<!-- 		</div> -->
 	</body>
 
 </html>
