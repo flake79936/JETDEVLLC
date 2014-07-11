@@ -176,9 +176,6 @@
 
 										<p><?= $row['Eother'] ?></p>
 
-
-			
-										
 										<p><iframe
 											width="300"
 											height="150"
