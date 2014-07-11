@@ -121,6 +121,8 @@
 					<li><a href="./EventCreation.php">Create Event</a></li>
 					<li><span class="shadow">|</span></li>
 					<li><a href="./eventAccor.php">Your Events</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a href="./TableEdit.php">Edit Events</a></li>
 				</ul>
 				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
 			</div><!--//header-->

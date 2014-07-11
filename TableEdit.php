@@ -1,8 +1,21 @@
-<!-- 
 <head>
-<link rel="stylesheet" type="text/css" href="./css/TableEdit.css" />
+		<!--(Start) Style Sheets-->
+			<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css">
+			<link href="css/accordion.css" rel="stylesheet" type="text/css" />
+			
+			<!--(Start) Provided by JetDevLLC-->
+				<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+				<link href="css/styleEdit.css"            rel="stylesheet" type="text/css" />
+				<link href="css/responsiveEdit.css"       rel="stylesheet" type="text/css" />	
+				<!--[if IE 6]>
+				<style type="text/css">img, div, { behavior: url("js/iepngfix.htc") }
+				</style>
+				<![endif]-->
+			<!--(End) Provided by JetDevLLC-->
+		<!--(End) Style Sheets-->
+		
 </head>
- -->
+
 <?PHP	require_once("./include/membersite_config.php");
 	if(!$fgmembersite->CheckLogin()){
 		$fgmembersite->RedirectToURL("login.php");
@@ -66,7 +79,7 @@ var Egoogle=$("#Egoogle_input_"+ID).val();
 var dataString = 'Eid='+ ID +'&Evename='+Evename+'&Eaddress='+Eaddress'&Ecity='+Ecity+'&Estate='Estate+'&Ezip='Ezip+'&EphoneNumber='
 +EphoneNumber+'&Edescription='+Edescription+'&Ewebsite='+Ewebsite+'&Ehashtage='Ehashtag+'&Efacebook='+facebook+'&Etwitter='Etwitter+
 '&Egoogle='+Egoogle;
-$("#Evename_"+ID).html('<img src="./images/load.gif" />'); // Loading image
+$("#Eid_"+ID).html('<img src="./images/load.gif" />'); // Loading image
 
 if(1)//Evename.length>0 || Ewebsite.length>0)
 {
@@ -117,10 +130,6 @@ $(".text").show();
 </script>
 <!-- End Script -->
 
-
-
-
-//Table Records
 <table>
 <?php
 include('db.php');
@@ -142,7 +151,41 @@ $Efacebook=$row['Efacebook'];
 $$Etwitter=$row['Etwitter'];
 $Egoogle=$row['Egoogle'];
 ?>
-<tr id="<?php echo $id; ?>" class="edit_tr">
+<!--  -->
+	<body >
+		<div class="header-wrap">
+			<div class="header">
+				<a class="logout-btn" href='logout.php'>Log Out</a>
+				<ul class="head-social-icons">
+					<!---<li><a class="facebook"   href="#"></a></li>
+					<li><a class="twitter"    href="#"></a></li>
+					<li><a class="googleplus" href="#"></a></li>-->
+					<li>Welcome <?= $fgmembersite->UserFullName() ?>!</li>
+				</ul><!--//head-social-icons-->
+
+				<ul class="nav">
+					<li><a href="./userPage.php">User Page</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a href="./EventCreation.php">Create Event</a></li>
+					<li><span class="shadow">|</span></li>
+					<li><a href="./searchForm.php">Search Events</a></li>
+				</ul>
+				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
+			</div><!--//header-->
+		</div><!--//header-wrap-->
+		
+		<div class="mobile-menu-list">
+			<ul>
+				<li><a href="./EventCreation.php">createEvent</a></li>
+				<li><a href="./searchForm.php">Search</a></li>
+				<li><a href="#Events">Events</a></li>
+			</ul>   
+		</div><!--//mobile-menu-list-->
+		
+		<div id="main_container">
+			<div id='middle_box'>
+				<div id="inner-mid-box">
+				<tr id="<?php echo $id; ?>" class="edit_tr">
 
 <td class="edit_td">
 <span id="Evename_<?php echo $id; ?>" class="text"><?php echo $Evename; ?>
@@ -233,3 +276,13 @@ id="Egoogle_input_<?php echo $id; ?>"/>
 }
 ?>
 </table>
+				
+				</div>
+			</div>
+		</div>
+	</body>
+
+<!--  -->
+
+
+
