@@ -94,7 +94,7 @@
 					<li><a class="twitter"    href="#"></a></li>
 					<li><a class="googleplus" href="#"></a></li>-->
 					<?PHP include 'SBar.php';?>
-					<li>Welcome <?= $fgmembersite->UserFullName() ?>!</li>
+<!-- 					<li>Welcome <?= $fgmembersite->UserFullName() ?>!</li> -->
 				</ul><!--//head-social-icons-->
 
 				<ul class="nav">
