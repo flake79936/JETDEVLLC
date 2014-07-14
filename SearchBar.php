@@ -109,27 +109,10 @@
 			<div class="header">
 				<a class="logout-btn" href='logout.php'>Log Out</a>
 				<ul class="head-social-icons">
-<!-- 					<li>		<div id='fg_membersite' align="center"> -->
-<!-- 			<fieldset align="left"> -->
-<!-- 				<legend>Search</legend> -->
-				<form id='search' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='POST' accept-charset='UTF-8'>
-						<input type='hidden' name='submitted' id='submitted' value='1'/>
-						
-<!-- 						<div> -->
-							<span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span>
-<!-- 						</div> -->
-						
-<!-- 						<div class='container'> -->
-<!-- 							<label for='eventSearch' >Search:</label><br/> -->
-							<input type='text' name='eventSearch' title="..." id='eventSearch' value='<?php echo $fgmembersite->SafeDisplay('eventSearch') ?>' maxlength="50" /><br/>
-							<span id='search_eventSearch_errorloc' class='error'></span>
-<!-- 						</div> -->
-						
-						<input id="submitButton" type="submit" name="Submit" value="Search" />
-				</form>
-<!-- 			</fieldset> -->
-
-<!-- 					<li>Welcome <?= $fgmembersite->UserFullName() ?>!</li> -->
+					<!---<li><a class="facebook"   href="#"></a></li>
+					<li><a class="twitter"    href="#"></a></li>
+					<li><a class="googleplus" href="#"></a></li>-->
+					<li>Welcome <?= $fgmembersite->UserFullName() ?>!</li>
 				</ul><!--//head-social-icons-->
 
 				<ul class="nav">
@@ -140,8 +123,6 @@
 					<li><a href="./eventAccor.php">Your Events</a></li>
 					<li><span class="shadow">|</span></li>
 					<li><a href="./TableEdit.php">Edit Events</a></li>
-
-		</div></li>
 				</ul>
 				<div class="mobile-menu-btn"><span class="icon-reorder"></span></div>
 			</div><!--//header-->
@@ -156,7 +137,6 @@
 		</div><!--//mobile-menu-list-->
 		
 		<div id='fg_membersite' align="center">
-<!-- 
 			<fieldset align="left">
 				<legend>Search</legend>
 				<form id='search' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='POST' accept-charset='UTF-8'>
@@ -175,7 +155,6 @@
 						<input id="submitButton" type="submit" name="Submit" value="Search" />
 				</form>
 			</fieldset>
- -->
 		</div>
 		
 		<?php

@@ -1,4 +1,8 @@
-
+<?PHP 
+	if(isset($_POST["submitted"])){
+		$result = $fgmembersite->searchEvent();
+	}
+?>
 				<form id='search' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='POST' accept-charset='UTF-8'>
 						<input type='hidden' name='submitted' id='submitted' value='1'/>
 						
