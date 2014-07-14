@@ -5,6 +5,10 @@
 		exit;
 	}
 	
+		if(isset($_POST["submitted"])){
+		$result = $fgmembersite->searchEvent();
+	}
+	
 	$usrname = $fgmembersite->UsrName();
 	
 	$con = mysqli_connect('localhost', 'JetDevSQL', 'DevTeamSQL!!12', 'EventAdvisor');
@@ -89,6 +93,7 @@
 					<!---<li><a class="facebook"   href="#"></a></li>
 					<li><a class="twitter"    href="#"></a></li>
 					<li><a class="googleplus" href="#"></a></li>-->
+					<?PHP include 'SBar.php';?>
 					<li>Welcome <?= $fgmembersite->UserFullName() ?>!</li>
 				</ul><!--//head-social-icons-->
 
