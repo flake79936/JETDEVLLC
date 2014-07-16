@@ -75,7 +75,7 @@ $(document).on('click','.updrow',function(e){
 	$tr.css('background-color','#686C70');
 	$tr.find('span').each(function(){
 		$(this).hide(function(){
-			$(this).after('<input name="'+$(this).attr('class')+'" value="'+$(this).text()+'" maxlength="35"/>');
+			$(this).after('<input name="'+$(this).attr('class')+'" value="'+$(this).text()+'" maxlength="50"/>');
 		});
 	});
 	e.stopImmediatePropagation();

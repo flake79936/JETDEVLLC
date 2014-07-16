@@ -49,7 +49,7 @@ if($action == 'ajax' || $action == 'update' || $action == 'delete') {
 				<th width="10%">Description</th>
 				<th width="10%">Website</th>
 				<th width="10%">Hashtag</th>
-				<th width="10%">Facebook</th>
+				<th width="12%">Facebook</th>
 				<th width="10%">Twitter</th>
 				<th width="10%">Google+</th>												
 			  </tr>

@@ -11,7 +11,7 @@
 	}
 	
 	if(isset($_POST["submitted"])){
-		$result = $fgmembersite->searchEvent();
+		$result= $_SESSION['result']; // green
 	}
 ?>
 
