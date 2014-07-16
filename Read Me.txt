@@ -1,0 +1,6 @@
+1. Extract the zip file in your root directory (www in case of wamp or htdocs in case of htdocs).
+2. Create the database 'livetable' in phpmyadmin and import the sql file given in zip archive.
+3. Open database.php and change the database credentials.Change database name, username and password.
+4. Now run index.php and enjoy the script
+
+Thanks for using blogaddition.com
