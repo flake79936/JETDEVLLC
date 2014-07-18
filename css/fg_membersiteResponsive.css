@@ -13,7 +13,7 @@ You can customize all the aspects of the form in this style sheet*/
 	}
 	
 	#fg_membersite #eventName{
-		display: inline-block;
+		display: inline;
 	}
 	
 	#fg_membersite #eventPic{
