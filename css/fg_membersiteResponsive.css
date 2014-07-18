@@ -2,7 +2,7 @@
 You can customize all the aspects of the form in this style sheet*/
 @media only screen and (min-width: 1024px){
 	#fg_membersite fieldset{
-		width:                 200px;
+		width:                 900px;
 		margin-top:            65px;
 		padding:               20px;
 		border:                1px solid #ccc;
