@@ -13,13 +13,12 @@ You can customize all the aspects of the form in this style sheet*/
 	}
 	
 	#fg_membersite #eventName{
-		display: inline;
+		display: inline-block;
 	}
 	
 	#fg_membersite #eventPic{
 		width:   220px;
 		display: block;
-		margin:  0 0 0 0;
 	}
 	
 	#fg_membersite legend, #fg_membersite h2{
