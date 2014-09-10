@@ -19,15 +19,18 @@
 
 		// these are the test feeds (clinton, obama)
 		$urls = array(
-			'http://feeds.elpasotimes.com/mngi/rss/CustomRssServlet/525/200227.xml',
-			'http://rss.cnn.com/rss/cnn_topstories.rss',
-			'http://www.kfoxtv.com/mostpopularstories/topstory.rss',
-			'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'
+			//'http://feeds.elpasotimes.com/mngi/rss/CustomRssServlet/525/200227.xml',
+			//'http://rss.cnn.com/rss/cnn_topstories.rss',
+			//'http://www.kfoxtv.com/mostpopularstories/topstory.rss',
+			//'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml',
+			'https://www.facebook.com/feeds/notifications.php?id=100000609757520&viewer=100000609757520&key=AWg_d6s11Ne3lE9y&format=rss20',
+			'https://www.facebook.com/8stringbassest'
 		);
 		$feed->set_feed_url($urls);
 
 		// set words to filter by
-		$words = 'border Juarez Mexico chihuahua cartel indios mexican';
+		//$words = 'border Juarez Mexico chihuahua cartel indios mexican';
+		$words = 'Air-ik Par king edwardo facebook likes Rodolfo Ignacio Gonzalez';
 
 		// set filter mode (and/or)
 		$mode = 'or';
@@ -42,21 +45,21 @@
 			echo '<p>', $feed->error(), '</p>';
 			die;
 		} else {
-			$items = $feed->get_items(0,20);
+			$items = $feed->get_items(0, 20);
 			$itemsFiltered = $feed->filter($items);
-			//echo '<h3>Search Results</h3>';
+			echo '<h3>Search Results</h3>';
 			if(!count($itemsFiltered)){
-				//echo '<p>Current border news not found</p>';
+				echo '<p>Current border news not found</p>';
 				echo '';
 			} else {
 				foreach($itemsFiltered as $item){
-					/*echo '<div style="margin-bottom:3em">';
+					echo '<div style="margin-bottom:3em">';
 					echo '<a href="',$item->get_link(),'">',highlight($words,strip_tags($item->get_title())),'</a><br />';
 					echo $item->get_date(),'<br />';
 					$content = strip_tags($item->get_content());
 					$content = highlight($words,$content);
 					echo $content,'<br />';
-					echo '</div>';*/
+					echo '</div>';
 					echo '<p class="headline"><a href="',$item->get_permalink(),'" title="',$item->get_title(),'">',$item->get_title(),'</a></p>';
 					echo '<p class="body">',$item->get_description(),'</p>';
 					echo '<p class="news_links"><a href="mercados.php" class="more" title="More on Juarez">More on Ju&aacute;rez</a><a href="',$item->get_permalink(),'" class="full" title="Full story" target="_blank">Full Story</a></p>';
