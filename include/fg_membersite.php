@@ -1209,7 +1209,6 @@ class FGMembersite{
 								);
 			$str = preg_replace($injections, '', $str);
 		}
-
 		return $str;
 	}
 
